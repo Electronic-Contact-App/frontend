@@ -17,8 +17,6 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@types/react": "^18.3.11",
-		"@types/react-dom": "^18.3.1",
 		"@zayne-labs/callapi": "1.0.0-rc.10",
 		"clsx": "^2.1.1",
 		"react-router-dom": "^6.27.0",
@@ -30,6 +28,8 @@
 		"@iconify/react": "^5.0.2",
 		"@total-typescript/ts-reset": "^0.6.1",
 		"@types/node": "^22.7.5",
+		"@types/react": "^18.3.11",
+		"@types/react-dom": "^18.3.1",
 		"@vitejs/plugin-react-swc": "^3.7.1",
 		"@zayne-labs/eslint-config": "^0.2.6",
 		"@zayne-labs/tsconfig": "^0.2.1",
