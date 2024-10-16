@@ -7,9 +7,9 @@
 	"license": "Apache-2.0",
 	"scripts": {
 		"build": "vite build",
-		"check-types": "tsc --pretty --incremental -p tsconfig.json",
+		"check-types": "tsc --pretty -p tsconfig.json",
 		"dev": "vite",
-		"lint:check-types": "tsc --pretty --incremental -p tsconfig.json",
+		"lint:check-types": "tsc --pretty -p tsconfig.json",
 		"lint:eslint": "eslint --cache --max-warnings 0 --report-unused-disable-directives",
 		"lint:format": "prettier --cache --write .",
 		"postinstall": "pnpm lint:eslint",
