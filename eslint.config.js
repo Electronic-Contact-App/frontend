@@ -1,7 +1,7 @@
 import { zayne } from "@zayne-labs/eslint-config";
 
 export default zayne({
-	ignores: [],
+	ignores: ["dist/**"],
 	react: true,
 	tailwindcss: true,
 	tanstack: {
