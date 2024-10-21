@@ -1,17 +1,24 @@
-/* eslint-disable perfectionist/sort-objects */
-import type { Config } from "tailwindcss/types/config";
+import { withTV } from "tailwind-variants/transformer";
 
-const tailwindConfig = {
+const config = withTV({
 	content: ["./index.html", "./src/**/*.{ts,tsx}"],
 	darkMode: ["class", '[data-theme="dark"]'],
 
 	theme: {
 		colors: {
+			white: "hsl(0, 0%, 100%)",
+
+			transparent: "transparent",
+
 			app: {
 				body: {
 					default: "var(--body-color)",
 					bolder: "var(--body-color-bolder)",
 				},
+
+				primary: "var(--color-primary)",
+
+				secondary: "var(--color-secondary)",
 
 				blue: {
 					50: "var(--color-blue-50)",
@@ -19,7 +26,7 @@ const tailwindConfig = {
 					200: "var(--color-blue-200)",
 					300: "var(--color-blue-300)",
 					400: "var(--color-blue-400)",
-					500: "var(--color-blue-500)",
+					primary: "var(--color-primary)",
 					600: "var(--color-blue-600)",
 					700: "var(--color-blue-700)",
 					800: "var(--color-blue-800)",
@@ -32,7 +39,7 @@ const tailwindConfig = {
 					200: "var(--color-orange-200)",
 					300: "var(--color-orange-300)",
 					400: "var(--color-orange-400)",
-					500: "var(--color-orange-500)",
+					secondary: "var(--color-secondary)",
 					600: "var(--color-orange-600)",
 					700: "var(--color-orange-700)",
 					800: "var(--color-orange-800)",
@@ -123,6 +130,6 @@ const tailwindConfig = {
 			xl: "1280px",
 		},
 	},
-} satisfies Config;
+});
 
-export default tailwindConfig;
+export default config;

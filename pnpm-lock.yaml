@@ -11,6 +11,9 @@ importers:
       '@zayne-labs/callapi':
         specifier: 1.0.0-rc.11
         version: 1.0.0-rc.11
+      '@zayne-labs/toolkit':
+        specifier: ^0.5.0
+        version: 0.5.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020)(zustand@5.0.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -20,6 +23,9 @@ importers:
       tailwind-merge:
         specifier: ^2.5.4
         version: 2.5.4
+      tailwind-variants:
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@3.4.14)
       zustand:
         specifier: 5.0.0
         version: 5.0.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020)
@@ -708,6 +714,24 @@ packages:
       eslint-plugin-tailwindcss:
         optional: true
       eslint-plugin-vue:
+        optional: true
+
+  '@zayne-labs/toolkit@0.5.0':
+    resolution: {integrity: sha512-O5+LIJwoQBnQiBTxGO48aQ4hBc1nWdlo/tczMsIE6m88H04Q3GblTBwBMu+u5Qa8zaP70VMoinBEJDiOWs21Jw==}
+    engines: {node: '>=18.x'}
+    peerDependencies:
+      '@types/react': ^18.0.0
+      react: ^18.0.0
+      sonner: ^1.5.0
+      zustand: ^5.0.0-rc.2
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+      sonner:
+        optional: true
+      zustand:
         optional: true
 
   '@zayne-labs/tsconfig@0.2.1':
@@ -2025,6 +2049,12 @@ packages:
   tailwind-merge@2.5.4:
     resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
 
+  tailwind-variants@0.2.1:
+    resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
+
   tailwindcss@3.4.14:
     resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
     engines: {node: '>=14.0.0'}
@@ -2806,6 +2836,12 @@ snapshots:
       - svelte-eslint-parser
       - typescript
       - vue-eslint-parser
+
+  '@zayne-labs/toolkit@0.5.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020)(zustand@5.0.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020))':
+    optionalDependencies:
+      '@types/react': 18.3.11
+      react: 19.0.0-rc-65a56d0e-20241020
+      zustand: 5.0.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020)
 
   '@zayne-labs/tsconfig@0.2.1': {}
 
@@ -4119,6 +4155,11 @@ snapshots:
       tslib: 2.8.0
 
   tailwind-merge@2.5.4: {}
+
+  tailwind-variants@0.2.1(tailwindcss@3.4.14):
+    dependencies:
+      tailwind-merge: 2.5.4
+      tailwindcss: 3.4.14
 
   tailwindcss@3.4.14:
     dependencies:

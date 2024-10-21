@@ -4,6 +4,7 @@ export default zayne({
 	ignores: ["dist/**"],
 	react: true,
 	tailwindcss: true,
+	perfectionist: false,
 	tanstack: {
 		query: true,
 	},
