@@ -3,9 +3,7 @@ import { Button } from "@/components/ui";
 function HomePage() {
 	return (
 		<div className="p-6">
-			<Button>
-				Hello
-			</Button>
+			<Button>Hello</Button>
 		</div>
 	);
 }
