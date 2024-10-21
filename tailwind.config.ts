@@ -1,45 +1,104 @@
+/* eslint-disable perfectionist/sort-objects */
 import type { Config } from "tailwindcss/types/config";
 
 const tailwindConfig = {
-	content: [
-		"./index.html",
-		"./src/**/*.{ts,tsx}",
-		"./node_modules/@nextui-org/theme/dist/components/pagination.js",
-	],
+	content: ["./index.html", "./src/**/*.{ts,tsx}"],
 	darkMode: ["class", '[data-theme="dark"]'],
 
 	theme: {
-		backgroundImage: {},
+		colors: {
+			app: {
+				body: {
+					default: "var(--body-color)",
+					bolder: "var(--body-color-bolder)",
+				},
+
+				blue: {
+					50: "var(--color-blue-50)",
+					100: "var(--color-blue-100)",
+					200: "var(--color-blue-200)",
+					300: "var(--color-blue-300)",
+					400: "var(--color-blue-400)",
+					500: "var(--color-blue-500)",
+					600: "var(--color-blue-600)",
+					700: "var(--color-blue-700)",
+					800: "var(--color-blue-800)",
+					900: "var(--color-blue-900)",
+				},
+
+				orange: {
+					50: "var(--color-orange-50)",
+					100: "var(--color-orange-100)",
+					200: "var(--color-orange-200)",
+					300: "var(--color-orange-300)",
+					400: "var(--color-orange-400)",
+					500: "var(--color-orange-500)",
+					600: "var(--color-orange-600)",
+					700: "var(--color-orange-700)",
+					800: "var(--color-orange-800)",
+					900: "var(--color-orange-900)",
+				},
+
+				grey: {
+					50: "var(--color-grey-50)",
+					100: "var(--color-grey-100)",
+					200: "var(--color-grey-200)",
+					300: "var(--color-grey-300)",
+					400: "var(--color-grey-400)",
+					500: "var(--color-grey-500)",
+					600: "var(--color-grey-600)",
+					700: "var(--color-grey-700)",
+					800: "var(--color-grey-800)",
+					900: "var(--color-grey-900)",
+				},
+
+				error: {
+					50: "var(--color-error-50)",
+					100: "var(--color-error-100)",
+					200: "var(--color-error-200)",
+					300: "var(--color-error-300)",
+					400: "var(--color-error-400)",
+					500: "var(--color-error-500)",
+					600: "var(--color-error-600)",
+					700: "var(--color-error-700)",
+					800: "var(--color-error-800)",
+					900: "var(--color-error-900)",
+				},
+
+				success: {
+					50: "var(--color-success-50)",
+					100: "var(--color-success-100)",
+					200: "var(--color-success-200)",
+					300: "var(--color-success-300)",
+					400: "var(--color-success-400)",
+					500: "var(--color-success-500)",
+					600: "var(--color-success-600)",
+					700: "var(--color-success-700)",
+					800: "var(--color-success-800)",
+					900: "var(--color-success-900)",
+				},
+			},
+			shadcn: {
+				background: "hsl(0 0% 100%)",
+				border: "theme(colors.input)",
+				foreground: "hsl(222.2 47.4% 11.2%)",
+				input: "hsl(214.3 31.8% 91.4%)",
+				muted: "hsl(210 40% 96.1%)",
+				"muted-foreground": "hsl(215.4 16.3% 46.9%)",
+				primary: "hsl(222.2 47.4% 11.2%)",
+				"primary-foreground": "hsl(210 40% 98%)",
+				ring: "hsl(215 20.2% 65.1%)",
+			},
+		},
 
 		extend: {
 			animation: {
 				flicker: "flicker 3s linear infinite",
 			},
 
-			colors: {
-				shadcn: {
-					background: "hsl(0 0% 100%)",
-					border: "theme(colors.input)",
-					foreground: "hsl(222.2 47.4% 11.2%)",
-					input: "hsl(214.3 31.8% 91.4%)",
-					muted: "hsl(210 40% 96.1%)",
-					"muted-foreground": "hsl(215.4 16.3% 46.9%)",
-					primary: "hsl(222.2 47.4% 11.2%)",
-					"primary-foreground": "hsl(210 40% 98%)",
-					ring: "hsl(215 20.2% 65.1%)",
-				},
-
-				sonner: {
-					"error-bg": "hsl(358 76% 10%)",
-					"error-border": "hsl(357 89% 16%)",
-					"error-text": "hsl(358 100% 81%)",
-					"success-bg": "hsl(150 100% 6%)",
-					"success-border": "hsl(147 100% 12%)",
-					"success-text": "hsl(150 100% 90%)",
-				},
+			fontFamily: {
+				satoshi: ["Satoshi", "sans-serif"],
 			},
-
-			fontFamily: {},
 
 			keyframes: {
 				flicker: {

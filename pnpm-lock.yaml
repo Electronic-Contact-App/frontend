@@ -9,27 +9,27 @@ importers:
   .:
     dependencies:
       '@zayne-labs/callapi':
-        specifier: 1.0.0-rc.10
-        version: 1.0.0-rc.10
+        specifier: 1.0.0-rc.11
+        version: 1.0.0-rc.11
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
       react-router-dom:
         specifier: ^6.27.0
-        version: 6.27.0(react-dom@19.0.0-rc-bf7e210c-20241017(react@19.0.0-rc-bf7e210c-20241017))(react@19.0.0-rc-bf7e210c-20241017)
+        version: 6.27.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
       tailwind-merge:
         specifier: ^2.5.4
         version: 2.5.4
       zustand:
         specifier: 5.0.0
-        version: 5.0.0(@types/react@18.3.11)(react@19.0.0-rc-bf7e210c-20241017)
+        version: 5.0.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020)
     devDependencies:
       '@eslint-react/eslint-plugin':
         specifier: ^1.15.0
         version: 1.15.0(eslint@9.12.0(jiti@1.21.6))(typescript@5.6.3)
       '@iconify/react':
         specifier: ^5.0.2
-        version: 5.0.2(react@19.0.0-rc-bf7e210c-20241017)
+        version: 5.0.2(react@19.0.0-rc-65a56d0e-20241020)
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
@@ -85,11 +85,11 @@ importers:
         specifier: ^0.6.8
         version: 0.6.8(prettier@3.3.3)
       react:
-        specifier: 19.0.0-rc-bf7e210c-20241017
-        version: 19.0.0-rc-bf7e210c-20241017
+        specifier: 19.0.0-rc-65a56d0e-20241020
+        version: 19.0.0-rc-65a56d0e-20241020
       react-dom:
-        specifier: 19.0.0-rc-bf7e210c-20241017
-        version: 19.0.0-rc-bf7e210c-20241017(react@19.0.0-rc-bf7e210c-20241017)
+        specifier: 19.0.0-rc-65a56d0e-20241020
+        version: 19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020)
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -669,8 +669,8 @@ packages:
     peerDependencies:
       vite: ^4 || ^5
 
-  '@zayne-labs/callapi@1.0.0-rc.10':
-    resolution: {integrity: sha512-OqGRZOF65bSiZPmeYnH8NARy8YMLCndpG0Iaj/ksh5DD19cHXys/iKBjQJbBbpHBbEU48bRzbC4iB8h+HBOh8A==}
+  '@zayne-labs/callapi@1.0.0-rc.11':
+    resolution: {integrity: sha512-bXzWrHF8pD0GS7CNUR0JW34T7E0LR2TZgS7P+6REkV3mL67oLWyT9fs/nlytZzrQXnxPuE+zHw021VXRtpnFGg==}
     engines: {node: '>=18.17.x'}
 
   '@zayne-labs/eslint-config@0.2.8':
@@ -1816,10 +1816,10 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react-dom@19.0.0-rc-bf7e210c-20241017:
-    resolution: {integrity: sha512-akljKHWZ84tq2CdZyGXgGYJrGcweaQtoLJqWGZSbOEuudahyQ4ZvR/IwEOREjmqGIPg9vaEqFzjTKtn4H7I58Q==}
+  react-dom@19.0.0-rc-65a56d0e-20241020:
+    resolution: {integrity: sha512-OrsgAX3LQ6JtdBJayK4nG1Hj5JebzWyhKSsrP/bmkeFxulb0nG2LaPloJ6kBkAxtgjiwRyGUciJ4+Qu64gy/KA==}
     peerDependencies:
-      react: 19.0.0-rc-bf7e210c-20241017
+      react: 19.0.0-rc-65a56d0e-20241020
 
   react-router-dom@6.27.0:
     resolution: {integrity: sha512-+bvtFWMC0DgAFrfKXKG9Fc+BcXWRUO1aJIihbB79xaeq0v5UzfvnM5houGUm1Y461WVRcgAQ+Clh5rdb1eCx4g==}
@@ -1834,8 +1834,8 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  react@19.0.0-rc-bf7e210c-20241017:
-    resolution: {integrity: sha512-ZkqeMTey7hRHadDT+qMpwDKHQVAvvjmtP0idzpf4DOlrFQmZ6Ji1HwnD4eIUx9g59PeW80fb/u6WRWd/xTBpfg==}
+  react@19.0.0-rc-65a56d0e-20241020:
+    resolution: {integrity: sha512-rZqpfd9PP/A97j9L1MR6fvWSMgs3khgIyLd0E+gYoCcLrxXndj+ySPRVlDPDC3+f7rm8efHNL4B6HeapqU6gzw==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -1894,8 +1894,8 @@ packages:
   safe-regex@2.1.1:
     resolution: {integrity: sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A==}
 
-  scheduler@0.25.0-rc-bf7e210c-20241017:
-    resolution: {integrity: sha512-hXYfi00SQzsINtMnOqJZQoA3s+sshbJu32lrrxE9NQTzaNrjOtcFinHVHs0LaN54BFhFzpHJ2j5yJ2vaEA6dwg==}
+  scheduler@0.25.0-rc-65a56d0e-20241020:
+    resolution: {integrity: sha512-HxWcXSy0sNnf+TKRkMwyVD1z19AAVQ4gUub8m7VxJUUfSu3J4lr1T+AagohKEypiW5dbQhJuCtAumPY6z9RQ1g==}
 
   semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
@@ -2490,10 +2490,10 @@ snapshots:
 
   '@humanwhocodes/retry@0.3.1': {}
 
-  '@iconify/react@5.0.2(react@19.0.0-rc-bf7e210c-20241017)':
+  '@iconify/react@5.0.2(react@19.0.0-rc-65a56d0e-20241020)':
     dependencies:
       '@iconify/types': 2.0.0
-      react: 19.0.0-rc-bf7e210c-20241017
+      react: 19.0.0-rc-65a56d0e-20241020
 
   '@iconify/types@2.0.0': {}
 
@@ -2767,7 +2767,7 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@zayne-labs/callapi@1.0.0-rc.10': {}
+  '@zayne-labs/callapi@1.0.0-rc.11': {}
 
   '@zayne-labs/eslint-config@0.2.8(@eslint-react/eslint-plugin@1.15.0(eslint@9.12.0(jiti@1.21.6))(typescript@5.6.3))(@typescript-eslint/parser@8.10.0(eslint@9.12.0(jiti@1.21.6))(typescript@5.6.3))(eslint-plugin-react-hooks@5.0.0(eslint@9.12.0(jiti@1.21.6)))(eslint-plugin-react-refresh@0.4.12(eslint@9.12.0(jiti@1.21.6)))(eslint@9.12.0(jiti@1.21.6))(typescript@5.6.3)':
     dependencies:
@@ -3903,24 +3903,24 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-dom@19.0.0-rc-bf7e210c-20241017(react@19.0.0-rc-bf7e210c-20241017):
+  react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020):
     dependencies:
-      react: 19.0.0-rc-bf7e210c-20241017
-      scheduler: 0.25.0-rc-bf7e210c-20241017
+      react: 19.0.0-rc-65a56d0e-20241020
+      scheduler: 0.25.0-rc-65a56d0e-20241020
 
-  react-router-dom@6.27.0(react-dom@19.0.0-rc-bf7e210c-20241017(react@19.0.0-rc-bf7e210c-20241017))(react@19.0.0-rc-bf7e210c-20241017):
-    dependencies:
-      '@remix-run/router': 1.20.0
-      react: 19.0.0-rc-bf7e210c-20241017
-      react-dom: 19.0.0-rc-bf7e210c-20241017(react@19.0.0-rc-bf7e210c-20241017)
-      react-router: 6.27.0(react@19.0.0-rc-bf7e210c-20241017)
-
-  react-router@6.27.0(react@19.0.0-rc-bf7e210c-20241017):
+  react-router-dom@6.27.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020):
     dependencies:
       '@remix-run/router': 1.20.0
-      react: 19.0.0-rc-bf7e210c-20241017
+      react: 19.0.0-rc-65a56d0e-20241020
+      react-dom: 19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020)
+      react-router: 6.27.0(react@19.0.0-rc-65a56d0e-20241020)
 
-  react@19.0.0-rc-bf7e210c-20241017: {}
+  react-router@6.27.0(react@19.0.0-rc-65a56d0e-20241020):
+    dependencies:
+      '@remix-run/router': 1.20.0
+      react: 19.0.0-rc-65a56d0e-20241020
+
+  react@19.0.0-rc-65a56d0e-20241020: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -3998,7 +3998,7 @@ snapshots:
     dependencies:
       regexp-tree: 0.1.27
 
-  scheduler@0.25.0-rc-bf7e210c-20241017: {}
+  scheduler@0.25.0-rc-65a56d0e-20241020: {}
 
   semver@5.7.2: {}
 
@@ -4276,7 +4276,7 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zustand@5.0.0(@types/react@18.3.11)(react@19.0.0-rc-bf7e210c-20241017):
+  zustand@5.0.0(@types/react@18.3.11)(react@19.0.0-rc-65a56d0e-20241020):
     optionalDependencies:
       '@types/react': 18.3.11
-      react: 19.0.0-rc-bf7e210c-20241017
+      react: 19.0.0-rc-65a56d0e-20241020

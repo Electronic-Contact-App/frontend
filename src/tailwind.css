@@ -6,6 +6,64 @@
 /* Custom Properties */
 /*-------------------*/
 @layer base {
+	:root {
+		--color-body-default: hsl(0, 0%, 17%);
+		--color-body-bolder: hsl(0, 0%, 21%);
+
+		--color-blue-100: hsl(212, 60%, 83%);
+		--color-blue-200: hsl(212, 61%, 75%);
+		--color-blue-300: hsl(212, 61%, 64%);
+		--color-blue-400: hsl(212, 61%, 56%);
+		--color-blue-500: hsl(212, 73%, 45%);
+		--color-blue-600: hsl(212, 73%, 41%);
+		--color-blue-700: hsl(212, 73%, 32%);
+		--color-blue-800: hsl(212, 73%, 25%);
+		--color-blue-900: hsl(212, 73%, 19%);
+
+		--color-orange-50: hsl(30, 71%, 95%);
+		--color-orange-100: hsl(30, 75%, 83%);
+		--color-orange-200: hsl(29, 74%, 75%);
+		--color-orange-300: hsl(29, 74%, 63%);
+		--color-orange-400: hsl(30, 73%, 56%);
+		--color-orange-500: hsl(29, 91%, 45%);
+		--color-orange-600: hsl(30, 91%, 41%);
+		--color-orange-700: hsl(30, 91%, 32%);
+		--color-orange-800: hsl(29, 90%, 25%);
+		--color-orange-900: hsl(29, 92%, 19%);
+
+		--color-grey-50: hsl(0, 0%, 100%);
+		--color-grey-100: hsl(0, 0%, 91%);
+		--color-grey-200: hsl(0, 0%, 86%);
+		--color-grey-300: hsl(0, 0%, 80%);
+		--color-grey-400: hsl(0, 0%, 70%);
+		--color-grey-500: hsl(0, 0%, 64%);
+		--color-grey-600: hsl(0, 0%, 61%);
+		--color-grey-700: hsl(0, 0%, 50%);
+		--color-grey-800: hsl(0, 0%, 38%);
+		--color-grey-900: hsl(0, 0%, 35%);
+
+		--color-error-50: hsl(0, 71%, 95%);
+		--color-error-100: hsl(0, 75%, 83%);
+		--color-error-200: hsl(0, 74%, 75%);
+		--color-error-300: hsl(0, 74%, 63%);
+		--color-error-400: hsl(0, 73%, 56%);
+		--color-error-500: hsl(0, 91%, 45%);
+		--color-error-600: hsl(0, 91%, 41%);
+		--color-error-700: hsl(0, 91%, 32%);
+		--color-error-800: hsl(0, 90%, 25%);
+		--color-error-900: hsl(0, 92%, 19%);
+
+		--color-success-50: hsl(128, 52%, 94%);
+		--color-success-100: hsl(130, 54%, 82%);
+		--color-success-200: hsl(129, 54%, 74%);
+		--color-success-300: hsl(129, 54%, 62%);
+		--color-success-400: hsl(129, 54%, 54%);
+		--color-success-500: hsl(129, 72%, 43%);
+		--color-success-600: hsl(129, 73%, 39%);
+		--color-success-700: hsl(129, 73%, 30%);
+		--color-success-800: hsl(129, 72%, 24%);
+		--color-success-900: hsl(129, 72%, 18%);
+	}
 }
 
 /* ------------------*/
@@ -28,7 +86,6 @@
 
 	html {
 		scroll-behavior: smooth;
-		-webkit-tap-highlight-color: transparent;
 	}
 
 	input:focus-visible {
@@ -47,6 +104,8 @@
 	}
 
 	body {
+		color: th;
 		line-height: 1.5;
+		font-family: theme("fontFamily.satoshi");
 	}
 }
