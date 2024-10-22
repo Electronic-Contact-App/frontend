@@ -1,7 +1,7 @@
 import type { Prettify } from "@zayne-labs/toolkit/type-helpers";
 import { type VariantProps, tv } from "tailwind-variants";
-import { Slot } from "../common";
-import { Arrow } from "../icons";
+import { Show, Slot } from "../common";
+import { Arrow, SpinnerIcon } from "../icons";
 
 // prettier-ignore
 export type ButtonProps = Prettify<React.ComponentPropsWithRef<"button"> & VariantProps<typeof button> & {
@@ -53,7 +53,7 @@ function Button(props: ButtonProps) {
 		children,
 		className,
 		size,
-		// isLoading,
+		isLoading = false,
 		theme,
 		type = "button",
 		unstyled,
@@ -70,7 +70,15 @@ function Button(props: ButtonProps) {
 	return (
 		<Component type={type} className={BTN_CLASSES} {...extraButtonProps}>
 			{withArrows && <Arrow className="rotate-180" />}
-			{children}
+
+			<Show when={isLoading}>
+				<Show.Content>
+					<SpinnerIcon className="animate-spin" />
+				</Show.Content>
+
+				<Show.Fallback>{children}</Show.Fallback>
+			</Show>
+
 			{withArrows && <Arrow />}
 		</Component>
 	);

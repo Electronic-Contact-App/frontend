@@ -7,9 +7,6 @@
 /*-------------------*/
 @layer base {
 	:root {
-		--color-body-default: hsl(0, 0%, 17%);
-		--color-body-bolder: hsl(0, 0%, 21%);
-
 		--color-blue-100: hsl(212, 60%, 83%);
 		--color-blue-200: hsl(212, 61%, 75%);
 		--color-blue-300: hsl(212, 61%, 64%);
@@ -63,6 +60,14 @@
 		--color-success-700: hsl(129, 73%, 30%);
 		--color-success-800: hsl(129, 72%, 24%);
 		--color-success-900: hsl(129, 72%, 18%);
+
+		--color-light-green: hsl(135, 100%, 94%);
+		--color-green-stroke: hsl(135, 80%, 77%);
+
+		--color-body-text: hsl(0, 0%, 17%);
+		--color-body-bolder: hsl(0, 0%, 21%);
+
+		--color-background: hsl(0, 0%, 98%);
 	}
 }
 
@@ -104,7 +109,7 @@
 	}
 
 	body {
-		color: th;
+		color: theme("colors.app.body.text");
 		line-height: 1.5;
 		font-family: theme("fontFamily.satoshi");
 	}

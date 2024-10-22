@@ -1,8 +1,11 @@
 import { withTV } from "tailwind-variants/transformer";
+import animationPlugin from "tailwindcss-animate";
 
 const config = withTV({
 	content: ["./index.html", "./src/**/*.{ts,tsx}"],
 	darkMode: ["class", '[data-theme="dark"]'],
+
+	plugins: [animationPlugin],
 
 	theme: {
 		colors: {
@@ -11,15 +14,6 @@ const config = withTV({
 			transparent: "transparent",
 
 			app: {
-				body: {
-					default: "var(--body-color)",
-					bolder: "var(--body-color-bolder)",
-				},
-
-				primary: "var(--color-primary)",
-
-				secondary: "var(--color-secondary)",
-
 				blue: {
 					50: "var(--color-blue-50)",
 					100: "var(--color-blue-100)",
@@ -84,21 +78,45 @@ const config = withTV({
 					800: "var(--color-success-800)",
 					900: "var(--color-success-900)",
 				},
+
+				"light-green": "var(--color-light-green)",
+
+				"green-stroke": "var(--color-green-stroke)",
+
+				primary: "var(--color-primary)",
+
+				secondary: "var(--color-secondary)",
+
+				background: "var(--color-background)",
+
+				body: {
+					text: "var(--color-body-text)",
+					bolder: "var(--color-body-bolder)",
+				},
 			},
+
 			shadcn: {
-				background: "hsl(0 0% 100%)",
-				border: "theme(colors.input)",
+				background: "hsl(0,0%,0%)",
 				foreground: "hsl(222.2 47.4% 11.2%)",
-				input: "hsl(214.3 31.8% 91.4%)",
-				muted: "hsl(210 40% 96.1%)",
-				"muted-foreground": "hsl(215.4 16.3% 46.9%)",
-				primary: "hsl(222.2 47.4% 11.2%)",
+				popover: "theme(colors.shadcn.background)",
+				primary: "theme(colors.shadcn.foreground)",
 				"primary-foreground": "hsl(210 40% 98%)",
+				"popover-foreground": "theme(colors.shadcn.foreground)",
+				accent: "hsl(210 40% 96.1%)",
+				"accent-foreground": "theme(colors.shadcn.foreground)",
+				input: "hsl(214.3 31.8% 91.4%)",
+				border: "theme(colors.shadcn.input)",
 				ring: "hsl(215 20.2% 65.1%)",
+				muted: "theme(colors.shadcn.accent)",
+				"muted-foreground": "hsl(215.4 16.3% 46.9%)",
 			},
 		},
 
 		extend: {
+			borderRadius: {
+				full: "50%",
+			},
+
 			animation: {
 				flicker: "flicker 3s linear infinite",
 			},
