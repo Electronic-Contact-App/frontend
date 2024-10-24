@@ -100,6 +100,7 @@ function SignupPage() {
 							placeholder="Enter your password"
 						/>
 					</Form.Item>
+
 					<Form.Item control={control} name="confirmPassword" className="gap-3">
 						<Form.Label className="font-medium">Confirm password</Form.Label>
 
