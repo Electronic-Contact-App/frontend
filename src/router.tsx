@@ -1,12 +1,15 @@
 import { lazy } from "react";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
+const GlobalLayout = lazy(() => import("./pages/layout"));
 const HomePage = lazy(() => import("./pages/(primary)/page"));
+const SignUpPage = lazy(() => import("./pages/(primary)/signup.page"));
 
 const routes = createRoutesFromElements(
 	<Route>
-		<Route path="/">
+		<Route path="/" element={<GlobalLayout />}>
 			<Route index={true} element={<HomePage />} />
+			<Route path="/signup" element={<SignUpPage />} />
 		</Route>
 	</Route>
 );

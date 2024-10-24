@@ -1,5 +1,7 @@
+import { Main } from "./_components";
+
 function HomePage() {
-	return <div className="p-6">Hello world</div>;
+	return <Main>Home page</Main>;
 }
 
 export default HomePage;

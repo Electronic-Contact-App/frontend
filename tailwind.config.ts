@@ -13,86 +13,84 @@ const config = withTV({
 
 			transparent: "transparent",
 
-			app: {
-				blue: {
-					50: "var(--color-blue-50)",
-					100: "var(--color-blue-100)",
-					200: "var(--color-blue-200)",
-					300: "var(--color-blue-300)",
-					400: "var(--color-blue-400)",
-					primary: "var(--color-primary)",
-					600: "var(--color-blue-600)",
-					700: "var(--color-blue-700)",
-					800: "var(--color-blue-800)",
-					900: "var(--color-blue-900)",
-				},
-
-				orange: {
-					50: "var(--color-orange-50)",
-					100: "var(--color-orange-100)",
-					200: "var(--color-orange-200)",
-					300: "var(--color-orange-300)",
-					400: "var(--color-orange-400)",
-					secondary: "var(--color-secondary)",
-					600: "var(--color-orange-600)",
-					700: "var(--color-orange-700)",
-					800: "var(--color-orange-800)",
-					900: "var(--color-orange-900)",
-				},
-
-				grey: {
-					50: "var(--color-grey-50)",
-					100: "var(--color-grey-100)",
-					200: "var(--color-grey-200)",
-					300: "var(--color-grey-300)",
-					400: "var(--color-grey-400)",
-					500: "var(--color-grey-500)",
-					600: "var(--color-grey-600)",
-					700: "var(--color-grey-700)",
-					800: "var(--color-grey-800)",
-					900: "var(--color-grey-900)",
-				},
-
-				error: {
-					50: "var(--color-error-50)",
-					100: "var(--color-error-100)",
-					200: "var(--color-error-200)",
-					300: "var(--color-error-300)",
-					400: "var(--color-error-400)",
-					500: "var(--color-error-500)",
-					600: "var(--color-error-600)",
-					700: "var(--color-error-700)",
-					800: "var(--color-error-800)",
-					900: "var(--color-error-900)",
-				},
-
-				success: {
-					50: "var(--color-success-50)",
-					100: "var(--color-success-100)",
-					200: "var(--color-success-200)",
-					300: "var(--color-success-300)",
-					400: "var(--color-success-400)",
-					500: "var(--color-success-500)",
-					600: "var(--color-success-600)",
-					700: "var(--color-success-700)",
-					800: "var(--color-success-800)",
-					900: "var(--color-success-900)",
-				},
-
-				"light-green": "var(--color-light-green)",
-
-				"green-stroke": "var(--color-green-stroke)",
-
+			blue: {
+				50: "var(--color-blue-50)",
+				100: "var(--color-blue-100)",
+				200: "var(--color-blue-200)",
+				300: "var(--color-blue-300)",
+				400: "var(--color-blue-400)",
 				primary: "var(--color-primary)",
+				600: "var(--color-blue-600)",
+				700: "var(--color-blue-700)",
+				800: "var(--color-blue-800)",
+				900: "var(--color-blue-900)",
+			},
 
+			orange: {
+				50: "var(--color-orange-50)",
+				100: "var(--color-orange-100)",
+				200: "var(--color-orange-200)",
+				300: "var(--color-orange-300)",
+				400: "var(--color-orange-400)",
 				secondary: "var(--color-secondary)",
+				600: "var(--color-orange-600)",
+				700: "var(--color-orange-700)",
+				800: "var(--color-orange-800)",
+				900: "var(--color-orange-900)",
+			},
 
-				background: "var(--color-background)",
+			grey: {
+				50: "var(--color-grey-50)",
+				100: "var(--color-grey-100)",
+				200: "var(--color-grey-200)",
+				300: "var(--color-grey-300)",
+				400: "var(--color-grey-400)",
+				500: "var(--color-grey-500)",
+				600: "var(--color-grey-600)",
+				700: "var(--color-grey-700)",
+				800: "var(--color-grey-800)",
+				900: "var(--color-grey-900)",
+			},
 
-				body: {
-					text: "var(--color-body-text)",
-					bolder: "var(--color-body-bolder)",
-				},
+			error: {
+				50: "var(--color-error-50)",
+				100: "var(--color-error-100)",
+				200: "var(--color-error-200)",
+				300: "var(--color-error-300)",
+				400: "var(--color-error-400)",
+				500: "var(--color-error-500)",
+				600: "var(--color-error-600)",
+				700: "var(--color-error-700)",
+				800: "var(--color-error-800)",
+				900: "var(--color-error-900)",
+			},
+
+			success: {
+				50: "var(--color-success-50)",
+				100: "var(--color-success-100)",
+				200: "var(--color-success-200)",
+				300: "var(--color-success-300)",
+				400: "var(--color-success-400)",
+				500: "var(--color-success-500)",
+				600: "var(--color-success-600)",
+				700: "var(--color-success-700)",
+				800: "var(--color-success-800)",
+				900: "var(--color-success-900)",
+			},
+
+			"light-green": "var(--color-light-green)",
+
+			"green-stroke": "var(--color-green-stroke)",
+
+			primary: "var(--color-primary)",
+
+			secondary: "var(--color-secondary)",
+
+			background: "var(--color-background)",
+
+			body: {
+				text: "var(--color-body-text)",
+				bolder: "var(--color-body-bolder)",
 			},
 
 			shadcn: {

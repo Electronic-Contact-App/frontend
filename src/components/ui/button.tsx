@@ -1,7 +1,7 @@
 import type { Prettify } from "@zayne-labs/toolkit/type-helpers";
 import { type VariantProps, tv } from "tailwind-variants";
 import { Show, Slot } from "../common";
-import { Arrow, SpinnerIcon } from "../icons";
+import { ArrowIcon, SpinnerIcon } from "../icons";
 
 // prettier-ignore
 export type ButtonProps = Prettify<React.ComponentPropsWithRef<"button"> & VariantProps<typeof button> & {
@@ -16,11 +16,11 @@ const button = tv(
 
 		variants: {
 			theme: {
-				ghost: "border border-app-primary bg-transparent text-app-primary",
+				ghost: "border border-primary bg-transparent text-primary",
 
-				primary: "bg-app-primary text-white",
+				primary: "bg-primary text-white",
 
-				"primary-inverted": "border border-app-blue-300 bg-app-blue-50 text-app-primary",
+				"primary-inverted": "border border-blue-300 bg-blue-50 text-primary",
 			},
 
 			size: {
@@ -33,7 +33,7 @@ const button = tv(
 			},
 
 			disabled: {
-				true: "cursor-not-allowed border-none bg-app-grey-300 text-white",
+				true: "cursor-not-allowed border-none bg-grey-300 text-white",
 			},
 		},
 
@@ -69,7 +69,7 @@ function Button(props: ButtonProps) {
 
 	return (
 		<Component type={type} className={BTN_CLASSES} {...extraButtonProps}>
-			{withArrows && <Arrow className="rotate-180" />}
+			{withArrows && <ArrowIcon />}
 
 			<Show when={isLoading}>
 				<Show.Content>
@@ -79,7 +79,7 @@ function Button(props: ButtonProps) {
 				<Show.Fallback>{children}</Show.Fallback>
 			</Show>
 
-			{withArrows && <Arrow />}
+			{withArrows && <ArrowIcon className="rotate-180" />}
 		</Component>
 	);
 }

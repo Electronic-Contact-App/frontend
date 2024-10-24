@@ -1,2 +1,2 @@
-export { default as Arrow } from "./Arrow";
+export { default as ArrowIcon } from "./ArrowIcon";
 export { default as SpinnerIcon } from "./SpinnerIcon";
