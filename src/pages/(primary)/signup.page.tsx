@@ -1,6 +1,7 @@
 import { IconBox } from "@/components/common";
 import { Button, Form } from "@/components/ui";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { Main } from "./_components";
 
 function SignupPage() {
@@ -79,12 +80,50 @@ function SignupPage() {
 						<Form.Label className="font-medium">Phone number</Form.Label>
 
 						<Form.Input
-							type="email"
+							type="tel"
 							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600"
-							placeholder="Enter your email address"
+							placeholder="70xxxxxxxx"
 						/>
 					</Form.Item>
+
+					<Form.Item control={control} name="password" className="gap-3">
+						<Form.Label className="font-medium">Password</Form.Label>
+
+						<Form.Input
+							type="password"
+							classNames={{
+								inputGroup: `h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+								placeholder:text-grey-600`,
+								eyeIcon: "text-grey-600",
+							}}
+							placeholder="Enter your password"
+						/>
+					</Form.Item>
+					<Form.Item control={control} name="confirmPassword" className="gap-3">
+						<Form.Label className="font-medium">Confirm password</Form.Label>
+
+						<Form.Input
+							type="password"
+							classNames={{
+								inputGroup: `h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+								placeholder:text-grey-600`,
+								eyeIcon: "text-grey-600",
+							}}
+							placeholder="Re-enter your password"
+						/>
+					</Form.Item>
+
+					<div className="mt-4 flex flex-col items-center gap-7">
+						<Button type="submit">Sign in</Button>
+
+						<p className="flex gap-1">
+							Already have an account?
+							<Link to="/signin" className="font-medium text-primary">
+								Sign In
+							</Link>
+						</p>
+					</div>
 				</Form.Root>
 			</section>
 		</Main>

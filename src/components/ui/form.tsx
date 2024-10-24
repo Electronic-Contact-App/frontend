@@ -103,7 +103,7 @@ function FormInputGroup(props: React.ComponentPropsWithRef<"div">) {
 	const otherChildren = getOtherChildren(children, [FormInputLeftItem, FormInputRightItem]);
 
 	return (
-		<div className={cnMerge("flex items-center justify-between", className)} {...restOfProps}>
+		<div className={cnMerge("flex items-center justify-between gap-2", className)} {...restOfProps}>
 			{LeftItemSlot}
 			{otherChildren}
 			{RightItemSlot}
@@ -146,7 +146,7 @@ export type FormInputPrimitiveProps<TFieldValues extends FieldValues = FieldValu
 	React.ComponentPropsWithRef<"input">,
 	"children"
 > & {
-	classNames?: { input?: string; inputGroup?: string };
+	classNames?: { input?: string; inputGroup?: string; eyeIcon?: string };
 	errorClassName?: string;
 	name?: keyof TFieldValues;
 	withEyeIcon?: boolean;
@@ -207,6 +207,7 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 				)}
 				{...restOfProps}
 			/>
+
 			<Show when={shouldHaveEyeIcon}>
 				<FormInputRightItem
 					as="button"
@@ -215,9 +216,15 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 					className="size-5 shrink-0 lg:size-6"
 				>
 					{isPasswordVisible ? (
-						<IconBox icon="material-symbols:visibility-off-outline-rounded" className="size-full" />
+						<IconBox
+							icon="material-symbols:visibility-off-outline-rounded"
+							className={cnMerge("size-full", classNames?.eyeIcon)}
+						/>
 					) : (
-						<IconBox icon="material-symbols:visibility-outline-rounded" className="size-full" />
+						<IconBox
+							icon="material-symbols:visibility-outline-rounded"
+							className={cnMerge("size-full", classNames?.eyeIcon)}
+						/>
 					)}
 				</FormInputRightItem>
 			</Show>
