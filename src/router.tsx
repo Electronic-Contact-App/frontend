@@ -4,12 +4,14 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 const GlobalLayout = lazy(() => import("./pages/layout"));
 const HomePage = lazy(() => import("./pages/(primary)/page"));
 const SignUpPage = lazy(() => import("./pages/(primary)/signup.page"));
+const SignInPage = lazy(() => import("./pages/(primary)/signin.page"));
 
 const routes = createRoutesFromElements(
 	<Route>
 		<Route path="/" element={<GlobalLayout />}>
 			<Route index={true} element={<HomePage />} />
 			<Route path="/signup" element={<SignUpPage />} />
+			<Route path="/signin" element={<SignInPage />} />
 		</Route>
 	</Route>
 );
