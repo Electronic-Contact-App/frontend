@@ -1,6 +1,8 @@
 import { IconBox } from "@/components/common";
 import { Button, Form } from "@/components/ui";
 import { useForm } from "react-hook-form";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import { Link } from "react-router-dom";
 import { Main } from "./_components";
 
@@ -79,11 +81,22 @@ function SignupPage() {
 					<Form.Item control={control} name="email" className="gap-3">
 						<Form.Label className="font-medium">Phone number</Form.Label>
 
-						<Form.Input
-							type="tel"
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
-							placeholder="70xxxxxxxx"
+						<Form.Controller
+							render={({ field }) => (
+								<PhoneInput
+									defaultCountry="ng"
+									forceDialCode={true}
+									value={field.value}
+									onChange={field.onChange}
+									placeholder="70xxxxxxxx"
+									className="[--react-international-phone-border-color:theme('colors.grey.200')]
+										[--react-international-phone-border-radius:8px]
+										[--react-international-phone-font-size:14px]
+										[--react-international-phone-height:44px]
+										[&>.react-international-phone-input]:w-full
+										[&_.react-international-phone-country-selector>button>div]:pl-[10px]"
+								/>
+							)}
 						/>
 					</Form.Item>
 
