@@ -1,11 +1,7 @@
 import { cnMerge } from "@/lib/utils/cn";
-import {
-	createCustomContext,
-	getOtherChildren,
-	getSlotElement,
-	useToggle,
-} from "@zayne-labs/toolkit/react";
-import type { PolymorphicPropsWithRef } from "@zayne-labs/toolkit/react";
+import { toArray } from "@zayne-labs/toolkit";
+import { type PolymorphicPropsWithRef, createCustomContext, useToggle } from "@zayne-labs/toolkit/react";
+import { getOtherChildren, getSlotElement } from "@zayne-labs/toolkit/react/utils";
 import { Fragment as ReactFragment, useEffect, useId, useMemo, useRef } from "react";
 import {
 	type Control,
@@ -334,6 +330,7 @@ type FormErrorMessageProps<TControl, TFieldValues extends FieldValues> =
 					className?: string;
 					errorField: keyof TValues;
 					type: "regular";
+					render: () => React.ReactNode;
 				}
 			: {
 					className?: string;
@@ -385,35 +382,26 @@ function FormErrorMessage<TControl, TFieldValues extends FieldValues = FieldValu
 		return null;
 	}
 
-	const errorParagraphClasses = "animate-shake pt-[0.3rem] text-[1.1rem] text-error";
+	const errorParagraphClasses = "animate-shake";
 
 	return (
-		<Show when={Array.isArray(message)}>
-			<ErrorMessageList
-				each={message as string[]}
-				render={(messageItem, index) => (
-					<p
-						key={messageItem}
-						className={cnMerge(
-							"ml-[15px] list-item",
-							errorParagraphClasses,
-							className,
-							index === 0 && "mt-1"
-						)}
-					>
-						<span>*</span>
-						{messageItem}
-					</p>
-				)}
-			/>
-
-			<Show.Fallback>
-				<p ref={errorParagraphRef} className={cnMerge(errorParagraphClasses, className)}>
+		<ErrorMessageList
+			each={toArray(message)}
+			render={(messageItem, index) => (
+				<p
+					key={messageItem}
+					className={cnMerge(
+						"ml-[15px] list-item",
+						errorParagraphClasses,
+						className,
+						index === 0 && "mt-1"
+					)}
+				>
 					<span>*</span>
-					{message}
+					{messageItem}
 				</p>
-			</Show.Fallback>
-		</Show>
+			)}
+		/>
 	);
 }
 

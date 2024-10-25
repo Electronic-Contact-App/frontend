@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.9.0
+        version: 3.9.0(react-hook-form@7.53.1(react@19.0.0-rc-65a56d0e-20241020))
       '@radix-ui/react-select':
         specifier: ^2.1.2
         version: 2.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
@@ -15,8 +18,8 @@ importers:
         specifier: 1.0.0-rc.11
         version: 1.0.0-rc.11
       '@zayne-labs/toolkit':
-        specifier: ^0.5.2
-        version: 0.5.2(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)(sonner@1.5.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020))(zustand@5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020))
+        specifier: ^0.6.0
+        version: 0.6.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)(sonner@1.5.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020))(zustand@5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -38,9 +41,9 @@ importers:
       tailwind-variants:
         specifier: ^0.2.1
         version: 0.2.1(tailwindcss@3.4.14)
-      zustand:
-        specifier: 5.0.0
-        version: 5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@eslint-react/eslint-plugin':
         specifier: ^1.15.0
@@ -386,6 +389,11 @@ packages:
 
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+
+  '@hookform/resolvers@3.9.0':
+    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
 
   '@humanfs/core@0.19.0':
     resolution: {integrity: sha512-2cbWIHbZVEweE853g8jymffCA+NCMiuqeECeBBLm8dg2oFdjuGJhgN4UAbI+6v0CKbbhvtXA4qV8YR5Ji86nmw==}
@@ -1001,8 +1009,8 @@ packages:
       eslint-plugin-vue:
         optional: true
 
-  '@zayne-labs/toolkit@0.5.2':
-    resolution: {integrity: sha512-OiW1wsH3hU8GonerE/9vorwzF6g6i12DANUlHHWSqUQHeTcO3iL3inYTPq6LPZV+DIVkavcXUZoCBf5VdhjzyQ==}
+  '@zayne-labs/toolkit@0.6.0':
+    resolution: {integrity: sha512-+H750UunUjW0e/eYRxDfVaqdHq5SMnQ+UdPQK1YoXC1ywr1JBxrvpaZC/ulCJYrSO9Bs97uMK7KzN7LgsvKjxw==}
     engines: {node: '>=18.x'}
     peerDependencies:
       '@types/react': ^18.0.0
@@ -2613,6 +2621,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
   zustand@5.0.0:
     resolution: {integrity: sha512-LE+VcmbartOPM+auOjCCLQOsQ05zUTp8RkgwRzefUk+2jISdMMFnxvyTjA4YNWr5ZGXYbVsEMZosttuxUBkojQ==}
     engines: {node: '>=12.20.0'}
@@ -2906,6 +2917,10 @@ snapshots:
       react-dom: 19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020)
 
   '@floating-ui/utils@0.2.8': {}
+
+  '@hookform/resolvers@3.9.0(react-hook-form@7.53.1(react@19.0.0-rc-65a56d0e-20241020))':
+    dependencies:
+      react-hook-form: 7.53.1(react@19.0.0-rc-65a56d0e-20241020)
 
   '@humanfs/core@0.19.0': {}
 
@@ -3452,7 +3467,7 @@ snapshots:
       - typescript
       - vue-eslint-parser
 
-  '@zayne-labs/toolkit@0.5.2(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)(sonner@1.5.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020))(zustand@5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020))':
+  '@zayne-labs/toolkit@0.6.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)(sonner@1.5.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020))(zustand@5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020))':
     optionalDependencies:
       '@types/react': 18.3.12
       react: 19.0.0-rc-65a56d0e-20241020
@@ -5015,7 +5030,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
+  zod@3.23.8: {}
+
   zustand@5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020):
     optionalDependencies:
       '@types/react': 18.3.12
       react: 19.0.0-rc-65a56d0e-20241020
+    optional: true

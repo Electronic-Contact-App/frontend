@@ -3,22 +3,41 @@ import { Button, Form } from "@/components/ui";
 import { useForm } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { callBackendApi } from "@/lib/api/callBackendApi";
 import { Link } from "react-router-dom";
 import { Main } from "./_components";
 
+type SignupFormValues = {
+	first_name: string;
+	last_name: string;
+	email: string;
+	phone: string;
+	password: string;
+	confirmPassword: string;
+};
+
 function SignupPage() {
-	const methods = useForm({
+	const methods = useForm<SignupFormValues>({
 		defaultValues: {
-			firstName: "",
-			lastName: "",
+			first_name: "",
+			last_name: "",
 			email: "",
-			phoneNumber: "",
+			phone: "",
 			password: "",
 			confirmPassword: "",
 		},
 	});
 
 	const { control } = methods;
+
+	const onSubmit = async (data: SignupFormValues) => {
+		const result = await callBackendApi("/auth/signup", {
+			method: "POST",
+			body: data,
+		});
+
+		console.info(result);
+	};
 
 	return (
 		<Main className="gap-8">
@@ -49,8 +68,12 @@ function SignupPage() {
 					</div>
 				</article>
 
-				<Form.Root methods={methods} className="gap-4">
-					<Form.Item control={control} name="firstName" className="gap-3">
+				<Form.Root
+					methods={methods}
+					className="gap-4"
+					onSubmit={(event) => void methods.handleSubmit(onSubmit)(event)}
+				>
+					<Form.Item control={control} name="first_name" className="gap-3">
 						<Form.Label className="font-medium">First name</Form.Label>
 						<Form.Input
 							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
@@ -59,7 +82,7 @@ function SignupPage() {
 						/>
 					</Form.Item>
 
-					<Form.Item control={control} name="lastName" className="gap-3">
+					<Form.Item control={control} name="last_name" className="gap-3">
 						<Form.Label className="font-medium">Last name</Form.Label>
 						<Form.Input
 							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
@@ -78,7 +101,7 @@ function SignupPage() {
 						/>
 					</Form.Item>
 
-					<Form.Item control={control} name="email" className="gap-3">
+					<Form.Item control={control} name="phone" className="gap-3">
 						<Form.Label className="font-medium">Phone number</Form.Label>
 
 						<Form.Controller
