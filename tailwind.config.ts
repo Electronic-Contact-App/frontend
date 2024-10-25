@@ -111,19 +111,32 @@ const config = withTV({
 		},
 
 		extend: {
-			borderRadius: {
-				full: "50%",
+			screens: {
+				lg: "1000px",
+				md: "768px",
+				sm: "480px",
+				xl: "1280px",
 			},
 
-			animation: {
-				flicker: "flicker 3s linear infinite",
+			borderRadius: {
+				full: "50%",
 			},
 
 			fontFamily: {
 				satoshi: ["Satoshi", "sans-serif"],
 			},
 
+			animation: {
+				flicker: "flicker 3s linear infinite",
+				"caret-blink": "caret-blink 1.25s ease-out infinite",
+			},
+
 			keyframes: {
+				"caret-blink": {
+					"0%,70%,100%": { opacity: "1" },
+					"20%,50%": { opacity: "0" },
+				},
+
 				flicker: {
 					"0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, to": {
 						filter:
@@ -137,13 +150,6 @@ const config = withTV({
 					},
 				},
 			},
-		},
-
-		screens: {
-			lg: "1000px",
-			md: "768px",
-			sm: "480px",
-			xl: "1280px",
 		},
 	},
 });
