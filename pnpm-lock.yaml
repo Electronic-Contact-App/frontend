@@ -15,7 +15,7 @@ importers:
         specifier: 1.0.0-rc.11
         version: 1.0.0-rc.11
       '@zayne-labs/toolkit':
-        specifier: ^0.5.0
+        specifier: ^0.5.2
         version: 0.5.2(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)(sonner@1.5.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020))(zustand@5.0.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020))
       clsx:
         specifier: ^2.1.1

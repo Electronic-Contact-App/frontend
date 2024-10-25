@@ -113,6 +113,19 @@ function SignupPage() {
 							}}
 							placeholder="Enter your password"
 						/>
+
+						<article className="text-[12px] text-grey-800">
+							<p>Password must have: </p>
+
+							<div className="mt-2 flex flex-wrap gap-2">
+								<span className="rounded-[24px] border border-grey-800 px-2 py-[5px]">
+									at least 1 special character
+								</span>
+								<span className="rounded-[24px] border border-grey-800 px-2 py-[5px]">
+									8 characters min
+								</span>
+							</div>
+						</article>
 					</Form.Item>
 
 					<Form.Item control={control} name="confirmPassword" className="gap-3">

@@ -408,11 +408,7 @@ function FormErrorMessage<TControl, TFieldValues extends FieldValues = FieldValu
 			/>
 
 			<Show.Fallback>
-				<p
-					ref={errorParagraphRef}
-					className={cnMerge(errorParagraphClasses, className)}
-					onAnimationEnd={() => errorParagraphRef.current?.classList.remove("animate-shake")}
-				>
+				<p ref={errorParagraphRef} className={cnMerge(errorParagraphClasses, className)}>
 					<span>*</span>
 					{message}
 				</p>

@@ -2,6 +2,7 @@
 	"recommendations": [
 		"dbaeumer.vscode-eslint", // ESLint
 		"esbenp.prettier-vscode", // Prettier - Code formatter
-		"antfu.iconify" // Intellisene for icons used with IconBox component
+		"antfu.iconify", // Intellisene for icons used with IconBox component
+		"bradlc.vscode-tailwindcss" // Tailwind Intellisense
 	]
 }

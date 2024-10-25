@@ -1,10 +1,10 @@
-import React from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./tailwind.css";
 
 createRoot(document.querySelector("#root") as HTMLElement).render(
-	<React.StrictMode>
+	<StrictMode>
 		<App />
-	</React.StrictMode>
+	</StrictMode>
 );
