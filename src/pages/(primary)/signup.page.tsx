@@ -94,6 +94,7 @@ function SignupPage() {
 										[--react-international-phone-font-size:14px]
 										[--react-international-phone-height:44px]
 										[&>.react-international-phone-input]:w-full
+										[&_.react-international-phone-country-selector>button>div>img]:rounded-full
 										[&_.react-international-phone-country-selector>button>div]:pl-[10px]"
 								/>
 							)}
