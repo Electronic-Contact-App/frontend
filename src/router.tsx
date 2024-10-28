@@ -11,9 +11,9 @@ const routes = createRoutesFromElements(
 	<Route>
 		<Route path="/" element={<GlobalLayout />}>
 			<Route index={true} element={<HomePage />} />
-			<Route path="/signup" element={<SignUpPage />} />
-			<Route path="/signin" element={<SignInPage />} />
-			<Route path="/confirm-verification" element={<ConfirmVerificationPage />} />
+			<Route path="signup" element={<SignUpPage />} />
+			<Route path="signin" element={<SignInPage />} />
+			<Route path="confirm-verification" element={<ConfirmVerificationPage />} />
 		</Route>
 	</Route>
 );

@@ -1,0 +1,24 @@
+{
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+
+	// For consistent formating across machines
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.tabSize": 3,
+	"editor.indentSize": "tabSize",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+
+	// For proper tab labels
+	"workbench.editor.customLabels.patterns": {
+		"**/{index,common,global}.{ts,js}": "${filename}.${extname} - ${dirname}",
+		"**/{page,*.page,layout,index}.tsx": "${dirname} - ${filename}.${extname}",
+		"**/{models,routes,services,types}.{ts,js}": "${filename}.${extname} - ${dirname}"
+	},
+
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit"
+	},
+
+	"cSpell.words": ["Satoshi", "signin", "signup"]
+}
