@@ -52,12 +52,16 @@ function SignupPage() {
 			<section className="flex flex-col gap-6">
 				<article className="flex flex-col gap-5">
 					<Button theme="ghost" className="gap-6 font-medium text-grey-800">
-						<IconBox icon="devicon:google" className="size-6" />
+						<span className="size-6">
+							<IconBox icon="devicon:google" className="size-full" />
+						</span>
 						Sign Up with Google
 					</Button>
 
 					<Button theme="ghost" className="gap-6 font-medium text-grey-800">
-						<IconBox icon="devicon:apple" className="size-6" />
+						<span className="size-6">
+							<IconBox icon="devicon:apple" className="size-full" />
+						</span>
 						Sign Up with Apple
 					</Button>
 

@@ -5,7 +5,9 @@ const GlobalLayout = lazy(() => import("./pages/layout"));
 const HomePage = lazy(() => import("./pages/(primary)/page"));
 const SignUpPage = lazy(() => import("./pages/(primary)/signup/page"));
 const SignInPage = lazy(() => import("./pages/(primary)/signin/page"));
-const ConfirmVerificationPage = lazy(() => import("./pages/(primary)/2fa/confirm-verification.page"));
+
+const TwoFactorConfirmPage = lazy(() => import("./pages/(primary)/2fa/verify.page"));
+const TwoFactorSuccessPage = lazy(() => import("./pages/(primary)/2fa/success.page"));
 
 const routes = createRoutesFromElements(
 	<Route>
@@ -13,7 +15,11 @@ const routes = createRoutesFromElements(
 			<Route index={true} element={<HomePage />} />
 			<Route path="signup" element={<SignUpPage />} />
 			<Route path="signin" element={<SignInPage />} />
-			<Route path="confirm-verification" element={<ConfirmVerificationPage />} />
+
+			<Route path="2fa">
+				<Route path="verify" element={<TwoFactorConfirmPage />} />
+				<Route path="success" element={<TwoFactorSuccessPage />} />
+			</Route>
 		</Route>
 	</Route>
 );
