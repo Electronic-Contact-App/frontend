@@ -1,6 +1,6 @@
 import { IconBox } from "@/components/common";
 import { Button } from "@/components/ui";
-import { Main } from "./_components";
+import { Main } from "../_components";
 
 function ConfirmVerificationPage() {
 	return (

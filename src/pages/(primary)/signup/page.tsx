@@ -5,7 +5,7 @@ import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { callBackendApi } from "@/lib/api/callBackendApi";
 import { Link } from "react-router-dom";
-import { Main } from "./_components";
+import { Main } from "../_components";
 
 type SignupFormValues = {
 	first_name: string;

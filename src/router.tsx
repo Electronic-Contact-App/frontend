@@ -3,9 +3,9 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 const GlobalLayout = lazy(() => import("./pages/layout"));
 const HomePage = lazy(() => import("./pages/(primary)/page"));
-const SignUpPage = lazy(() => import("./pages/(primary)/signup.page"));
-const SignInPage = lazy(() => import("./pages/(primary)/signin.page"));
-const ConfirmVerificationPage = lazy(() => import("./pages/(primary)/confirm-verification.page"));
+const SignUpPage = lazy(() => import("./pages/(primary)/signup/page"));
+const SignInPage = lazy(() => import("./pages/(primary)/signin/page"));
+const ConfirmVerificationPage = lazy(() => import("./pages/(primary)/2fa/confirm-verification.page"));
 
 const routes = createRoutesFromElements(
 	<Route>
