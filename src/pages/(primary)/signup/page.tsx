@@ -3,6 +3,7 @@ import { Button, Form } from "@/components/ui";
 import { useForm } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { ArrowIcon } from "@/components/icons";
 import { callBackendApi } from "@/lib/api/callBackendApi";
 import { Link } from "react-router-dom";
 import { Main } from "../_components";
@@ -42,6 +43,14 @@ function SignupPage() {
 	return (
 		<Main className="gap-8">
 			<header>
+				<Button
+					unstyled={true}
+					className="mb-4 flex size-11 items-center justify-center rounded-full bg-grey-100"
+					onClick={() => history.back()}
+				>
+					<ArrowIcon className="text-icon" />
+				</Button>
+
 				<h1 className="text-[24px] font-bold">Welcome to Chacha</h1>
 
 				<p className="mt-2 text-[15px] leading-[20px] text-grey-500">
@@ -116,7 +125,8 @@ function SignupPage() {
 									value={field.value}
 									onChange={field.onChange}
 									placeholder="70xxxxxxxx"
-									className="[--react-international-phone-border-color:theme('colors.grey.200')]
+									className="[--react-international-phone-background-color:transparent]
+										[--react-international-phone-border-color:theme('colors.grey.200')]
 										[--react-international-phone-border-radius:8px]
 										[--react-international-phone-font-size:14px]
 										[--react-international-phone-height:44px]
@@ -170,7 +180,7 @@ function SignupPage() {
 					</Form.Item>
 
 					<div className="mt-4 flex flex-col items-center gap-7">
-						<Button type="submit">Sign in</Button>
+						<Button type="submit">Sign up</Button>
 
 						<p className="flex gap-1">
 							Already have an account?

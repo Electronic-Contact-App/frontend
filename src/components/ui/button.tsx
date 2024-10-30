@@ -1,6 +1,6 @@
 import type { Prettify } from "@zayne-labs/toolkit/type-helpers";
 import { type VariantProps, tv } from "tailwind-variants";
-import { Show, Slot } from "../common";
+import { Slot, Slottable } from "../common";
 import { ArrowIcon, SpinnerIcon } from "../icons";
 
 // prettier-ignore
@@ -71,13 +71,9 @@ function Button(props: ButtonProps) {
 		<Component type={type} className={BTN_CLASSES} {...extraButtonProps}>
 			{withArrows && <ArrowIcon />}
 
-			<Show when={isLoading}>
-				<Show.Content>
-					<SpinnerIcon className="animate-spin" />
-				</Show.Content>
-
-				<Show.Fallback>{children}</Show.Fallback>
-			</Show>
+			<Slottable>
+				{!isLoading ? children : <SpinnerIcon className="animate-spin [animation-duration:1.5s]" />}
+			</Slottable>
 
 			{withArrows && <ArrowIcon className="rotate-180" />}
 		</Component>

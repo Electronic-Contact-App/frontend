@@ -1,24 +1,17 @@
 import { lazy } from "react";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-
-const GlobalLayout = lazy(() => import("./pages/layout"));
-const HomePage = lazy(() => import("./pages/(primary)/page"));
-const SignUpPage = lazy(() => import("./pages/(primary)/signup/page"));
-const SignInPage = lazy(() => import("./pages/(primary)/signin/page"));
-
-const TwoFactorConfirmPage = lazy(() => import("./pages/(primary)/2fa/verify.page"));
-const TwoFactorSuccessPage = lazy(() => import("./pages/(primary)/2fa/success.page"));
+import RootLayout from "./pages/layout";
 
 const routes = createRoutesFromElements(
 	<Route>
-		<Route path="/" element={<GlobalLayout />}>
-			<Route index={true} element={<HomePage />} />
-			<Route path="signup" element={<SignUpPage />} />
-			<Route path="signin" element={<SignInPage />} />
+		<Route path="/" element={<RootLayout />}>
+			<Route index={true} Component={lazy(() => import("./pages/(primary)/page"))} />
+			<Route path="signup" Component={lazy(() => import("./pages/(primary)/signup/page"))} />
+			<Route path="signin" Component={lazy(() => import("./pages/(primary)/signin/page"))} />
 
 			<Route path="2fa">
-				<Route path="verify" element={<TwoFactorConfirmPage />} />
-				<Route path="success" element={<TwoFactorSuccessPage />} />
+				<Route path="verify" Component={lazy(() => import("./pages/(primary)/2fa/verify.page"))} />
+				<Route path="success" Component={lazy(() => import("./pages/(primary)/2fa/success.page"))} />
 			</Route>
 		</Route>
 	</Route>

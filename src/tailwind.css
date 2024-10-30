@@ -67,6 +67,8 @@
 		--color-body-text: hsl(0, 0%, 17%);
 		--color-body-bolder: hsl(0, 0%, 21%);
 
+		--color-icon: hsl(0, 0%, 51%);
+
 		--color-background: hsl(0, 0%, 98%);
 	}
 }

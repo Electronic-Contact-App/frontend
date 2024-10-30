@@ -1,10 +1,22 @@
 import { IconBox } from "@/components/common";
+import { ArrowIcon } from "@/components/icons";
 import { Button } from "@/components/ui";
+import { Link } from "react-router-dom";
 import { Main } from "../_components";
 
 function ConfirmVerificationPage() {
 	return (
 		<Main className="mt-[112px] min-w-[370px]">
+			<header>
+				<Button
+					unstyled={true}
+					className="mb-[112px] flex size-11 items-center justify-center rounded-full bg-grey-100"
+					onClick={() => history.back()}
+				>
+					<ArrowIcon className="text-icon" />
+				</Button>
+			</header>
+
 			<section className="flex flex-col items-center gap-6 text-center">
 				<span className="flex size-[70px] items-center justify-center rounded-full bg-success-500">
 					<IconBox
@@ -20,8 +32,8 @@ function ConfirmVerificationPage() {
 				</div>
 			</section>
 
-			<Button theme="primary" className="mt-[60px]">
-				Sign in
+			<Button theme="primary" className="mt-[60px]" asChild={true}>
+				<Link to="/signin">Sign in</Link>
 			</Button>
 		</Main>
 	);

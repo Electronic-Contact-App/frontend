@@ -7,7 +7,7 @@ const SpinnerIcon = (props: React.SVGProps<SVGSVGElement>) => (
 		xmlns="http://www.w3.org/2000/svg"
 		{...props}
 	>
-		<circle cx="12.5" cy="12" r="10" stroke="white" stroke-width="2" />
+		<circle cx="12.5" cy="12" r="10" stroke="white" strokeWidth="2" />
 		<circle cx="12.5" cy="12" r="2" fill="#DA700A" />
 		<circle cx="12.5" cy="2" r="2" fill="#DA700A" />
 	</svg>

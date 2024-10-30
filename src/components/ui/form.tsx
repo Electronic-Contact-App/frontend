@@ -12,12 +12,13 @@ import {
 	type FieldPath,
 	type FormState,
 	FormProvider as HookFormProvider,
+	type RegisterOptions,
 	type UseFormReturn,
 	type UseFormStateReturn,
 	useFormState,
 	useFormContext as useHookFormContext,
 } from "react-hook-form";
-import { IconBox, Show, getElementList } from "../common";
+import { IconBox, getElementList } from "../common";
 
 type FieldValues = Record<string, unknown>;
 
@@ -142,7 +143,7 @@ export type FormInputPrimitiveProps<TFieldValues extends FieldValues = FieldValu
 	React.ComponentPropsWithRef<"input">,
 	"children"
 > & {
-	classNames?: { input?: string; inputGroup?: string; eyeIcon?: string };
+	classNames?: { eyeIcon?: string; input?: string; inputGroup?: string };
 	errorClassName?: string;
 	name?: keyof TFieldValues;
 	withEyeIcon?: boolean;
@@ -195,8 +196,9 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 				type={type === "password" && isPasswordVisible ? "text" : type}
 				className={cnMerge(
 					!inputTypesWithoutFullWith.has(type) && "flex w-full",
-					`text-sm file:border-0 file:bg-transparent placeholder:text-shadcn-muted-foreground
-					focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+					`bg-transparent text-sm file:border-0 file:bg-transparent
+					placeholder:text-shadcn-muted-foreground focus-visible:outline-none
+					disabled:cursor-not-allowed disabled:opacity-50`,
 					className,
 					classNames?.input,
 					type !== "password" && errors?.[name] && errorClassName
@@ -204,7 +206,7 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 				{...restOfProps}
 			/>
 
-			<Show when={shouldHaveEyeIcon}>
+			{shouldHaveEyeIcon && (
 				<FormInputRightItem
 					as="button"
 					type="button"
@@ -223,12 +225,18 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 						/>
 					)}
 				</FormInputRightItem>
-			</Show>
+			)}
 		</WrapperElement>
 	);
 }
 
-function FormInput(props: Omit<FormInputPrimitiveProps, "control" | "formState" | "id" | "name" | "ref">) {
+function FormInput(
+	props: Omit<FormInputPrimitiveProps, "control" | "formState" | "id" | "name" | "ref"> & {
+		rules?: RegisterOptions;
+	}
+) {
+	const { rules, ...restOfProps } = props;
+
 	const { name } = useFormItemContext();
 	const { formState, register } = useHookFormContext();
 
@@ -236,8 +244,8 @@ function FormInput(props: Omit<FormInputPrimitiveProps, "control" | "formState" 
 		<FormInputPrimitive
 			name={name}
 			formState={formState}
-			{...(Boolean(name) && register(name))}
-			{...props}
+			{...(Boolean(name) && register(name, rules))}
+			{...restOfProps}
 		/>
 	);
 }
@@ -277,8 +285,8 @@ function FormTextAreaPrimitive<TFieldValues extends FieldValues>(
 			id={id}
 			name={name}
 			className={cnMerge(
-				`w-full text-sm placeholder:text-shadcn-muted-foreground focus-visible:outline-none
-				disabled:cursor-not-allowed disabled:opacity-50`,
+				`w-full bg-transparent text-sm placeholder:text-shadcn-muted-foreground
+				focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
 				className,
 				name && errors?.[name] && errorClassName
 			)}
@@ -288,18 +296,21 @@ function FormTextAreaPrimitive<TFieldValues extends FieldValues>(
 }
 
 function FormTextArea(
-	props: Omit<FormTextAreaPrimitiveProps, "control" | "formState" | "id" | "name" | "ref">
+	props: Omit<FormTextAreaPrimitiveProps, "control" | "formState" | "id" | "name" | "ref"> & {
+		rules?: RegisterOptions;
+	}
 ) {
-	const { name } = useFormItemContext();
+	const { rules, ...restOfProps } = props;
 
+	const { name } = useFormItemContext();
 	const { formState, register } = useHookFormContext();
 
 	return (
 		<FormTextAreaPrimitive
 			name={name}
 			formState={formState}
-			{...(Boolean(name) && register(name))}
-			{...props}
+			{...(Boolean(name) && register(name, rules))}
+			{...restOfProps}
 		/>
 	);
 }
@@ -329,8 +340,8 @@ type FormErrorMessageProps<TControl, TFieldValues extends FieldValues> =
 			? {
 					className?: string;
 					errorField: keyof TValues;
-					type: "regular";
 					render: () => React.ReactNode;
+					type: "regular";
 				}
 			: {
 					className?: string;

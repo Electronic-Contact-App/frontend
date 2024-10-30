@@ -93,6 +93,8 @@ const config = withTV({
 				bolder: "var(--color-body-bolder)",
 			},
 
+			icon: "var(--color-icon)",
+
 			shadcn: {
 				background: "hsl(0,0%,0%)",
 				foreground: "hsl(222.2 47.4% 11.2%)",
