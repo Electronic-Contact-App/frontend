@@ -339,8 +339,8 @@ type FormErrorMessageProps<TControl, TFieldValues extends FieldValues> =
 	| (TControl extends Control<infer TValues>
 			? {
 					className?: string;
+					control?: never;
 					errorField: keyof TValues;
-					render: () => React.ReactNode;
 					type: "regular";
 				}
 			: {
@@ -351,6 +351,7 @@ type FormErrorMessageProps<TControl, TFieldValues extends FieldValues> =
 				})
 	| {
 			className?: string;
+			control?: never;
 			errorField: string;
 			type: "root";
 	  };
@@ -362,26 +363,28 @@ function FormErrorMessage<TControl, TFieldValues extends FieldValues = FieldValu
 
 	const { formState } = useHookFormContext();
 
-	const [ErrorMessageList] = getElementList();
-
-	const errorParagraphRef = useRef<HTMLParagraphElement>(null);
+	const wrapperRef = useRef<HTMLUListElement>(null);
 
 	useEffect(() => {
-		if (!errorParagraphRef.current) return;
+		const errorParagraphs = wrapperRef.current?.children;
 
-		if (!errorParagraphRef.current.classList.contains("animate-shake")) {
-			errorParagraphRef.current.classList.add("animate-shake");
+		if (!errorParagraphs) return;
+
+		for (const errorParagraph of errorParagraphs) {
+			if (!errorParagraph.classList.contains("animate-shake")) {
+				errorParagraph.classList.add("animate-shake");
+			}
 		}
 
 		// Scroll to first error message
 		if (Object.keys(formState.errors).indexOf(errorField as string) === 0) {
-			errorParagraphRef.current.scrollIntoView({
+			errorParagraphs[0]?.scrollIntoView({
 				behavior: "smooth",
 				block: "center",
 			});
+			window.scrollBy({ behavior: "smooth", top: -100 });
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [formState.submitCount]);
+	}, [errorField, formState.errors, formState.submitCount]);
 
 	const message = (
 		type === "root"
@@ -395,14 +398,21 @@ function FormErrorMessage<TControl, TFieldValues extends FieldValues = FieldValu
 
 	const errorParagraphClasses = "animate-shake";
 
+	const messageArray = toArray(message);
+
+	const [ErrorMessageList] = getElementList();
+
 	return (
 		<ErrorMessageList
-			each={toArray(message)}
+			ref={wrapperRef}
+			each={messageArray}
 			render={(messageItem, index) => (
 				<p
+					onAnimationEnd={(event) => event.currentTarget.classList.remove("animate-shake")}
 					key={messageItem}
 					className={cnMerge(
-						"ml-[15px] list-item",
+						"ml-[15px]",
+						messageArray.length > 1 && "list-item",
 						errorParagraphClasses,
 						className,
 						index === 0 && "mt-1"
