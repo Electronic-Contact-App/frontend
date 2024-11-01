@@ -5,7 +5,7 @@ function Main(props: React.ComponentPropsWithoutRef<"main">) {
 
 	return (
 		<main
-			className={cnMerge("flex grow flex-col px-5 max-md:max-w-[380px]", className)}
+			className={cnMerge("flex grow flex-col px-5 max-md:max-w-[400px]", className)}
 			{...restOfProps}
 		>
 			{children}
