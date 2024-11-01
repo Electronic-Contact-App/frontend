@@ -119,6 +119,7 @@ function SignupPage() {
 									className="[--react-international-phone-background-color:transparent]
 										[--react-international-phone-border-color:theme('colors.grey.200')]
 										[--react-international-phone-border-radius:8px]
+										[--react-international-phone-dropdown-item-background-color:white]
 										[--react-international-phone-font-size:14px]
 										[--react-international-phone-height:44px]
 										[&>.react-international-phone-input]:w-full

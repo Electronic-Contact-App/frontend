@@ -4,10 +4,10 @@ import { Outlet } from "react-router-dom";
 
 function AuthLayout() {
 	return (
-		<div className="py-5">
+		<div>
 			<Button
 				unstyled={true}
-				className="mx-5 mb-4 flex size-11 items-center justify-center self-start rounded-full
+				className="mx-5 mt-4 flex size-11 items-center justify-center self-start rounded-full
 					bg-grey-100"
 				onClick={() => history.back()}
 			>
