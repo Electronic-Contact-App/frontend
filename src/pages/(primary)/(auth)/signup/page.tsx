@@ -1,12 +1,11 @@
 import { IconBox } from "@/components/common";
 import { Button, Form } from "@/components/ui";
+import { callBackendApi } from "@/lib/api/callBackendApi";
 import { useForm } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-import { ArrowIcon } from "@/components/icons";
-import { callBackendApi } from "@/lib/api/callBackendApi";
 import { Link } from "react-router-dom";
-import { Main } from "../_components";
+import { Main } from "../../_components";
 
 type SignupFormValues = {
 	first_name: string;
@@ -43,14 +42,6 @@ function SignupPage() {
 	return (
 		<Main className="gap-8">
 			<header>
-				<Button
-					unstyled={true}
-					className="mb-4 flex size-11 items-center justify-center rounded-full bg-grey-100"
-					onClick={() => history.back()}
-				>
-					<ArrowIcon className="text-icon" />
-				</Button>
-
 				<h1 className="text-[24px] font-bold">Welcome to Chacha</h1>
 
 				<p className="mt-2 text-[15px] leading-[20px] text-grey-500">

@@ -1,11 +1,10 @@
 import { IconBox } from "@/components/common";
-import { ArrowIcon } from "@/components/icons";
 import { Button, Form, InputOTP } from "@/components/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { waitUntil } from "@zayne-labs/toolkit";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Main } from "../_components";
+import { Main } from "../../_components";
 
 const TwoFactorAuthSchema = z.object({
 	otp: z.string().min(6, "Please enter a valid code!"),
@@ -33,14 +32,6 @@ function TwoFactorAuthPage() {
 	return (
 		<Main>
 			<header>
-				<Button
-					unstyled={true}
-					className="mb-4 flex size-11 items-center justify-center rounded-full bg-grey-100"
-					onClick={() => history.back()}
-				>
-					<ArrowIcon className="text-icon" />
-				</Button>
-
 				<h1 className="mt-6 text-[27px] font-medium">Let’s us verify it’s you</h1>
 
 				<p className="mt-2 text-[14px] text-grey-700">

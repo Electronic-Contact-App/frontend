@@ -3,16 +3,20 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import RootLayout from "./pages/layout";
 
 const routes = createRoutesFromElements(
-	<Route>
-		<Route path="/" element={<RootLayout />}>
-			<Route index={true} Component={lazy(() => import("./pages/(primary)/page"))} />
-			<Route path="signup" Component={lazy(() => import("./pages/(primary)/signup/page"))} />
-			<Route path="signin" Component={lazy(() => import("./pages/(primary)/signin/page"))} />
+	<Route path="/" element={<RootLayout />}>
+		<Route index={true} Component={lazy(() => import("./pages/(primary)/(dashboard)/page"))} />
 
-			<Route path="2fa">
-				<Route path="verify" Component={lazy(() => import("./pages/(primary)/2fa/verify.page"))} />
-				<Route path="success" Component={lazy(() => import("./pages/(primary)/2fa/success.page"))} />
-			</Route>
+		<Route Component={lazy(() => import("./pages/(primary)/(auth)/layout"))}>
+			<Route path="signup" Component={lazy(() => import("./pages/(primary)/(auth)/signup/page"))} />
+			<Route path="signin" Component={lazy(() => import("./pages/(primary)/(auth)/signin/page"))} />
+			<Route
+				path="2fa/verify"
+				Component={lazy(() => import("./pages/(primary)/(auth)/2fa/verify.page"))}
+			/>
+			<Route
+				path="2fa/success"
+				Component={lazy(() => import("./pages/(primary)/(auth)/2fa/success.page"))}
+			/>
 		</Route>
 	</Route>
 );
