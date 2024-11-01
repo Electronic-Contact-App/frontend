@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 function AuthLayout() {
 	return (
-		<div className="py-16">
+		<div className="py-5">
 			<Button
 				unstyled={true}
 				className="mx-5 mb-4 flex size-11 items-center justify-center self-start rounded-full
