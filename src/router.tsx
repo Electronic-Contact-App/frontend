@@ -3,9 +3,9 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import RootLayout from "./pages/layout";
 
 const routes = createRoutesFromElements(
-	<Route element={<RootLayout />}>
-		<Route path="/">
-			<Route index={true} Component={lazy(() => import("./pages/(primary)/(dashboard)/page"))} />
+	<Route path="/" element={<RootLayout />}>
+		<Route Component={lazy(() => import("./pages/(primary)/(dashboard)/layout"))}>
+			<Route path="/" Component={lazy(() => import("./pages/(primary)/(dashboard)/page"))} />
 		</Route>
 
 		<Route Component={lazy(() => import("./pages/(primary)/(auth)/layout"))}>

@@ -7,6 +7,7 @@
 /*-------------------*/
 @layer base {
 	:root {
+		--color-blue-50: hsl(211, 100%, 95%);
 		--color-blue-100: hsl(212, 60%, 83%);
 		--color-blue-200: hsl(212, 61%, 75%);
 		--color-blue-300: hsl(212, 61%, 64%);
@@ -28,7 +29,7 @@
 		--color-orange-800: hsl(29, 90%, 25%);
 		--color-orange-900: hsl(29, 92%, 19%);
 
-		--color-grey-50: hsl(0, 0%, 100%);
+		--color-grey-50: hsl(0, 0%, 95%);
 		--color-grey-100: hsl(0, 0%, 91%);
 		--color-grey-200: hsl(0, 0%, 86%);
 		--color-grey-300: hsl(0, 0%, 80%);
