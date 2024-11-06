@@ -55,7 +55,7 @@ const SigninPage = () => {
 			</section>
 
 			<Form.Root methods={methods} className="gap-4">
-				<Form.Item control={control} name={"email"} className="space-y-3">
+				<Form.Item control={control} name="email" className="space-y-3">
 					<Form.Label className="font-medium">Email address/Username</Form.Label>
 					<Form.Input
 						className="h-[44px] w-full rounded-[8px] border border-grey-200 px-[10px]
@@ -64,7 +64,7 @@ const SigninPage = () => {
 					/>
 				</Form.Item>
 
-				<Form.Item control={control} className="space-y-3" name={"password"}>
+				<Form.Item control={control} className="space-y-3" name="password">
 					<Form.Label className="font-medium">Password</Form.Label>
 					<Form.Input
 						type="password"
@@ -78,7 +78,7 @@ const SigninPage = () => {
 				</Form.Item>
 
 				<div className="flex items-center justify-between">
-					<Form.Item control={control} className="flex-row items-center gap-[8px]" name={"checkbox"}>
+					<Form.Item control={control} className="flex-row items-center gap-[8px]" name="checkbox">
 						<Form.Input
 							className="h-[44px] w-[18px] rounded-[8px] border border-grey-200 px-[10px]
 								accent-[#DA700A]"
@@ -87,7 +87,7 @@ const SigninPage = () => {
 						<Form.Label className="font-medium">Remember me</Form.Label>
 					</Form.Item>
 
-					<Link to={""} className="text-[14px] font-normal text-[#0057B5]">
+					<Link to="" className="text-[14px] font-normal text-[#0057B5]">
 						Forgot Password?
 					</Link>
 				</div>
