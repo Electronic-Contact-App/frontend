@@ -5,7 +5,13 @@ import RootLayout from "./pages/layout";
 const routes = createRoutesFromElements(
 	<Route path="/" element={<RootLayout />}>
 		<Route Component={lazy(() => import("./pages/(primary)/(dashboard)/layout"))}>
-			<Route path="/" Component={lazy(() => import("./pages/(primary)/(dashboard)/page"))} />
+			<Route index={true} Component={lazy(() => import("./pages/(primary)/(dashboard)/page"))} />
+			<Route Component={lazy(() => import("./pages/(primary)/(dashboard)/profile/layout"))}>
+				<Route
+					path="profile/contact-detail"
+					Component={lazy(() => import("./pages/(primary)/(dashboard)/profile/contact-detail.page"))}
+				/>
+			</Route>
 		</Route>
 
 		<Route Component={lazy(() => import("./pages/(primary)/(auth)/layout"))}>

@@ -1,13 +1,10 @@
 import { Button, Form } from "@/components/ui";
-
 import { IconBox } from "@/components/common";
 import { useForm } from "react-hook-form";
 import { Main } from "../../_components";
 import { Link } from "react-router-dom";
 
 type SignupFormValues = {
-	first_name: "";
-	last_name: "";
 	email: "";
 	checkbox: "";
 	password: "";
@@ -16,8 +13,6 @@ type SignupFormValues = {
 const SigninPage = () => {
 	const methods = useForm<SignupFormValues>({
 		defaultValues: {
-			first_name: "",
-			last_name: "",
 			email: "",
 			checkbox: "",
 			password: "",
@@ -28,8 +23,6 @@ const SigninPage = () => {
 
 	return (
 		<Main className="space-y-[24px] max-md:min-w-[380px]">
-			{/*  */}
-
 			<h1 className="text-[24px] font-bold">Sign in to Chacha</h1>
 
 			<section>
