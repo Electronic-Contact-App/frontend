@@ -19,6 +19,26 @@ const routes = createRoutesFromElements(
 				path="2fa/success"
 				Component={lazy(() => import("./pages/(primary)/(auth)/2fa/success.page"))}
 			/>
+			<Route
+				path="2fa/success"
+				Component={lazy(() => import("./pages/(primary)/(auth)/2fa/success.page"))}
+			/>
+			<Route
+				path="forgot-password"
+				Component={lazy(() => import("./pages/(primary)/(auth)/forgot-password/page"))}
+			/>
+			<Route
+				path="reset-password"
+				Component={lazy(() => import("./pages/(primary)/(auth)/reset-password/page"))}
+			/>
+			<Route
+				path="reset-password/verify"
+				Component={lazy(() => import("./pages/(primary)/(auth)/reset-password/verify.page"))}
+			/>
+			<Route
+				path="reset-password/success"
+				Component={lazy(() => import("./pages/(primary)/(auth)/reset-password/success.page"))}
+			/>
 		</Route>
 	</Route>
 );
