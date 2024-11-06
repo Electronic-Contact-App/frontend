@@ -157,8 +157,7 @@ export type FormInputPrimitiveProps<TFieldValues extends FieldValues = FieldValu
 	React.ComponentPropsWithRef<"input">,
 	"children"
 > & {
-	classNames?: { eyeIcon?: string; input?: string; inputGroup?: string };
-	errorClassName?: string;
+	classNames?: { error?: string; eyeIcon?: string; input?: string; inputGroup?: string };
 	name?: keyof TFieldValues;
 	withEyeIcon?: boolean;
 } & (
@@ -177,7 +176,6 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 		className,
 		classNames,
 		control,
-		errorClassName,
 		formState,
 		id = contextValues?.uniqueId,
 		name = contextValues?.name,
@@ -197,7 +195,7 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 	const WrapperElement = shouldHaveEyeIcon ? FormInputGroup : ReactFragment;
 
 	const wrapperElementProps = shouldHaveEyeIcon && {
-		className: cnMerge("w-full", classNames?.inputGroup, name && errors?.[name] && errorClassName),
+		className: cnMerge("w-full", classNames?.inputGroup, name && errors?.[name] && classNames?.error),
 	};
 
 	return (
@@ -213,7 +211,7 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 					disabled:cursor-not-allowed disabled:opacity-50`,
 					className,
 					classNames?.input,
-					type !== "password" && name && errors?.[name] && errorClassName
+					type !== "password" && name && errors?.[name] && classNames?.error
 				)}
 				{...restOfProps}
 			/>
