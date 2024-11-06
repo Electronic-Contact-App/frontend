@@ -97,7 +97,7 @@ const SigninPage = () => {
 				<Button className="text-base">Sign in</Button>
 				<p className="mt-5 text-center text-[15px] font-normal">
 					Don’t have an account?
-					<Link to="signup" className="text-base font-medium text-[#0057B5]">
+					<Link to="/signup" className="text-base font-medium text-[#0057B5]">
 						Sign up
 					</Link>
 				</p>
