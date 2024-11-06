@@ -54,7 +54,7 @@ const SigninPage = () => {
 				</div>
 			</section>
 
-			<Form.Root methods={methods} className="gap-4" >
+			<Form.Root methods={methods} className="gap-4">
 				<Form.Item control={control} name={"email"} className="space-y-3">
 					<Form.Label className="font-medium">Email address/Username</Form.Label>
 					<Form.Input
@@ -80,7 +80,8 @@ const SigninPage = () => {
 				<div className="flex items-center justify-between">
 					<Form.Item control={control} className="flex-row items-center gap-[8px]" name={"checkbox"}>
 						<Form.Input
-							className="h-[44px] w-[18px] rounded-[8px] border border-grey-200 px-[10px] accent-[#DA700A]"
+							className="h-[44px] w-[18px] rounded-[8px] border border-grey-200 px-[10px]
+								accent-[#DA700A]"
 							type="checkbox"
 						/>
 						<Form.Label className="font-medium">Remember me</Form.Label>
@@ -93,7 +94,7 @@ const SigninPage = () => {
 			</Form.Root>
 
 			<section className="pt-[98px]">
-				<Button className="text-base" >Sign in</Button>
+				<Button className="text-base">Sign in</Button>
 				<p className="mt-5 text-center text-[15px] font-normal">
 					Don’t have an account?{" "}
 					<Link to={"signup"} className="text-base font-medium text-[#0057B5]">
