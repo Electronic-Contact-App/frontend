@@ -3,6 +3,7 @@
 		"dbaeumer.vscode-eslint", // ESLint
 		"esbenp.prettier-vscode", // Prettier - Code formatter
 		"antfu.iconify", // Intellisene for icons used with IconBox component
-		"bradlc.vscode-tailwindcss" // Tailwind Intellisense
+		"bradlc.vscode-tailwindcss", // Tailwind Intellisense
+		"zardoy.npm-rapid-ready" // NPM Rapid Ready
 	]
 }

@@ -1,1 +1,1 @@
-export  { Image } from "@unpic/react";
+export { Image } from "@unpic/react";
