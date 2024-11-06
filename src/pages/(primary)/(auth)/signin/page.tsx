@@ -36,13 +36,13 @@ const SigninPage = () => {
 				<p className="pb-[12px] text-[16px] font-medium">Sign in with:</p>
 
 				<div className="mb-[20px] flex gap-4">
-					<Button theme={"ghost"} className="">
+					<Button theme="ghost" className="">
 						<IconBox icon="devicon:google" className="size-[24px]" />
 					</Button>
-					<Button theme={"ghost"}>
+					<Button theme="ghost">
 						<IconBox icon="entypo-social:linkedin-with-circle" className="size-[24px]" />
 					</Button>
-					<Button theme={"ghost"}>
+					<Button theme="ghost">
 						<IconBox icon="entypo-social:facebook-with-circle" className="size-[24px]" />
 					</Button>
 				</div>
@@ -96,8 +96,8 @@ const SigninPage = () => {
 			<section className="pt-[98px]">
 				<Button className="text-base">Sign in</Button>
 				<p className="mt-5 text-center text-[15px] font-normal">
-					Don’t have an account?{" "}
-					<Link to={"signup"} className="text-base font-medium text-[#0057B5]">
+					Don’t have an account?
+					<Link to="signup" className="text-base font-medium text-[#0057B5]">
 						Sign up
 					</Link>
 				</p>
