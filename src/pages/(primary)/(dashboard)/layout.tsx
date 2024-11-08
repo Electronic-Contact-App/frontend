@@ -3,7 +3,7 @@ import { BottomNavigation } from "./_components";
 
 function DashboardLayout() {
 	return (
-		<div className="flex grow flex-col">
+		<div className="flex grow flex-col pb-5">
 			<Outlet />
 			<BottomNavigation />
 		</div>

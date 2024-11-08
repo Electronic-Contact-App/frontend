@@ -6,10 +6,25 @@ const routes = createRoutesFromElements(
 	<Route path="/" element={<RootLayout />}>
 		<Route Component={lazy(() => import("./pages/(primary)/(dashboard)/layout"))}>
 			<Route index={true} Component={lazy(() => import("./pages/(primary)/(dashboard)/page"))} />
-			<Route Component={lazy(() => import("./pages/(primary)/(dashboard)/profile/layout"))}>
+
+			<Route
+				Component={lazy(() => import("./pages/(primary)/(dashboard)/profile/(main-profile)/layout"))}
+			>
 				<Route
-					path="profile/contact-detail"
-					Component={lazy(() => import("./pages/(primary)/(dashboard)/profile/contact-detail.page"))}
+					path="profile"
+					Component={lazy(() => import("./pages/(primary)/(dashboard)/profile/(main-profile)/page"))}
+				/>
+				<Route
+					path="profile/business-card"
+					Component={lazy(
+						() => import("./pages/(primary)/(dashboard)/profile/(main-profile)/business-card.page")
+					)}
+				/>
+				<Route
+					path="profile/document"
+					Component={lazy(
+						() => import("./pages/(primary)/(dashboard)/profile/(main-profile)/document.page")
+					)}
 				/>
 			</Route>
 		</Route>

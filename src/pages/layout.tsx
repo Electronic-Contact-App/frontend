@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 function RootLayout() {
 	return (
-		<div className="flex min-h-svh w-full flex-col items-center bg-background">
+		<div id="root-layout" className="flex w-full max-w-[393px] grow flex-col px-5">
 			<Outlet />
 		</div>
 	);

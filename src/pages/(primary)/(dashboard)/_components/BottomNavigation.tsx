@@ -1,4 +1,4 @@
-import { getElementList, IconBox } from "@/components/common";
+import { IconBox, getElementList } from "@/components/common";
 import { NavLink } from "react-router-dom";
 
 const naviationLinks = [
@@ -33,12 +33,12 @@ function BottomNavigation() {
 	const [NavigationList] = getElementList();
 
 	return (
-		<nav className="px-5 pb-[23px] pt-4">
+		<nav className="px-5 pt-4">
 			<NavigationList
-				className="flex justify-between gap-5"
+				className="flex justify-between gap-5 self-end"
 				each={naviationLinks}
 				render={(link) => (
-					<li>
+					<li key={link.href}>
 						<NavLink
 							to={link.href}
 							className="flex flex-col items-center gap-2 text-grey-800 [&.active]:text-primary"
