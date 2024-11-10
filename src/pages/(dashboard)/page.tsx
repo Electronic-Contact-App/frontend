@@ -7,11 +7,11 @@ import {
 	shareDocuments,
 	viewQrCode,
 } from "@/assets";
-import { getElementList, IconBox, Image } from "@/components/common";
-import { Main } from "../_components";
+import { IconBox, Image, getElementList } from "@/components/common";
 import { ArrowIcon, NotificationIcon, ScanIcon } from "@/components/icons";
-import { Form } from "@/components/ui";
 import SearchIcon from "@/components/icons/SearchIcon";
+import { Form } from "@/components/ui";
+import { Main } from "../_components";
 
 const quickActions = [
 	{
@@ -111,6 +111,7 @@ function HomePage() {
 								py-4"
 						>
 							<p className="text-[14px]">{action.title}</p>
+
 							<Image src={action.image} alt="" width={50} height={55} />
 						</li>
 					)}
