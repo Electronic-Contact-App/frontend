@@ -1,4 +1,4 @@
-import { Main } from "@/pages/(primary)/_components";
+import { Main } from "@/pages/_components";
 
 const ContactDetailPage = () => {
 	return <Main>Profile</Main>;

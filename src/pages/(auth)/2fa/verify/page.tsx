@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { waitUntil } from "@zayne-labs/toolkit";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Main } from "../../_components";
+import { Main } from "../../../_components";
 
 const TwoFactorAuthSchema = z.object({
 	otp: z.string().min(6, "Please enter a valid code!"),

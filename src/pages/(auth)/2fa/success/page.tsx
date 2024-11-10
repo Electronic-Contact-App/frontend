@@ -1,7 +1,7 @@
 import { IconBox } from "@/components/common";
 import { Button } from "@/components/ui";
 import { Link } from "react-router-dom";
-import { Main } from "../../_components";
+import { Main } from "../../../_components";
 
 function ConfirmVerificationPage() {
 	return (

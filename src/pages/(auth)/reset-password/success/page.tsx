@@ -1,7 +1,7 @@
 import { IconBox } from "@/components/common";
 import { Button } from "@/components/ui";
+import { Main } from "@/pages/_components";
 import { Link } from "react-router-dom";
-import { Main } from "../../_components";
 
 function page() {
 	return (
