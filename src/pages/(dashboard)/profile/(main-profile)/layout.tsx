@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { TabNavigation } from "./_components";
+import { TabNavigation } from "../_components";
 
 function ProfileLayout() {
 	return (
