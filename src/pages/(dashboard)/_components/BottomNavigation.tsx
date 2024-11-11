@@ -33,7 +33,7 @@ function BottomNavigation() {
 	const [NavigationList] = getElementList();
 
 	return (
-		<nav className="sticky bottom-0 bg-background px-5 pt-4">
+		<nav className="sticky bottom-0 bg-background px-5 pb-5 pt-4">
 			<NavigationList
 				className="flex justify-between gap-5 self-end"
 				each={naviationLinks}

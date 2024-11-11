@@ -27,17 +27,23 @@ const routes = createRoutesFromElements(
 
 			<Route path="chat" Component={lazy(() => import("./pages/(dashboard)/chat/page"))} />
 
-			<Route Component={lazy(() => import("./pages/(dashboard)/profile/layout"))}>
+			<Route Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/layout"))}>
 				<Route path="profile" Component={lazy(() => import("./pages/(dashboard)/profile/page"))} />
 				<Route
 					path="profile/business-card"
-					Component={lazy(() => import("./pages/(dashboard)/profile/business-card/page"))}
+					Component={lazy(
+						() => import("./pages/(dashboard)/profile/(main-profile)/business-card/page")
+					)}
 				/>
 				<Route
 					path="profile/document"
-					Component={lazy(() => import("./pages/(dashboard)/profile/document/page"))}
+					Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/document/page"))}
 				/>
 			</Route>
+			<Route
+				path="profile/edit"
+				Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))}
+			/>
 		</Route>
 
 		<Route Component={lazy(() => import("./pages/(auth)/layout"))}>
