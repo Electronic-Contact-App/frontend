@@ -11,6 +11,8 @@ const config = withTV({
 		colors: {
 			white: "hsl(0, 0%, 100%)",
 
+			black: "hsl(0, 0%, 0%)",
+
 			transparent: "transparent",
 
 			blue: {
