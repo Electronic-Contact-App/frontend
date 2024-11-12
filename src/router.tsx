@@ -8,20 +8,6 @@ const routes = createRoutesFromElements(
 			<Route index={true} Component={lazy(() => import("./pages/(dashboard)/page"))} />
 
 			<Route path="contact" Component={lazy(() => import("./pages/(dashboard)/contact/page"))} />
-			<Route
-				path="contact/virtual-business-card"
-				Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/page"))}
-			/>
-			<Route
-				path="contact/virtual-business-card/create"
-				Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/create/page"))}
-			/>
-			<Route
-				path="contact/virtual-business-card/create/success"
-				Component={lazy(
-					() => import("./pages/(dashboard)/contact/virtual-business-card/create/success/page")
-				)}
-			/>
 
 			<Route path="event" Component={lazy(() => import("./pages/(dashboard)/event/page"))} />
 
@@ -45,6 +31,21 @@ const routes = createRoutesFromElements(
 				Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))}
 			/>
 		</Route>
+
+		<Route
+			path="contact/virtual-business-card"
+			Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/page"))}
+		/>
+		<Route
+			path="contact/virtual-business-card/create"
+			Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/create/page"))}
+		/>
+		<Route
+			path="contact/virtual-business-card/create/success"
+			Component={lazy(
+				() => import("./pages/(dashboard)/contact/virtual-business-card/create/success/page")
+			)}
+		/>
 
 		<Route Component={lazy(() => import("./pages/(auth)/layout"))}>
 			<Route path="signup" Component={lazy(() => import("./pages/(auth)/signup/page"))} />
