@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { IconBox } from "@/components/common";
 import { ArrowIcon } from "@/components/icons";
 import { Outlet } from "react-router-dom";
-import 'react-international-phone/style.css'
+import "react-international-phone/style.css";
 import { PhoneInput } from "react-international-phone";
 
 type CreateVirtualCardFormValues = {
