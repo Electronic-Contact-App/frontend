@@ -4,31 +4,35 @@ import { Main } from "@/pages/_components";
 import { Link } from "react-router-dom";
 
 function SuccessPage() {
-	return <Main className="mt-[112px] min-w-[370px]">
-	<section className="flex flex-col items-center gap-6 text-center">
-		<span className="flex size-[70px] items-center justify-center rounded-full bg-success-500">
-			<IconBox
-				icon="material-symbols:check-rounded"
-				className="size-9 stroke-white stroke-[2px] text-white"
-			/>
-		</span>
+	return (
+		<Main className="mt-[112px] min-w-[370px]">
+			<section className="flex flex-col items-center gap-6 text-center">
+				<span className="flex size-[70px] items-center justify-center rounded-full bg-success-500">
+					<IconBox
+						icon="material-symbols:check-rounded"
+						className="size-9 stroke-white stroke-[2px] text-white"
+					/>
+				</span>
 
-		<div>
-			<h1 className="text-[18px] font-bold">Congratulations!!!</h1>
+				<div>
+					<h1 className="text-[18px] font-bold">Congratulations!!!</h1>
 
-			<p className="mt-3 text-[15px] text-grey-800">You have successfully created your virtual business card</p>
-		</div>
-	</section>
+					<p className="mt-3 text-[15px] text-grey-800">
+						You have successfully created your virtual business card
+					</p>
+				</div>
+			</section>
 
-	<div className="flex gap-5">
-		<Button theme="ghost" className="mt-[60px]" asChild={true}>
-			<Link to="">View Card</Link>
-		</Button>
-		<Button theme="primary" className="mt-[60px]" asChild={true}>
-			<Link to="">Go Home</Link>
-		</Button>
-	</div>
-</Main>;
+			<div className="flex gap-5">
+				<Button theme="ghost" className="mt-[60px]" asChild={true}>
+					<Link to="">View Card</Link>
+				</Button>
+				<Button theme="primary" className="mt-[60px]" asChild={true}>
+					<Link to="">Go Home</Link>
+				</Button>
+			</div>
+		</Main>
+	);
 }
 
 export default SuccessPage;

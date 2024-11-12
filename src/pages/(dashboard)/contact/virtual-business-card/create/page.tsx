@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import { IconBox } from "@/components/common";
 import { ArrowIcon } from "@/components/icons";
 import { Outlet } from "react-router-dom";
-// import { PhoneInput } from "react-international-phone";
+import 'react-international-phone/style.css'
+import { PhoneInput } from "react-international-phone";
 
 type CreateVirtualCardFormValues = {
 	name: string;
@@ -65,7 +66,7 @@ function CreateBusinessCardFormPage() {
 						/>
 					</Form.Item>
 
-					{/* <Form.Item control={control} name="phone" className="gap-3">
+					<Form.Item control={control} name="phone" className="gap-3">
 						<Form.Label className="font-medium">Phone number</Form.Label>
 
 						<Form.Controller
@@ -88,7 +89,7 @@ function CreateBusinessCardFormPage() {
 								/>
 							)}
 						/>
-					</Form.Item> */}
+					</Form.Item>
 
 					<Form.Item control={control} name="email" className="gap-3">
 						<Form.Label className="font-medium">Email</Form.Label>
