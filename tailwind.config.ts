@@ -122,10 +122,6 @@ const config = withTV({
 				xl: "1280px",
 			},
 
-			borderRadius: {
-				full: "50%",
-			},
-
 			fontFamily: {
 				satoshi: ["Satoshi", "sans-serif"],
 			},
