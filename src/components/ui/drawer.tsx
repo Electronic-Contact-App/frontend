@@ -44,7 +44,7 @@ function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content> & { wit
 	);
 }
 
-function DrawerHeader(props: React.ComponentProps<"div">) {
+function DrawerHeader(props: InferProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -52,7 +52,7 @@ function DrawerHeader(props: React.ComponentProps<"div">) {
 	);
 }
 
-function DrawerFooter(props: React.ComponentProps<"div">) {
+function DrawerFooter(props: InferProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	return <div className={cnMerge("mt-auto flex flex-col gap-2 p-4", className)} {...restOfProps} />;

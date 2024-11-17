@@ -1,11 +1,15 @@
 import { Tabs } from "@/components/ui";
+import { useLocation } from "@zayne-labs/toolkit/react";
 import { Link, useNavigate } from "react-router-dom";
 
 function TabNavigation() {
 	const navigate = useNavigate();
 
+	const [pathname, setPathname] = useLocation((state) => state.pathname);
+
 	const handleTabChange = (value: string) => {
 		navigate(value === "contact" ? "/profile" : `/profile/${value}`);
+		setPathname.triggerPopstate();
 	};
 
 	return (
@@ -15,7 +19,7 @@ function TabNavigation() {
 			</Link>
 
 			<section>
-				<Tabs.Root defaultValue="contact" onValueChange={handleTabChange}>
+				<Tabs.Root defaultValue={pathname.split("/")[2] ?? "contact"} onValueChange={handleTabChange}>
 					<Tabs.List className="w-full justify-between rounded-[16px] bg-grey-50 px-3 py-1">
 						<Tabs.Trigger
 							value="contact"
