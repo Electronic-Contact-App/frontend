@@ -55,6 +55,7 @@ const config = withTV({
 			},
 
 			error: {
+				DEFAULT: "var(--color-error-500)",
 				50: "var(--color-error-50)",
 				100: "var(--color-error-100)",
 				200: "var(--color-error-200)",

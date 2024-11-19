@@ -2,9 +2,14 @@ import { lazy } from "react";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import RootLayout from "./pages/layout";
 
+const DashboardLayout = lazy(() => import("./pages/(dashboard)/layout"));
+const AuthLayout = lazy(() => import("./pages/(auth)/layout"));
+const MainProfileLayout = lazy(() => import("./pages/(dashboard)/profile/(main-profile)/layout"));
+const SettingsLayout = lazy(() => import("./pages/(dashboard)/profile/settings/layout"));
+
 const routes = createRoutesFromElements(
-	<Route path="/" element={<RootLayout />}>
-		<Route Component={lazy(() => import("./pages/(dashboard)/layout"))}>
+	<Route path="/" Component={RootLayout}>
+		<Route Component={DashboardLayout}>
 			<Route index={true} Component={lazy(() => import("./pages/(dashboard)/page"))} />
 
 			<Route path="contact" Component={lazy(() => import("./pages/(dashboard)/contact/page"))} />
@@ -13,7 +18,7 @@ const routes = createRoutesFromElements(
 
 			<Route path="chat" Component={lazy(() => import("./pages/(dashboard)/chat/page"))} />
 
-			<Route Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/layout"))}>
+			<Route Component={MainProfileLayout}>
 				<Route path="profile" Component={lazy(() => import("./pages/(dashboard)/profile/page"))} />
 				<Route
 					path="profile/business-card"
@@ -26,9 +31,14 @@ const routes = createRoutesFromElements(
 					Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/document/page"))}
 				/>
 			</Route>
+		</Route>
+
+		<Route path="profile/edit" Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))} />
+
+		<Route Component={SettingsLayout}>
 			<Route
-				path="profile/edit"
-				Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))}
+				path="profile/settings"
+				Component={lazy(() => import("./pages/(dashboard)/profile/settings/page"))}
 			/>
 		</Route>
 
@@ -47,7 +57,7 @@ const routes = createRoutesFromElements(
 			)}
 		/>
 
-		<Route Component={lazy(() => import("./pages/(auth)/layout"))}>
+		<Route Component={AuthLayout}>
 			<Route path="signup" Component={lazy(() => import("./pages/(auth)/signup/page"))} />
 			<Route path="signin" Component={lazy(() => import("./pages/(auth)/signin/page"))} />
 			<Route path="2fa/verify" Component={lazy(() => import("./pages/(auth)/2fa/verify/page"))} />

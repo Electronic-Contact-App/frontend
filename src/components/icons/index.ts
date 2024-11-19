@@ -5,3 +5,4 @@ export { default as NotificationIcon } from "./NotificationIcon";
 export { default as UploadIcon } from "./UploadIcon";
 export { default as EditIcon } from "./EditIcon";
 export { default as CopyIcon } from "./CopyIcon";
+export { default as AboutIcon } from "./AboutIcon";
