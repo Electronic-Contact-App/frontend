@@ -9,28 +9,29 @@ import { Link } from "react-router-dom";
 
 const settingsLinks = {
 	first: [
+		// {
+		// 	link: "/profile/settings/profile",
+		// 	icon: "solar:user-linear",
+		// 	title: "Profile settings",
+		// },
+
 		{
-			link: "/settings/profile",
-			icon: "solar:user-linear",
-			title: "Profile settings",
-		},
-		{
-			link: "/settings/security",
-			icon: "solar:shield-minimalistic-outline",
-			title: "Security settings",
-		},
-		{
-			link: "/settings/privacy",
+			link: "/profile/settings/privacy",
 			icon: "solar:lock-password-linear",
 			title: "Privacy settings",
 		},
 		{
-			link: "/settings/location",
+			link: "/profile/settings/security",
+			icon: "solar:shield-minimalistic-outline",
+			title: "Security settings",
+		},
+		{
+			link: "/profile/settings/location",
 			icon: "material-symbols:location-on-outline-rounded",
 			title: "Location settings",
 		},
 		{
-			link: "/settings/notifications",
+			link: "/profile/settings/notifications",
 			icon: <NotificationIcon />,
 			title: "Notification settings",
 		},
@@ -38,17 +39,17 @@ const settingsLinks = {
 
 	second: [
 		{
-			link: "/settings/contacts",
+			link: "/profile/settings/contacts",
 			icon: <NotificationIcon />,
 			title: "View Contacts",
 		},
 		{
-			link: "/settings/nearby-people",
+			link: "/profile/settings/nearby-people",
 			icon: <NotificationIcon />,
 			title: "People nearby",
 		},
 		{
-			link: "/settings/history",
+			link: "/profile/settings/history",
 			icon: "solar:history-2-linear",
 			title: "View history",
 		},
@@ -56,12 +57,12 @@ const settingsLinks = {
 
 	third: [
 		{
-			link: "/settings/help",
+			link: "/profile/settings/help",
 			icon: "lsicon:circle-help-outline",
 			title: "Help",
 		},
 		{
-			link: "/settings/about",
+			link: "/profile/settings/about",
 			icon: <AboutIcon />,
 			title: "About us",
 		},
@@ -84,11 +85,11 @@ function SettingsPage() {
 	return (
 		<Main className="gap-4">
 			<header className="flex flex-col gap-6">
-				<div className="relative flex items-center justify-center">
+				<section className="relative flex items-center justify-center">
 					<h1>Settings</h1>
-				</div>
+				</section>
 
-				<div className="flex items-center justify-between bg-white p-3">
+				<section className="flex items-center justify-between bg-white p-3">
 					<section className="flex gap-2">
 						<div className="size-12">
 							<Image
@@ -110,7 +111,7 @@ function SettingsPage() {
 						<ScanIcon />
 						<NotificationIcon />
 					</section>
-				</div>
+				</section>
 			</header>
 
 			<SettingsLinksList
@@ -133,7 +134,7 @@ function SettingsPage() {
 										item.icon
 									)}
 								</span>
-								<p>{item.title}</p>
+								{isString(item.title) ? <p>{item.title}</p> : item.title}
 							</div>
 
 							<span className="block size-5">

@@ -5,7 +5,7 @@ import RootLayout from "./pages/layout";
 const DashboardLayout = lazy(() => import("./pages/(dashboard)/layout"));
 const AuthLayout = lazy(() => import("./pages/(auth)/layout"));
 const MainProfileLayout = lazy(() => import("./pages/(dashboard)/profile/(main-profile)/layout"));
-const SettingsLayout = lazy(() => import("./pages/(dashboard)/profile/settings/layout"));
+const NestedPagesLayout = lazy(() => import("./pages/(dashboard)/layout.nested"));
 
 const routes = createRoutesFromElements(
 	<Route path="/" Component={RootLayout}>
@@ -33,29 +33,49 @@ const routes = createRoutesFromElements(
 			</Route>
 		</Route>
 
-		<Route path="profile/edit" Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))} />
+		<Route Component={NestedPagesLayout}>
+			<Route
+				path="contact/virtual-business-card"
+				Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/page"))}
+			/>
+			<Route
+				path="contact/virtual-business-card/create"
+				Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/create/page"))}
+			/>
+			<Route
+				path="contact/virtual-business-card/create/success"
+				Component={lazy(
+					() => import("./pages/(dashboard)/contact/virtual-business-card/create/success/page")
+				)}
+			/>
 
-		<Route Component={SettingsLayout}>
+			<Route
+				path="profile/edit"
+				Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))}
+			/>
 			<Route
 				path="profile/settings"
 				Component={lazy(() => import("./pages/(dashboard)/profile/settings/page"))}
 			/>
+			<Route
+				path="profile/settings/privacy"
+				Component={lazy(() => import("./pages/(dashboard)/profile/settings/privacy/page"))}
+			/>
+			<Route
+				path="profile/settings/privacy/profile"
+				Component={lazy(() => import("./pages/(dashboard)/profile/settings/privacy/profile/page"))}
+			/>
+			<Route
+				path="profile/settings/privacy/business-card"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/settings/privacy/business-card/page")
+				)}
+			/>
+			<Route
+				path="profile/settings/privacy/document"
+				Component={lazy(() => import("./pages/(dashboard)/profile/settings/privacy/document/page"))}
+			/>
 		</Route>
-
-		<Route
-			path="contact/virtual-business-card"
-			Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/page"))}
-		/>
-		<Route
-			path="contact/virtual-business-card/create"
-			Component={lazy(() => import("./pages/(dashboard)/contact/virtual-business-card/create/page"))}
-		/>
-		<Route
-			path="contact/virtual-business-card/create/success"
-			Component={lazy(
-				() => import("./pages/(dashboard)/contact/virtual-business-card/create/success/page")
-			)}
-		/>
 
 		<Route Component={AuthLayout}>
 			<Route path="signup" Component={lazy(() => import("./pages/(auth)/signup/page"))} />

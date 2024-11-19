@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 function SuccessPage() {
 	return (
 		<Main className="mt-[112px] min-w-[370px]">
+			<header>
+				<section className="relative flex items-center justify-center"/>
+			</header>
+
 			<section className="flex flex-col items-center gap-6 text-center">
 				<span className="flex size-[70px] items-center justify-center rounded-full bg-success-500">
 					<IconBox

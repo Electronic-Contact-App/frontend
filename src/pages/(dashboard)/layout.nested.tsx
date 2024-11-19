@@ -3,10 +3,10 @@ import { ArrowIcon } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { Outlet } from "react-router-dom";
 
-function SettingsLayout() {
+function NestedPagesLayout() {
 	return (
 		<div>
-			<Teleport to="main>header>div">
+			<Teleport to="main>header>section">
 				<Button
 					unstyled={true}
 					className="absolute left-0 flex size-11 items-center justify-center rounded-full bg-grey-100"
@@ -21,4 +21,4 @@ function SettingsLayout() {
 	);
 }
 
-export default SettingsLayout;
+export default NestedPagesLayout;
