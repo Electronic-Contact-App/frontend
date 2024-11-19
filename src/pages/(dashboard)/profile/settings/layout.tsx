@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 function SettingsLayout() {
 	return (
 		<div>
-			<Teleport to="main>header>div" insertPosition="afterbegin">
+			<Teleport to="main>header>div">
 				<Button
 					unstyled={true}
 					className="absolute left-0 flex size-11 items-center justify-center rounded-full bg-grey-100"

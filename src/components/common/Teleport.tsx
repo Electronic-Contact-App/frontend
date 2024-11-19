@@ -1,8 +1,7 @@
-import { useMountEffect } from "@zayne-labs/toolkit/react";
+import { useEffectOnce, useMountEffect } from "@zayne-labs/toolkit/react";
 import { type AnyString, isString } from "@zayne-labs/toolkit/type-helpers";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
-import { renderToString } from "react-dom/server";
 
 type ValidHtmlTags = keyof HTMLElementTagNameMap;
 
@@ -15,26 +14,22 @@ type PortalProps = {
 function Teleport(props: PortalProps) {
 	const { children, to, insertPosition } = props;
 
-	const [teleportDestination, setTeleportDestination] = useState<HTMLElement | null>(null);
+	const [reactPortal, setReactPortal] = useState<React.ReactPortal | null>(null);
 
-	// needs fixing, renderToString removes event listeners
-	useEffect(() => {
+	useEffectOnce(() => {
 		if (!to || !insertPosition) return;
 
 		const destination = isString(to) ? document.querySelector<HTMLElement>(to) : to;
 
-		const jsxString = renderToString(children);
+		const tempWrapper = document.createElement("div");
+		tempWrapper.style.display = "contents";
 
-		const range = document.createRange();
-		const fragment = range.createContextualFragment(jsxString);
-		const element = fragment.firstElementChild;
+		destination?.insertAdjacentElement(insertPosition, tempWrapper);
 
-		if (!element) return;
-
-		destination?.insertAdjacentElement(insertPosition, element);
+		setReactPortal(createPortal(children, tempWrapper));
 
 		return () => {
-			element.remove();
+			tempWrapper.remove();
 		};
 	});
 
@@ -43,10 +38,10 @@ function Teleport(props: PortalProps) {
 
 		const destination = isString(to) ? document.querySelector<HTMLElement>(to) : to;
 
-		setTeleportDestination(destination);
+		destination && setReactPortal(createPortal(children, destination));
 	});
 
-	return teleportDestination && createPortal(children, teleportDestination);
+	return reactPortal;
 }
 
 export default Teleport;
