@@ -6,3 +6,5 @@ export { default as shareContactTemporarily } from "./share-contact-temporarily.
 export { default as shareDocuments } from "./share-documents.svg";
 export { default as viewQrCode } from "./view-qr-code.svg";
 export { default as createBusinessCard } from "./create-business-card.svg";
+export { default as ViewContacts } from "./view-contacts.svg";
+export { default as QRcode } from "./qr-code.svg";

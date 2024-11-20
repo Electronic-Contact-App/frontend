@@ -1,9 +1,9 @@
 import { IconBox } from "@/components/common";
 import { Button, Form } from "@/components/ui";
 import { Main } from "@/pages/_components";
-import "react-international-phone/style.css";
 import { useForm } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 type CreateVirtualCardFormValues = {
 	name: string;

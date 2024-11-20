@@ -1,5 +1,5 @@
 import { createBusinessCard } from "@/assets";
-import { IconBox } from "@/components/common";
+import { IconBox, Image } from "@/components/common";
 import { Button } from "@/components/ui";
 import { Main } from "@/pages/_components";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ function ShareBusinessCardPage() {
 
 			<div className="flex grow flex-col justify-between">
 				<div className="mt-[25px] w-full justify-items-center">
-					<img src={createBusinessCard} alt="Business card svg" className="h-[177px] w-[222px]" />
+					<Image src={createBusinessCard} alt="Business card svg" height={177} width={222} />
 					<p className="text-center">
 						You don't have a business card
 						<Link to={`/contact/virtual-business-card/create`}>

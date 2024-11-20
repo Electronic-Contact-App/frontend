@@ -1,88 +1,80 @@
-import { Button, Drawer, Form } from "@/components/ui";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { useForm } from "react-hook-form";
+import {
+	ViewContacts,
+	createBusinessCard,
+	scanQrCode,
+	shareContactTemporarily,
+	shareDocuments,
+	viewQrCode,
+} from "@/assets";
+import { Image } from "@/components/common";
+import { VideoIcon } from "@/components/icons";
 import { Link } from "react-router-dom";
 import { Main } from "../../_components";
 
 function ContactPage() {
-	const methods = useForm();
-
 	return (
 		<Main>
-			<Drawer.Root>
-				<Drawer.Trigger>Open</Drawer.Trigger>
+			<div className="text-center">
+				<p>Contact Sharing</p>
+			</div>
 
-				<Drawer.Content withHandle={false} className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
-					<Drawer.Header className="flex flex-col gap-6 p-0">
-						<Drawer.Title className="flex items-center self-center">
-							<DotLottieReact
-								className="w-[80px]"
-								src="https://lottie.host/0cded368-9526-48ae-80a7-589cb589a4af/NOXTo43Q5h.lottie"
-								loop={true}
-								autoplay={true}
-							/>
-							<p className="text-[18px] font-medium">Share temporarily</p>
-						</Drawer.Title>
+			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
+				<div>
+					<p>View Contacts</p>
+				</div>
+				<div className="h-[72px] w-[92px]">
+					<Image src={ViewContacts} layout="fullWidth" alt="" className="size-full" />
+				</div>
+			</div>
+			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
+				<div>
+					<p>Scan QR code</p>
+				</div>
+				<div className="h-[72px] w-[92px]">
+					<Image src={scanQrCode} alt="" layout="fullWidth" className="size-full" />
+				</div>
+			</div>
+			<Link to={`virtual-business-card`}>
+				<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
+					<div>
+						<p>Share your virtual business cards</p>
+					</div>
+					<div className="h-[72px] w-[92px]">
+						<Image src={createBusinessCard} alt="" layout="fullWidth" className="size-full" />
+					</div>
+				</div>
+			</Link>
+			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
+				<div>
+					<p>Share your document</p>
+				</div>
+				<div className="h-[72px] w-[92px]">
+					<Image src={shareDocuments} alt="" layout="fullWidth" className="size-full" />
+				</div>
+			</div>
+			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
+				<div>
+					<p>Share your contact</p>
+				</div>
+				<div className="h-[72px] w-[92px]">
+					<Image src={shareContactTemporarily} alt="" layout="fullWidth" className="size-full" />
+				</div>
+			</div>
+			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
+				<div>
+					<p>View your QR code </p>
+				</div>
+				<div className="h-[72px] w-[92px]">
+					<Image src={viewQrCode} alt="" layout="fullWidth" className="size-full" />
+				</div>
+			</div>
 
-						<Drawer.Description className="flex justify-between">
-							<p className="text-grey-700">Choose what you want to share</p>
-
-							<Link to="#" className="text-[14px] text-secondary underline underline-offset-[3px]">
-								Select all
-							</Link>
-						</Drawer.Description>
-					</Drawer.Header>
-
-					<Form.Root methods={methods} className="mt-4 gap-4">
-						<Form.Item
-							name=""
-							className="flex-row items-center justify-between rounded-[8px] border border-grey-100
-								p-[10px]"
-						>
-							<Form.Label>Name</Form.Label>
-
-							<Form.Input
-								type="checkbox"
-								className="size-[18px] rounded-[2px] border-2 border-grey-600 accent-primary"
-							/>
-						</Form.Item>
-						<Form.Item
-							name=""
-							className="flex-row items-center justify-between rounded-[8px] border border-grey-100
-								p-[10px]"
-						>
-							<Form.Label>Email</Form.Label>
-
-							<Form.Input
-								type="checkbox"
-								className="size-[18px] rounded-[2px] border-2 border-grey-600 accent-primary"
-							/>
-						</Form.Item>
-						<Form.Item
-							name=""
-							className="flex-row items-center justify-between rounded-[8px] border border-grey-100
-								p-[10px]"
-						>
-							<Form.Label>Link</Form.Label>
-
-							<Form.Input
-								type="checkbox"
-								className="size-[18px] rounded-[2px] border-2 border-grey-600 accent-primary"
-							/>
-						</Form.Item>
-					</Form.Root>
-
-					<Drawer.Footer className="mt-9 flex flex-row justify-between gap-2">
-						<Drawer.Close asChild={true}>
-							<Button className="max-w-[172px]" theme="primary-inverted">
-								Cancel
-							</Button>
-						</Drawer.Close>
-
-						<Button className="max-w-[172px]">Share</Button>
-					</Drawer.Footer>
-				</Drawer.Content>
-			</Drawer.Root>
+			<Link to={`how-to-tutorial`}>
+				<div className="flex gap-3 pt-3">
+					<VideoIcon className="rounded bg-grey-100 p-0.5" />
+					<p className="text-[#DA700A]">Tutorial: How to share contact temporarily</p>
+				</div>
+			</Link>
 		</Main>
 	);
 }
