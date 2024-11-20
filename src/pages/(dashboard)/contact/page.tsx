@@ -1,14 +1,15 @@
-import { Main } from "../../_components";
 import {
+	ViewContacts,
 	createBusinessCard,
 	scanQrCode,
+	shareContactTemporarily,
 	shareDocuments,
 	viewQrCode,
-	shareContactTemporarily,
-	ViewContacts,
 } from "@/assets";
+import { Image } from "@/components/common";
 import { VideoIcon } from "@/components/icons";
 import { Link } from "react-router-dom";
+import { Main } from "../../_components";
 
 function ContactPage() {
 	return (
@@ -22,7 +23,7 @@ function ContactPage() {
 					<p>View Contacts</p>
 				</div>
 				<div className="h-[72px] w-[92px]">
-					<img src={ViewContacts} alt="" className="size-full" />
+					<Image src={ViewContacts} layout="fullWidth" alt="" className="size-full" />
 				</div>
 			</div>
 			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
@@ -30,7 +31,7 @@ function ContactPage() {
 					<p>Scan QR code</p>
 				</div>
 				<div className="h-[72px] w-[92px]">
-					<img src={scanQrCode} alt="" className="size-full" />
+					<Image src={scanQrCode} alt="" layout="fullWidth" className="size-full" />
 				</div>
 			</div>
 			<Link to={`virtual-business-card`}>
@@ -39,7 +40,7 @@ function ContactPage() {
 						<p>Share your virtual business cards</p>
 					</div>
 					<div className="h-[72px] w-[92px]">
-						<img src={createBusinessCard} alt="" className="size-full" />
+						<Image src={createBusinessCard} alt="" layout="fullWidth" className="size-full" />
 					</div>
 				</div>
 			</Link>
@@ -48,7 +49,7 @@ function ContactPage() {
 					<p>Share your document</p>
 				</div>
 				<div className="h-[72px] w-[92px]">
-					<img src={shareDocuments} alt="" className="size-full" />
+					<Image src={shareDocuments} alt="" layout="fullWidth" className="size-full" />
 				</div>
 			</div>
 			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
@@ -56,7 +57,7 @@ function ContactPage() {
 					<p>Share your contact</p>
 				</div>
 				<div className="h-[72px] w-[92px]">
-					<img src={shareContactTemporarily} alt="" className="size-full" />
+					<Image src={shareContactTemporarily} alt="" layout="fullWidth" className="size-full" />
 				</div>
 			</div>
 			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded bg-grey-100 px-5">
@@ -64,7 +65,7 @@ function ContactPage() {
 					<p>View your QR code </p>
 				</div>
 				<div className="h-[72px] w-[92px]">
-					<img src={viewQrCode} alt="" className="size-full" />
+					<Image src={viewQrCode} alt="" layout="fullWidth" className="size-full" />
 				</div>
 			</div>
 

@@ -1,11 +1,9 @@
-import { Main } from "@/pages/_components";
-import { Button, Form } from "@/components/ui";
-import { useForm } from "react-hook-form";
 import { IconBox } from "@/components/common";
-import { ArrowIcon } from "@/components/icons";
-import { Outlet } from "react-router-dom";
-import "react-international-phone/style.css";
+import { Button, Form } from "@/components/ui";
+import { Main } from "@/pages/_components";
+import { useForm } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 type CreateVirtualCardFormValues = {
 	name: string;
@@ -34,17 +32,11 @@ function CreateBusinessCardFormPage() {
 
 	return (
 		<Main>
-			<div className="flex w-full items-center">
-				<Button
-					unstyled={true}
-					className="flex size-11 items-center justify-center self-start rounded-full bg-grey-100"
-					onClick={() => history.back()}
-				>
-					<ArrowIcon className="text-icon" />
-				</Button>
-				<p className="w-full text-center">Create Business Card</p>
-				<Outlet />
-			</div>
+			<header>
+				<section className="relative flex items-center justify-center">
+					<h1>Create Business Card</h1>
+				</section>
+			</header>
 
 			<section className="flex flex-col gap-6">
 				<Form.Root methods={methods} className="gap-4">

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { IconBox } from "@/components/common";
-import { Main } from "../../../_components";
+import { QRcode } from "@/assets";
+import { IconBox, Image } from "@/components/common";
+import { CopyIcon, UploadIcon } from "@/components/icons";
 // import { Link } from "react-router-dom";
 import { Button, Drawer } from "@/components/ui";
-import { CopyIcon, UploadIcon } from "@/components/icons";
-import { QRcode } from "@/assets";
+import React, { useState } from "react";
+import { Main } from "../../../_components";
 // import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 // import { useForm } from "react-hook-form";
 
@@ -67,7 +67,7 @@ function ContactDetailsPage() {
 	const qrCodeView = (
 		<div className="mt-4 flex flex-col items-center">
 			<div className="w-[282px]">
-				<img src={QRcode} className="w-full" alt="QRCode" />
+				<Image src={QRcode} layout="fullWidth" className="w-full" alt="QRCode" />
 			</div>
 			<button
 				onClick={() => setShowQRCode(false)} // Back to details
@@ -253,7 +253,7 @@ function ContactDetailsPage() {
 								bg-grey-100"
 						>
 							<div className="h-[225px] w-[282px]">
-								<img src={QRcode} className="w-full" alt="QRCode" />
+								<Image layout="fullWidth" src={QRcode} className="w-full" alt="QRCode" />
 							</div>
 						</div>
 					</div>
