@@ -1,17 +1,24 @@
 import { createBusinessCard } from "@/assets";
 import { IconBox } from "@/components/common";
+import { ArrowIcon } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { Main } from "@/pages/_components";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function ShareBusinessCardPage() {
 	return (
 		<Main>
-			<header>
-				<section className="relative flex items-center justify-center">
-					<h1>Business Card</h1>
-				</section>
-			</header>
+			<div className="flex w-full items-center">
+				<Button
+					unstyled={true}
+					className="flex size-11 items-center justify-center self-start rounded-full bg-grey-100"
+					onClick={() => history.back()}
+				>
+					<ArrowIcon className="text-icon" />
+				</Button>
+				<p className="w-full text-center">Business Card</p>
+				<Outlet />
+			</div>
 
 			<div className="flex grow flex-col justify-between">
 				<div className="mt-[25px] w-full justify-items-center">
