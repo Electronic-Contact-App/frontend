@@ -48,6 +48,22 @@ const routes = createRoutesFromElements(
 					() => import("./pages/(dashboard)/contact/virtual-business-card/create/success/page")
 				)}
 			/>
+			<Route
+				path="contact/details"
+				Component={lazy(() => import("./pages/(dashboard)/contact/details/page"))}
+			/>
+			<Route
+				path="contact/details/success"
+				Component={lazy(() => import("./pages/(dashboard)/contact/details/success/page"))}
+			/>
+			<Route
+				path="contact/scan-qr"
+				Component={lazy(() => import("./pages/(dashboard)/contact/scan-qr/page"))}
+			/>
+			<Route
+				path="contact/how-to-tutorial"
+				Component={lazy(() => import("./pages/(dashboard)/contact/how-to-tutorial/page"))}
+			/>
 
 			<Route
 				path="profile/edit"
