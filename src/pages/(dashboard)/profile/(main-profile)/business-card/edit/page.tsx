@@ -3,7 +3,6 @@ import { IconBox } from "@/components/common";
 import { useForm } from "react-hook-form";
 import { ArrowIcon } from "@/components/icons";
 import { Main } from "@/pages/_components";
-import "react-international-phone/style.css";
 import { useState } from "react";
 
 type EditFormValues = {
@@ -12,6 +11,8 @@ type EditFormValues = {
 	phone: "";
 	email: "";
 	about: "";
+	jobInfo: "";
+	company: "";
 };
 
 const EditProfile = () => {
@@ -22,6 +23,8 @@ const EditProfile = () => {
 			phone: "",
 			email: "",
 			about: "",
+			jobInfo: "",
+			company: "",
 		},
 	});
 
@@ -47,7 +50,7 @@ const EditProfile = () => {
 					<ArrowIcon className="text-icon" />
 				</Button>
 
-				<h1>Edit Profile</h1>
+				<h1 className="">Edit business card</h1>
 			</section>
 
 			<div
@@ -83,94 +86,64 @@ const EditProfile = () => {
 					/>
 				</Form.Item>
 
-				<div className="space-y-3">
-					<Form.Item control={control} className="space-y-3" name="phone">
-						<Form.Label className="font-medium">Phone number</Form.Label>
+				<Form.Item control={control} className="space-y-3" name="phone">
+					<Form.Label className="font-medium">Phone number</Form.Label>
 
-						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
-							<p
-								className="relative flex cursor-pointer items-center gap-[2px] pr-[12px]
-									text-[14px] font-normal"
-								onClick={toggleOptions("phone")}
-							>
-								Mobile
-								<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
-								{isShow === "phone" && (
-									<div
-										className={`absolute left-[-10px] top-full w-[100px] bg-white px-3 py-2
-										outline-none`}
-									>
-										<p className="py-2">Mobile</p>
-										<p className="py-2">Home</p>
-										<p className="py-2">Work</p>
-									</div>
-								)}
-							</p>
-							<Form.Input
-								type="tel"
-								placeholder="+234 7062462466"
-								className="flex-1 bg-transparent outline-none"
-							/>
-						</div>
-					</Form.Item>
-
-					<div>
-						<Button
-							unstyled={true}
-							className="flex items-center gap-[2.83px] font-medium text-primary"
+					<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
+						<p
+							className="relative flex cursor-pointer items-center gap-[2px] pr-[12px] text-[14px]
+								font-normal"
+							onClick={toggleOptions("phone")}
 						>
-							<IconBox
-								icon="solar:add-circle-outline"
-								className="size-[13.33px] font-medium text-primary"
-							/>
-							Add Field
-						</Button>
+							Mobile
+							<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
+							{isShow === "phone" && (
+								<div
+									className={`absolute left-[-10px] top-full w-[100px] bg-white px-3 py-2
+									outline-none`}
+								>
+									<p className="py-2">Mobile</p>
+									<p className="py-2">Home</p>
+									<p className="py-2">Work</p>
+								</div>
+							)}
+						</p>
+						<Form.Input
+							type="tel"
+							placeholder="+234 7062462466"
+							className="flex-1 bg-transparent outline-none"
+						/>
 					</div>
-				</div>
+				</Form.Item>
 
-				<div className="space-y-3">
-					<Form.Item control={control} className="space-y-3" name="email">
-						<Form.Label className="font-medium">Email</Form.Label>
+				<Form.Item control={control} className="space-y-3" name="email">
+					<Form.Label className="font-medium">Email</Form.Label>
 
-						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
-							<p
-								className="relative flex cursor-pointer items-center gap-[2px] pr-[12px]
-									text-[14px] font-normal"
-								onClick={toggleOptions("email")}
-							>
-								Home
-								<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
-								{isShow === "email" && (
-									<div
-										className={`absolute left-[-10px] top-full w-[100px] bg-white px-3 py-2
-										outline-none`}
-									>
-										<p className="py-2">Home</p>
-										<p className="py-2">Work</p>
-									</div>
-								)}
-							</p>
-							<Form.Input
-								type="email"
-								placeholder="miraclegift@gmail.com"
-								className="flex-1 bg-transparent outline-none"
-							/>
-						</div>
-					</Form.Item>
-
-					<div>
-						<Button
-							unstyled={true}
-							className="flex items-center gap-[2.83px] font-medium text-primary"
+					<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
+						<p
+							className="relative flex cursor-pointer items-center gap-[2px] pr-[12px] text-[14px]
+								font-normal"
+							onClick={toggleOptions("email")}
 						>
-							<IconBox
-								icon="solar:add-circle-outline"
-								className="size-[13.33px] font-medium text-primary"
-							/>
-							Add Field
-						</Button>
+							Home
+							<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
+							{isShow === "email" && (
+								<div
+									className={`absolute left-[-10px] top-full w-[100px] bg-white px-3 py-2
+									outline-none`}
+								>
+									<p className="py-2">Home</p>
+									<p className="py-2">Work</p>
+								</div>
+							)}
+						</p>
+						<Form.Input
+							type="email"
+							placeholder="miraclegift@gmail.com"
+							className="flex-1 bg-transparent outline-none"
+						/>
 					</div>
-				</div>
+				</Form.Item>
 
 				<Form.Item control={control} name="about" className="space-y-3">
 					<Form.Label className="font-medium">About</Form.Label>
@@ -181,6 +154,34 @@ const EditProfile = () => {
 						placeholder="Enter a brief info about yourself"
 					/>
 				</Form.Item>
+
+				<Form.Item control={control} name="jobInfo" className="space-y-3">
+					<Form.Label className="font-medium">Job info</Form.Label>
+					<Form.Input
+						className="h-[44px] w-full rounded-[8px] border border-grey-200 px-[10px]
+							placeholder:text-grey-600"
+						placeholder="Enter your job title"
+					/>
+				</Form.Item>
+
+				<Form.Item control={control} name="company" className="space-y-3">
+					<Form.Label className="font-medium">Company name</Form.Label>
+					<Form.Input
+						className="h-[44px] w-full rounded-[8px] border border-grey-200 px-[10px]
+							placeholder:text-grey-600"
+						placeholder="Enter the name of your company"
+					/>
+				</Form.Item>
+
+				<div>
+					<Button unstyled={true} className="flex items-center gap-[2.83px] font-medium text-primary">
+						<IconBox
+							icon="solar:add-circle-outline"
+							className="size-[13.33px] font-medium text-primary"
+						/>
+						Add Field
+					</Button>
+				</div>
 
 				<Button disabled={true} theme={"primary"} className="mt-[36px]">
 					Save Changes

@@ -29,10 +29,10 @@ const detailsUI = details.map((detail) => (
 	<div
 		key={detail.detailCategory}
 		className="flex flex-wrap items-center justify-between gap-[12px] border-b border-solid
-			border-[#E7E7E7] pb-[12px] pt-[5px] text-[14px]"
+			border-grey-100 pb-[12px] pt-[5px] text-[14px]"
 	>
-		<p className="font-[400] text-[#7F7F7F]">{detail.detailCategory}</p>
-		<p className="font-medium text-[#353535]">{detail.detailContent}</p>
+		<p className="font-[400] text-grey-700">{detail.detailCategory}</p>
+		<p className="font-medium">{detail.detailContent}</p>
 	</div>
 ));
 
@@ -40,32 +40,36 @@ const actionButtons = [
 	{
 		text: "Share temporarily",
 		image: <UploadIcon />,
+		path: "#",
 	},
 
 	{
 		text: "Share permanently",
 		image: <UploadIcon />,
+		path: "#",
 	},
 
 	{
-		text: "Edit contact",
+		text: "Edit business card",
 		image: <EditIcon />,
+		path: "/profile/business-card/edit",
 	},
 
 	{
 		text: "Copy contact",
 		image: <CopyIcon />,
+		path: "#",
 	},
 ];
 
 const actionButtonsUI = actionButtons.map((items) => (
 	<div
 		key={items.text}
-		className="mb-1 flex items-center gap-[8px] rounded-[8px] bg-[#F1F1F1] px-6 py-[13px] text-[#1F6EC9]"
+		className="mb-1 flex items-center gap-[8px] rounded-[8px] bg-grey-50 px-6 py-[13px] text-primary"
 	>
 		{items.image}
 
-		<Link to="/profile/edit" className="text-[16px]">
+		<Link to={items.path} className="text-[16px]">
 			{items.text}
 		</Link>
 	</div>
@@ -76,13 +80,13 @@ const ContactDetail = () => {
 		<Main className="px-3">
 			<div
 				className="mx-auto mb-[24px] flex size-[110px] items-center justify-center rounded-[55px]
-					bg-[#F1F1F1] text-center"
+					bg-grey-50 text-center"
 			>
-				<IconBox icon="solar:user-bold" className="size-12 text-[#7F7F7F]" />
+				<IconBox icon="solar:user-bold" className="size-12 text-grey-700" />
 			</div>
-			<section className="mb-[36px] space-y-[24px] rounded-[16px] bg-[#fff] px-[12px] py-[24px]">
+			<section className="mb-[36px] space-y-[24px] rounded-[16px] bg-white px-[12px] py-[24px]">
 				<div className="space-y-[8px]">{detailsUI}</div>
-				<Link to="qr" className="flex items-center gap-[4px] text-[14px] font-normal text-[#DA700A]">
+				<Link to="qr" className="flex items-center gap-[4px] text-[14px] font-normal text-secondary">
 					Generate QR code <IconBox icon="quill:chevron-right" className="mt-[3px]" />
 				</Link>
 			</section>

@@ -5,3 +5,7 @@ export { default as shareBusinessCard } from "./share-business-card.svg";
 export { default as shareContactTemporarily } from "./share-contact-temporarily.svg";
 export { default as shareDocuments } from "./share-documents.svg";
 export { default as viewQrCode } from "./view-qr-code.svg";
+export { default as profileImage } from "./image.png";
+export { default as qrCode } from "./qr-code.svg";
+export { default as document } from "./document.svg";
+export { default as documentIco } from "./document-ico.svg";
