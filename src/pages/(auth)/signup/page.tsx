@@ -10,6 +10,7 @@ import { Main } from "../../_components";
 type SignupFormValues = {
 	first_name: string;
 	last_name: string;
+	user_name: string;
 	email: string;
 	phone: string;
 	password: string;
@@ -21,6 +22,7 @@ function SignupPage() {
 		defaultValues: {
 			first_name: "",
 			last_name: "",
+			user_name: "",
 			email: "",
 			phone: "",
 			password: "",
@@ -92,6 +94,15 @@ function SignupPage() {
 							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600"
 							placeholder="Enter your last name"
+						/>
+					</Form.Item>
+
+					<Form.Item control={control} name="user_name" className="gap-3">
+						<Form.Label className="font-medium">User name</Form.Label>
+						<Form.Input
+							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+								placeholder:text-grey-600"
+							placeholder="Enter your username"
 						/>
 					</Form.Item>
 
@@ -172,7 +183,14 @@ function SignupPage() {
 					</Form.Item>
 
 					<div className="mt-4 flex flex-col items-center gap-7">
-						<Button type="submit">Sign up</Button>
+						<Button
+							type="submit"
+							isLoading={methods.formState.isSubmitting}
+							isDisabled={!methods.formState.isValid}
+							disabled={!methods.formState.isValid || methods.formState.isSubmitting}
+						>
+							Sign up
+						</Button>
 
 						<p className="flex gap-1">
 							Already have an account?

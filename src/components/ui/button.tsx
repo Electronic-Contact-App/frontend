@@ -32,7 +32,7 @@ const button = tv(
 				true: "gap-2",
 			},
 
-			disabled: {
+			isDisabled: {
 				true: "cursor-not-allowed border-none bg-grey-300 text-white",
 			},
 		},
@@ -57,17 +57,17 @@ function Button(props: ButtonProps) {
 		theme,
 		type = "button",
 		unstyled,
+		isDisabled,
 		withArrows,
-		disabled,
 		...extraButtonProps
 	} = props;
 
 	const Component = asChild ? Slot : "button";
 
-	const BTN_CLASSES = !unstyled ? button({ className, disabled, size, theme, withArrows }) : className;
+	const BTN_CLASSES = !unstyled ? button({ className, isDisabled, size, theme, withArrows }) : className;
 
 	return (
-		<Component type={type} className={BTN_CLASSES} disabled={Boolean(disabled)} {...extraButtonProps}>
+		<Component type={type} className={BTN_CLASSES} {...extraButtonProps}>
 			{withArrows && <ArrowIcon />}
 
 			<Slottable>
@@ -79,4 +79,4 @@ function Button(props: ButtonProps) {
 	);
 }
 
-export default Button;
+export { Button };
