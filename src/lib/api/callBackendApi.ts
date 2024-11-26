@@ -1,6 +1,6 @@
-import { callApi } from "@zayne-labs/callapi";
+import { createFetchClient } from "@zayne-labs/callapi";
 
-const callBackendApi = callApi.create({
+const callBackendApi = createFetchClient({
 	baseURL: import.meta.env.VITE_BACKEND_URL,
 });
 

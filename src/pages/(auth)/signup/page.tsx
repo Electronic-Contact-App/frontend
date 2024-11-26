@@ -4,13 +4,13 @@ import { callBackendApi } from "@/lib/api/callBackendApi";
 import { useForm } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Main } from "../../_components";
 
 type SignupFormValues = {
 	first_name: string;
 	last_name: string;
-	user_name: string;
+	username: string;
 	email: string;
 	phone: string;
 	password: string;
@@ -18,11 +18,13 @@ type SignupFormValues = {
 };
 
 function SignupPage() {
+	const navigate = useNavigate();
+
 	const methods = useForm<SignupFormValues>({
 		defaultValues: {
 			first_name: "",
 			last_name: "",
-			user_name: "",
+			username: "",
 			email: "",
 			phone: "",
 			password: "",
@@ -33,12 +35,12 @@ function SignupPage() {
 	const { control } = methods;
 
 	const onSubmit = async (data: SignupFormValues) => {
-		const result = await callBackendApi("/auth/signup", {
+		await callBackendApi("/auth/signup", {
 			method: "POST",
 			body: data,
-		});
 
-		console.info(result);
+			onSuccess: () => void navigate("/2fa/verify"),
+		});
 	};
 
 	return (
@@ -52,27 +54,29 @@ function SignupPage() {
 			</header>
 
 			<section className="flex flex-col gap-6">
-				<article className="flex flex-col gap-5">
-					<Button theme="ghost" className="gap-6 font-medium text-grey-800">
-						<span className="size-6">
-							<IconBox icon="devicon:google" className="size-full" />
-						</span>
-						Sign Up with Google
-					</Button>
+				<div className="flex flex-col gap-3">
+					<h3 className="text-[16px] font-medium">Sign in with:</h3>
 
-					<Button theme="ghost" className="gap-6 font-medium text-grey-800">
-						<span className="size-6">
-							<IconBox icon="devicon:apple" className="size-full" />
-						</span>
-						Sign Up with Apple
-					</Button>
+					<article className="flex flex-col gap-5">
+						<div className="flex gap-4">
+							<Button theme="ghost" className="h-[42px]">
+								<IconBox icon="devicon:google" className="size-6" />
+							</Button>
+							<Button theme="ghost" className="h-[42px]">
+								<IconBox icon="entypo-social:linkedin-with-circle" className="size-6" />
+							</Button>
+							<Button theme="ghost" className="h-[42px]">
+								<IconBox icon="entypo-social:facebook-with-circle" className="size-6" />
+							</Button>
+						</div>
 
-					<div className="flex items-center justify-center gap-2 text-grey-300">
-						<span className="inline-block h-px w-full bg-grey-300" />
-						Or
-						<span className="inline-block h-px w-full bg-grey-300" />
-					</div>
-				</article>
+						<div className="flex items-center justify-center gap-2 text-grey-300">
+							<span className="inline-block h-px w-full bg-grey-300" />
+							Or
+							<span className="inline-block h-px w-full bg-grey-300" />
+						</div>
+					</article>
+				</div>
 
 				<Form.Root
 					methods={methods}
@@ -82,7 +86,7 @@ function SignupPage() {
 					<Form.Item control={control} name="first_name" className="gap-3">
 						<Form.Label className="font-medium">First name</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600"
 							placeholder="Enter your first name"
 						/>
@@ -91,16 +95,16 @@ function SignupPage() {
 					<Form.Item control={control} name="last_name" className="gap-3">
 						<Form.Label className="font-medium">Last name</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600"
 							placeholder="Enter your last name"
 						/>
 					</Form.Item>
 
-					<Form.Item control={control} name="user_name" className="gap-3">
+					<Form.Item control={control} name="username" className="gap-3">
 						<Form.Label className="font-medium">User name</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600"
 							placeholder="Enter your username"
 						/>
@@ -110,7 +114,7 @@ function SignupPage() {
 						<Form.Label className="font-medium">Email</Form.Label>
 						<Form.Input
 							type="email"
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600"
 							placeholder="Enter your email address"
 						/>
@@ -147,7 +151,7 @@ function SignupPage() {
 						<Form.Input
 							type="password"
 							classNames={{
-								inputGroup: `h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+								inputGroup: `h-11 rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600`,
 								eyeIcon: "text-grey-600",
 							}}
@@ -174,7 +178,7 @@ function SignupPage() {
 						<Form.Input
 							type="password"
 							classNames={{
-								inputGroup: `h-[44px] rounded-[8px] border border-grey-200 px-[10px]
+								inputGroup: `h-11 rounded-[8px] border border-grey-200 px-[10px]
 								placeholder:text-grey-600`,
 								eyeIcon: "text-grey-600",
 							}}

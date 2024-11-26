@@ -83,7 +83,7 @@ export function DropZoneImagePreview(props: ImagePreviewProps) {
 			render={(file) => {
 				return (
 					<li
-						key={file instanceof File ? file.name : file}
+						key={isFile(file) ? file.name : file}
 						className={cnMerge(
 							"flex items-center justify-between p-2 text-xs",
 							classNames?.listItem
