@@ -58,17 +58,16 @@ function Button(props: ButtonProps) {
 		type = "button",
 		unstyled,
 		withArrows,
+		disabled,
 		...extraButtonProps
 	} = props;
 
 	const Component = asChild ? Slot : "button";
 
-	const BTN_CLASSES = !unstyled
-		? button({ className, disabled: extraButtonProps.disabled, size, theme, withArrows })
-		: className;
+	const BTN_CLASSES = !unstyled ? button({ className, disabled, size, theme, withArrows }) : className;
 
 	return (
-		<Component type={type} className={BTN_CLASSES} {...extraButtonProps}>
+		<Component type={type} className={BTN_CLASSES} disabled={Boolean(disabled)} {...extraButtonProps}>
 			{withArrows && <ArrowIcon />}
 
 			<Slottable>

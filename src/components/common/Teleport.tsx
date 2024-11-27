@@ -1,24 +1,47 @@
+import { useEffectOnce, useMountEffect } from "@zayne-labs/toolkit/react";
+import { type AnyString, isString } from "@zayne-labs/toolkit/type-helpers";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 
 type ValidHtmlTags = keyof HTMLElementTagNameMap;
-type ValidSelectorAttributes = `data-${string}` | keyof React.AllHTMLAttributes<HTMLElement>;
-export type ValidSelector =
-	| `.${string}`
-	| `[${ValidSelectorAttributes}='${string}']`
-	| `#${string}`
-	| `${ValidHtmlTags}[${ValidSelectorAttributes}='${string}']`
-	| `data-${string}`
-	| ValidHtmlTags;
 
 type PortalProps = {
 	children: React.ReactNode;
-	to?: ValidSelector;
+	to?: ValidHtmlTags | AnyString | HTMLElement | null;
+	insertPosition?: InsertPosition;
 };
 
-function Teleport({ children, to = "#portal-holder" }: PortalProps) {
-	const teleportDestination = document.querySelector<HTMLElement>(to);
+function Teleport(props: PortalProps) {
+	const { children, to, insertPosition } = props;
 
-	return createPortal(children, teleportDestination ?? document.body);
+	const [reactPortal, setReactPortal] = useState<React.ReactPortal | null>(null);
+
+	useEffectOnce(() => {
+		if (!to || !insertPosition) return;
+
+		const destination = isString(to) ? document.querySelector<HTMLElement>(to) : to;
+
+		const tempWrapper = document.createElement("div");
+		tempWrapper.style.display = "contents";
+
+		destination?.insertAdjacentElement(insertPosition, tempWrapper);
+
+		setReactPortal(createPortal(children, tempWrapper));
+
+		return () => {
+			tempWrapper.remove();
+		};
+	});
+
+	useMountEffect(() => {
+		if (!to || insertPosition) return;
+
+		const destination = isString(to) ? document.querySelector<HTMLElement>(to) : to;
+
+		destination && setReactPortal(createPortal(children, destination));
+	});
+
+	return reactPortal;
 }
 
 export default Teleport;

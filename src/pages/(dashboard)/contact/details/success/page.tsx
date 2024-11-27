@@ -18,14 +18,14 @@ function SuccessPage() {
 					<h1 className="text-[18px] font-bold">Congratulations!!!</h1>
 
 					<p className="mt-3 text-[15px] text-grey-800">
-						You have successfully created your virtual business card
+						You have successfully shared your contact temporarily for 30 mins
 					</p>
 				</div>
 			</section>
 
 			<div className="flex gap-5">
 				<Button theme="ghost" className="mt-[60px]" asChild={true}>
-					<Link to="">View Card</Link>
+					<Link to="">Undo sharing</Link>
 				</Button>
 				<Button theme="primary" className="mt-[60px]" asChild={true}>
 					<Link to="">Go Home</Link>

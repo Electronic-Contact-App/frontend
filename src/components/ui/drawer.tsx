@@ -19,8 +19,8 @@ function DrawerOverlay(props: InferProps<typeof DrawerPrimitive.Overlay>) {
 	);
 }
 
-function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content>) {
-	const { className, children, ...restOfProps } = props;
+function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content> & { withHandle?: boolean }) {
+	const { className, children, withHandle = true, ...restOfProps } = props;
 
 	return (
 		<Portal>
@@ -34,7 +34,9 @@ function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content>) {
 				)}
 				{...restOfProps}
 			>
-				<span className="mx-auto mt-4 block h-2 w-[100px] rounded-full bg-shadcn-muted" />
+				{withHandle && (
+					<span className="mx-auto mt-4 block h-2 w-[100px] rounded-full bg-shadcn-muted" />
+				)}
 
 				{children}
 			</DrawerPrimitive.Content>
@@ -42,7 +44,7 @@ function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content>) {
 	);
 }
 
-function DrawerHeader(props: React.ComponentProps<"div">) {
+function DrawerHeader(props: InferProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -50,7 +52,7 @@ function DrawerHeader(props: React.ComponentProps<"div">) {
 	);
 }
 
-function DrawerFooter(props: React.ComponentProps<"div">) {
+function DrawerFooter(props: InferProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	return <div className={cnMerge("mt-auto flex flex-col gap-2 p-4", className)} {...restOfProps} />;

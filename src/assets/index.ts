@@ -9,3 +9,6 @@ export { default as profileImage } from "./image.png";
 export { default as qrCode } from "./qr-code.svg";
 export { default as document } from "./document.svg";
 export { default as documentIco } from "./document-ico.svg";
+export { default as createBusinessCard } from "./create-business-card.svg";
+export { default as ViewContacts } from "./view-contacts.svg";
+export { default as QRcode } from "./qr-code.svg";

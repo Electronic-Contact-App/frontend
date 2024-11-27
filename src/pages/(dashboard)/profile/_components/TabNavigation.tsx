@@ -1,28 +1,36 @@
 import { Tabs } from "@/components/ui";
+import { useLocation } from "@zayne-labs/toolkit/react";
 import { Link, useNavigate } from "react-router-dom";
 
 function TabNavigation() {
 	const navigate = useNavigate();
 
+	const [pathname, { triggerPopstate }] = useLocation((state) => state.pathname);
+
 	const handleTabChange = (value: string) => {
 		navigate(value === "contact" ? "/profile" : `/profile/${value}`);
+		triggerPopstate();
 	};
 
 	return (
 		<header className="flex flex-col gap-6">
-			<Link to="/history" className="text-right text-[14px] text-white">
-				View history
-			</Link>
+			<div className="relative flex items-center justify-center">
+				<h1 className="text-[18px] font-medium text-white">Profile</h1>
+
+				<Link to="/history" className="absolute right-0 text-right text-[14px] text-white">
+					View history
+				</Link>
+			</div>
 
 			<section>
-				<Tabs.Root defaultValue="contact" onValueChange={handleTabChange}>
+				<Tabs.Root value={pathname.split("/")[2] ?? "contact"} onValueChange={handleTabChange}>
 					<Tabs.List className="w-full justify-between rounded-[16px] bg-grey-50 px-3 py-1">
 						<Tabs.Trigger
 							value="contact"
 							className="rounded-[8px] px-3 py-[6px] text-[13.5px] font-medium text-grey-700
 								data-[state=active]:bg-white data-[state=active]:text-primary"
 						>
-							Contact Details
+							<Link to="/profile">Contact Details</Link>
 						</Tabs.Trigger>
 
 						<Tabs.Trigger
@@ -30,7 +38,7 @@ function TabNavigation() {
 							className="rounded-[8px] px-3 py-[6px] text-[13.5px] font-medium text-grey-700
 								data-[state=active]:bg-white data-[state=active]:text-primary"
 						>
-							Business Card
+							<Link to="/profile/business-card">Business Card</Link>
 						</Tabs.Trigger>
 
 						<Tabs.Trigger
@@ -38,7 +46,7 @@ function TabNavigation() {
 							className="rounded-[8px] px-3 py-[6px] text-[13.5px] font-medium text-grey-700
 								data-[state=active]:bg-white data-[state=active]:text-primary"
 						>
-							Document
+							<Link to="/profile/document">Document</Link>
 						</Tabs.Trigger>
 					</Tabs.List>
 				</Tabs.Root>

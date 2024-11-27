@@ -55,6 +55,7 @@ const config = withTV({
 			},
 
 			error: {
+				DEFAULT: "var(--color-error-500)",
 				50: "var(--color-error-50)",
 				100: "var(--color-error-100)",
 				200: "var(--color-error-200)",
@@ -98,19 +99,31 @@ const config = withTV({
 			icon: "var(--color-icon)",
 
 			shadcn: {
-				background: "hsl(0,0%,0%)",
-				foreground: "hsl(222.2 47.4% 11.2%)",
-				popover: "theme(colors.shadcn.background)",
-				primary: "theme(colors.shadcn.foreground)",
-				"primary-foreground": "hsl(210 40% 98%)",
-				"popover-foreground": "theme(colors.shadcn.foreground)",
-				accent: "hsl(210 40% 96.1%)",
-				"accent-foreground": "theme(colors.shadcn.foreground)",
-				input: "hsl(214.3 31.8% 91.4%)",
-				border: "theme(colors.shadcn.input)",
-				ring: "hsl(215 20.2% 65.1%)",
-				muted: "theme(colors.shadcn.accent)",
-				"muted-foreground": "hsl(215.4 16.3% 46.9%)",
+				background: "hsl(0, 0%, 100%)",
+				foreground: "hsl(222.2, 47.4%, 11.2%)",
+				primary: {
+					DEFAULT: "hsl(222.2, 47.4%, 11.2%)",
+					foreground: "hsl(210, 40%, 98%)",
+				},
+				secondary: {
+					DEFAULT: "hsl(210, 40%, 96.1%)",
+					foreground: "hsl(222.2, 47.4%, 11.2%)",
+				},
+				popover: {
+					DEFAULT: "hsl(0, 0%, 100%)",
+					foreground: "hsl(222.2, 47.4%, 11.2%)",
+				},
+				accent: {
+					DEFAULT: "hsl(210, 40%, 96.1%)",
+					foreground: "hsl(222.2, 47.4%, 11.2%)",
+				},
+				muted: {
+					DEFAULT: "hsl(210, 40%, 96.1%)",
+					foreground: "hsl(215.4, 16.3%, 46.9%)",
+				},
+				input: "hsl(214.3, 31.8%, 91.4%)",
+				border: "hsl(214.3, 31.8%, 91.4%)",
+				ring: "hsl(215, 20.2%, 65.1%)",
 			},
 		},
 
@@ -120,10 +133,6 @@ const config = withTV({
 				md: "768px",
 				sm: "480px",
 				xl: "1280px",
-			},
-
-			borderRadius: {
-				full: "50%",
 			},
 
 			fontFamily: {
