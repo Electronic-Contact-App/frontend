@@ -85,7 +85,6 @@ const EditProfile = () => {
 				<div className="space-y-3">
 					<Form.Item control={control} className="space-y-3" name="phone">
 						<Form.Label className="font-medium">Phone number</Form.Label>
-
 						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
 							<p
 								className="relative flex cursor-pointer items-center gap-[2px] pr-[12px]
