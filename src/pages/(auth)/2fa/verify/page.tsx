@@ -1,32 +1,38 @@
 import { IconBox } from "@/components/common";
 import { Button, Form, InputOTP } from "@/components/ui";
+import { callBackendApi } from "@/lib/api/callBackendApi";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { waitUntil } from "@zayne-labs/toolkit";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { Main } from "../../../_components";
 
 const TwoFactorAuthSchema = z.object({
-	otp: z.string().min(6, "Please enter a valid code!"),
+	otp_code: z.string().min(6, "Please enter a valid code!"),
 });
 
 type TwoFactorAuthFormData = z.infer<typeof TwoFactorAuthSchema>;
 
 function TwoFactorAuthPage() {
+	const navigate = useNavigate();
+
 	const methods = useForm<TwoFactorAuthFormData>({
 		resolver: zodResolver(TwoFactorAuthSchema),
 		mode: "onChange",
 		defaultValues: {
-			otp: "",
+			otp_code: "",
 		},
 	});
 
 	const { control, formState, handleSubmit } = methods;
 
 	const onSubmit = async (data: TwoFactorAuthFormData) => {
-		await waitUntil(2000);
+		await callBackendApi("/auth/otp-verification", {
+			method: "POST",
+			body: data,
 
-		console.info(data);
+			onSuccess: () => void navigate("/2fa/success"),
+		});
 	};
 
 	return (
@@ -41,7 +47,7 @@ function TwoFactorAuthPage() {
 
 			<section className="mt-10">
 				<Form.Root methods={methods} onSubmit={(event) => void handleSubmit(onSubmit)(event)}>
-					<Form.Item control={control} name="otp" className="flex flex-col gap-3">
+					<Form.Item control={control} name="otp_code" className="flex flex-col gap-3">
 						<Form.Label className="font-medium">Enter Code</Form.Label>
 
 						<Form.Controller

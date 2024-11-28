@@ -8,7 +8,7 @@ function TabNavigation() {
 	const [pathname, { triggerPopstate }] = useLocation((state) => state.pathname);
 
 	const handleTabChange = (value: string) => {
-		navigate(value === "contact" ? "/profile" : `/profile/${value}`);
+		void navigate(value === "contact" ? "/profile" : `/profile/${value}`);
 		triggerPopstate();
 	};
 

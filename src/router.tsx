@@ -169,5 +169,5 @@ const routes = createRoutesFromElements(
 const browserRouter = createBrowserRouter(routes);
 
 export function Router() {
-	return <RouterProvider future={{ v7_startTransition: true }} router={browserRouter} />;
+	return <RouterProvider router={browserRouter} />;
 }
