@@ -29,15 +29,6 @@ const EditProfile = () => {
 	return (
 		<Main className="">
 			<section className="relative mt-4 text-center">
-				{/* <Button
-					unstyled={true}
-					className="absolute -top-1/2 mx-1 flex size-11 items-center justify-center self-start
-						rounded-full bg-grey-100"
-					onClick={() => history.back()}
-				>
-					<ArrowIcon className="text-icon" />
-				</Button> */}
-
 				<h1>Edit Profile</h1>
 			</section>
 
