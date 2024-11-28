@@ -86,7 +86,10 @@ const ContactDetail = () => {
 			</div>
 			<section className="mb-[36px] space-y-[24px] rounded-[16px] bg-white px-[12px] py-[24px]">
 				<div className="space-y-[8px]">{detailsUI}</div>
-				<Link to="qr" className="flex items-center gap-[4px] text-[14px] font-normal text-secondary">
+				<Link
+					to="/profile/qr-code"
+					className="flex items-center gap-[4px] text-[14px] font-normal text-secondary"
+				>
 					Generate QR code <IconBox icon="quill:chevron-right" className="mt-[3px]" />
 				</Link>
 			</section>

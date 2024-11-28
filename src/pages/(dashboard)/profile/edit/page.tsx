@@ -1,7 +1,6 @@
 import { Button, Form } from "@/components/ui";
 import { IconBox } from "@/components/common";
 import { useForm } from "react-hook-form";
-import { ArrowIcon } from "@/components/icons";
 import { Main } from "@/pages/_components";
 import "react-international-phone/style.css";
 import { useState } from "react";
@@ -38,14 +37,14 @@ const EditProfile = () => {
 	return (
 		<Main className="">
 			<section className="relative mt-4 text-center">
-				<Button
+				{/* <Button
 					unstyled={true}
 					className="absolute -top-1/2 mx-1 flex size-11 items-center justify-center self-start
 						rounded-full bg-grey-100"
 					onClick={() => history.back()}
 				>
 					<ArrowIcon className="text-icon" />
-				</Button>
+				</Button> */}
 
 				<h1>Edit Profile</h1>
 			</section>
