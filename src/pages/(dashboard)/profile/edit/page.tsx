@@ -1,9 +1,9 @@
 import { Button, Form } from "@/components/ui";
 import { IconBox } from "@/components/common";
+import { Content, Item, Label, Portal, Root, Trigger } from "@/components/ui/dropdown-menu";
 import { useForm } from "react-hook-form";
 import { Main } from "@/pages/_components";
 import "react-international-phone/style.css";
-import { useState } from "react";
 
 type EditFormValues = {
 	firstname: "";
@@ -25,14 +25,6 @@ const EditProfile = () => {
 	});
 
 	const { control } = methods;
-	// useState that tracks which dropdown is open. If open it closes by setting to null
-	const [isShow, setIsShow] = useState<string | null>(null);
-
-	const toggleOptions =
-		(showId: string): React.MouseEventHandler<HTMLParagraphElement> =>
-		() => {
-			setIsShow(isShow === showId ? null : showId);
-		};
 
 	return (
 		<Main className="">
@@ -86,24 +78,21 @@ const EditProfile = () => {
 					<Form.Item control={control} className="space-y-3" name="phone">
 						<Form.Label className="font-medium">Phone number</Form.Label>
 						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
-							<p
-								className="relative flex cursor-pointer items-center gap-[2px] pr-[12px]
-									text-[14px] font-normal"
-								onClick={toggleOptions("phone")}
-							>
-								Mobile
-								<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
-								{isShow === "phone" && (
-									<div
-										className={`absolute left-[-10px] top-full w-[100px] bg-white px-3 py-2
-										outline-none`}
-									>
-										<p className="py-2">Mobile</p>
-										<p className="py-2">Home</p>
-										<p className="py-2">Work</p>
-									</div>
-								)}
-							</p>
+							<Root>
+								<Trigger>
+									<Button unstyled={true} className="flex cursor-pointer items-center gap-[2px]">
+										<Label className="p-0 text-[14px] font-normal">Home</Label>
+										<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
+									</Button>
+								</Trigger>
+								<Portal>
+									<Content>
+										<Item>Home</Item>
+										<Item>Work</Item>
+										<Item>Mobile</Item>
+									</Content>
+								</Portal>
+							</Root>
 							<Form.Input
 								type="tel"
 								placeholder="+234 7062462466"
@@ -112,6 +101,7 @@ const EditProfile = () => {
 						</div>
 					</Form.Item>
 
+					{/* Add field button */}
 					<div>
 						<Button
 							unstyled={true}
@@ -131,23 +121,20 @@ const EditProfile = () => {
 						<Form.Label className="font-medium">Email</Form.Label>
 
 						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
-							<p
-								className="relative flex cursor-pointer items-center gap-[2px] pr-[12px]
-									text-[14px] font-normal"
-								onClick={toggleOptions("email")}
-							>
-								Home
-								<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
-								{isShow === "email" && (
-									<div
-										className={`absolute left-[-10px] top-full w-[100px] bg-white px-3 py-2
-										outline-none`}
-									>
-										<p className="py-2">Home</p>
-										<p className="py-2">Work</p>
-									</div>
-								)}
-							</p>
+							<Root>
+								<Trigger>
+									<Button unstyled={true} className="flex cursor-pointer items-center gap-[2px]">
+										<Label className="p-0 text-[14px] font-normal">Home</Label>
+										<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
+									</Button>
+								</Trigger>
+								<Portal>
+									<Content>
+										<Item>Home</Item>
+										<Item>Work</Item>
+									</Content>
+								</Portal>
+							</Root>
 							<Form.Input
 								type="email"
 								placeholder="miraclegift@gmail.com"
@@ -187,5 +174,4 @@ const EditProfile = () => {
 		</Main>
 	);
 };
-
 export default EditProfile;

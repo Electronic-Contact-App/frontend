@@ -52,7 +52,7 @@ const actionButtons = [
 	{
 		text: "Edit business card",
 		image: <EditIcon />,
-		path: "/profile/business-card/edit",
+		path: "/profile/edit",
 	},
 
 	{
