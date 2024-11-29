@@ -91,6 +91,54 @@ const routes = createRoutesFromElements(
 				path="profile/settings/privacy/document"
 				Component={lazy(() => import("./pages/(dashboard)/profile/settings/privacy/document/page"))}
 			/>
+			<Route
+				path="profile/settings/privacy/business-card"
+				Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/business-card/page"))}
+			/>
+			<Route
+				path="profile/settings/privacy/document"
+				Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/document/page"))}
+			/>
+			<Route
+				path="profile/document/document-content"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/document-content/page")
+				)}
+			/>
+			<Route
+				path="profile/business-card/qr-code"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/business-card/qr-code/page")
+				)}
+			/>
+			<Route
+				path="profile/business-card/edit"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/business-card/edit/page")
+				)}
+			/>
+			<Route
+				path="profile/edit"
+				Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))}
+			/>
+			<Route
+				path="profile/document/choose-document"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/choose-document/page")
+				)}
+			/>
+			<Route
+				path="profile/document/upload-document"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload-document/page")
+				)}
+			/>
+			<Route
+				path="profile/document/upload-success"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload-success/page")
+				)}
+			/>
 		</Route>
 
 		<Route Component={AuthLayout}>
