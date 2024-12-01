@@ -1,5 +1,4 @@
 import { IconBox } from "@/components/common";
-import { ArrowIcon } from "@/components/icons";
 import { Button, Form } from "@/components/ui";
 import { Main } from "@/pages/_components";
 import { useForm } from "react-hook-form";
@@ -20,18 +19,11 @@ const UploadDocument = () => {
 
 	return (
 		<Main className="px-3">
-			<section className="relative mb-[41px] mt-4 text-center">
-				<Button
-					unstyled={true}
-					className="absolute -top-1/2 mx-1 flex size-11 items-center justify-center self-start
-						rounded-full bg-grey-100"
-					onClick={() => history.back()}
-				>
-					<ArrowIcon className="text-icon" />
-				</Button>
-
-				<h1>Upload Document</h1>
-			</section>
+			<header>
+				<section className="relative mb-[41px] mt-4 text-center">
+					<h1>Upload Document</h1>
+				</section>
+			</header>
 
 			<section className="grow text-[14px]">
 				<Form.Root methods={methods} className="gap-[45px]">

@@ -11,6 +11,7 @@ import { IconBox, Image, getElementList } from "@/components/common";
 import { ArrowIcon, NotificationIcon, ScanIcon } from "@/components/icons";
 import SearchIcon from "@/components/icons/SearchIcon";
 import { Form } from "@/components/ui";
+import { Link } from "react-router-dom";
 import { Main } from "../_components";
 
 const quickActions = [
@@ -68,6 +69,7 @@ function HomePage() {
 					<NotificationIcon />
 				</section>
 			</header>
+
 			<section>
 				<Form.Item withWrapper={false} name="">
 					<Form.InputGroup
@@ -82,6 +84,7 @@ function HomePage() {
 					</Form.InputGroup>
 				</Form.Item>
 			</section>
+
 			<section className="flex flex-col gap-3">
 				<article
 					className="flex h-[72px] flex-col justify-between rounded-[8px] border-[0.5px]
@@ -92,7 +95,7 @@ function HomePage() {
 						<p className="text-[14px]">Complete your profile</p>
 					</div>
 					<div className="flex gap-2 self-end">
-						<p className="text-[14px] text-primary">Go to profile</p>
+						<Link to="/profile" className="text-[14px] text-primary">Go to profile</Link>
 						<ArrowIcon className="rotate-180 text-primary" />
 					</div>
 				</article>

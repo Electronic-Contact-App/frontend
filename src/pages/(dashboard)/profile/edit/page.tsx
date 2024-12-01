@@ -1,8 +1,8 @@
-import { Button, Form } from "@/components/ui";
 import { IconBox } from "@/components/common";
+import { Button, Form } from "@/components/ui";
 import { Content, Item, Label, Portal, Root, Trigger } from "@/components/ui/dropdown-menu";
-import { useForm } from "react-hook-form";
 import { Main } from "@/pages/_components";
+import { useForm } from "react-hook-form";
 import "react-international-phone/style.css";
 
 type EditFormValues = {
@@ -28,9 +28,11 @@ const EditProfile = () => {
 
 	return (
 		<Main className="">
-			<section className="relative mt-4 text-center">
-				<h1>Edit Profile</h1>
-			</section>
+			<header>
+				<section className="relative mt-4 text-center">
+					<h1>Edit Profile</h1>
+				</section>
+			</header>
 
 			<div
 				className="mx-auto mb-[8px] mt-[44px] flex size-[110px] items-center justify-center

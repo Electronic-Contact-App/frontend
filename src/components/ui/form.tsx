@@ -1,6 +1,11 @@
 import { cnMerge } from "@/lib/utils/cn";
 import { toArray } from "@zayne-labs/toolkit";
-import { type PolymorphicProps, createCustomContext, useToggle } from "@zayne-labs/toolkit/react";
+import {
+	type InferProps,
+	type PolymorphicProps,
+	createCustomContext,
+	useToggle,
+} from "@zayne-labs/toolkit/react";
 import { getOtherChildren, getSlotElement } from "@zayne-labs/toolkit/react/utils";
 import { Fragment as ReactFragment, useEffect, useId, useMemo, useRef } from "react";
 import {
@@ -97,11 +102,12 @@ function FormItem<TControl, TFieldValues extends FieldValues = FieldValues>(
 	);
 }
 
-function FormLabel({ children, className }: { children: string; className?: string }) {
+function FormLabel(props: InferProps<"label">) {
 	const { uniqueId } = useStrictFormItemContext();
+	const { children, className, ...restOfProps } = props;
 
 	return (
-		<label htmlFor={uniqueId} className={className}>
+		<label htmlFor={uniqueId} className={className} {...restOfProps}>
 			{children}
 		</label>
 	);
@@ -242,7 +248,7 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 }
 
 function FormInput(
-	props: Omit<FormInputPrimitiveProps, "control" | "formState" | "id" | "name" | "ref"> & {
+	props: Omit<FormInputPrimitiveProps, "control" | "formState" | "name" | "ref"> & {
 		rules?: RegisterOptions;
 	}
 ) {

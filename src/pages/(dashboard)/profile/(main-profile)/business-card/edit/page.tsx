@@ -1,9 +1,8 @@
-import { Button, Form } from "@/components/ui";
 import { IconBox } from "@/components/common";
-import { useForm } from "react-hook-form";
-import { ArrowIcon } from "@/components/icons";
+import { Button, Form } from "@/components/ui";
 import { Main } from "@/pages/_components";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 type EditFormValues = {
 	firstname: "";
@@ -39,19 +38,12 @@ const EditProfile = () => {
 		};
 
 	return (
-		<Main className="">
-			<section className="relative mt-4 text-center">
-				<Button
-					unstyled={true}
-					className="absolute -top-1/2 mx-1 flex size-11 items-center justify-center self-start
-						rounded-full bg-grey-100"
-					onClick={() => history.back()}
-				>
-					<ArrowIcon className="text-icon" />
-				</Button>
-
-				<h1 className="">Edit business card</h1>
-			</section>
+		<Main>
+			<header>
+				<section className="relative mt-4 text-center">
+					<h1 className="">Edit business card</h1>
+				</section>
+			</header>
 
 			<div
 				className="mx-auto mb-[8px] mt-[44px] flex size-[110px] items-center justify-center
@@ -91,7 +83,7 @@ const EditProfile = () => {
 
 					<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
 						<p
-							className="relative flex cursor-pointer items-center gap-[2px] pr-[12px] text-[14px]
+							className="relative flex cursor-pointer items-center gap-[2px] pr-3 text-[14px]
 								font-normal"
 							onClick={toggleOptions("phone")}
 						>

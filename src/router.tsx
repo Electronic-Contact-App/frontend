@@ -100,12 +100,6 @@ const routes = createRoutesFromElements(
 				Component={lazy(() => import("./pages/(dashboard)/profile/(main-profile)/document/page"))}
 			/>
 			<Route
-				path="profile/document/document-content"
-				Component={lazy(
-					() => import("./pages/(dashboard)/profile/(main-profile)/document/document-content/page")
-				)}
-			/>
-			<Route
 				path="profile/business-card/qr-code"
 				Component={lazy(
 					() => import("./pages/(dashboard)/profile/(main-profile)/business-card/qr-code/page")
@@ -122,21 +116,27 @@ const routes = createRoutesFromElements(
 				Component={lazy(() => import("./pages/(dashboard)/profile/edit/page"))}
 			/>
 			<Route
-				path="profile/document/choose-document"
+				path="profile/document/choose"
 				Component={lazy(
-					() => import("./pages/(dashboard)/profile/(main-profile)/document/choose-document/page")
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/choose/page")
 				)}
 			/>
 			<Route
-				path="profile/document/upload-document"
+				path="profile/document/upload"
 				Component={lazy(
-					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload-document/page")
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload/page")
 				)}
 			/>
 			<Route
-				path="profile/document/upload-success"
+				path="profile/document/upload/photo"
 				Component={lazy(
-					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload-success/page")
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload/photo/page")
+				)}
+			/>
+			<Route
+				path="profile/document/upload/success"
+				Component={lazy(
+					() => import("./pages/(dashboard)/profile/(main-profile)/document/upload/success/page")
 				)}
 			/>
 		</Route>

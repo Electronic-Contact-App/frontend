@@ -132,7 +132,7 @@ function ContactDetailsPage() {
 					</div>
 				</section>
 
-				{/* <Drawer.Content withHandle={false} className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
+				{/* <Drawer.Content className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
 					<Drawer.Header className="flex flex-col gap-6 p-0">
 						<Drawer.Title className="flex items-center self-center">
 							<DotLottieReact
@@ -226,7 +226,7 @@ function ContactDetailsPage() {
 					</Drawer.Footer>
 				</Drawer.Content> */}
 
-				{/* <Drawer.Content withHandle={false} className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
+				{/* <Drawer.Content className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
 					<Drawer.Header className="flex flex-col gap-6 p-0">
 						<Drawer.Title className="flex items-center self-center">
 							<DotLottieReact
@@ -270,7 +270,7 @@ function ContactDetailsPage() {
 					</Drawer.Footer>
 				</Drawer.Content> */}
 
-				{/* <Drawer.Content withHandle={false} className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
+				{/* <Drawer.Content className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
 					<Drawer.Header className="flex flex-col gap-6 p-0">
 						<Drawer.Title className="flex items-center self-center">
 							<DotLottieReact
@@ -301,7 +301,7 @@ function ContactDetailsPage() {
 					</Drawer.Footer>
 				</Drawer.Content> */}
 
-				<Drawer.Content withHandle={false} className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
+				<Drawer.Content className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
 					<Drawer.Header className="flex flex-col gap-6 p-0">
 						<Drawer.Title className="flex items-center self-center">
 							<p className="text-[18px] font-medium">Confirm</p>

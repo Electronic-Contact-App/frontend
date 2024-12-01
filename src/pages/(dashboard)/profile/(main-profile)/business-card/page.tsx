@@ -1,8 +1,7 @@
 import { IconBox } from "@/components/common";
-import { Link } from "react-router-dom";
 import { CopyIcon, EditIcon, UploadIcon } from "@/components/icons";
 import { Main } from "@/pages/_components";
-// import { url } from "inspector";
+import { Link } from "react-router-dom";
 
 const actionButtons = [
 	{
@@ -29,19 +28,6 @@ const actionButtons = [
 		path: "#",
 	},
 ];
-
-const actionButtonsUI = actionButtons.map((items) => (
-	<div
-		key={items.text}
-		className="mb-1 flex items-center gap-[8px] rounded-[8px] bg-grey-50 px-6 py-[13px] text-primary"
-	>
-		{items.image}
-
-		<Link to={items.path} className="text-[16px]">
-			{items.text}
-		</Link>
-	</div>
-));
 
 const BusinessCard = () => {
 	return (
@@ -143,7 +129,19 @@ const BusinessCard = () => {
 					Generate QR code <IconBox icon="quill:chevron-right" className="mt-[3px]" />
 				</Link>
 			</section>
-			{actionButtonsUI}
+			{actionButtons.map((items) => (
+				<div
+					key={items.text}
+					className="mb-1 flex items-center gap-[8px] rounded-[8px] bg-grey-50 px-6 py-[13px]
+						text-primary"
+				>
+					{items.image}
+
+					<Link to={items.path} className="text-[16px]">
+						{items.text}
+					</Link>
+				</div>
+			))}
 		</Main>
 	);
 };
