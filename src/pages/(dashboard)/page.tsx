@@ -95,7 +95,9 @@ function HomePage() {
 						<p className="text-[14px]">Complete your profile</p>
 					</div>
 					<div className="flex gap-2 self-end">
-						<Link to="/profile" className="text-[14px] text-primary">Go to profile</Link>
+						<Link to="/profile" className="text-[14px] text-primary">
+							Go to profile
+						</Link>
 						<ArrowIcon className="rotate-180 text-primary" />
 					</div>
 				</article>
