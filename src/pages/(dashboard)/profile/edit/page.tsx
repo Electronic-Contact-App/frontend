@@ -1,6 +1,5 @@
 import { IconBox } from "@/components/common";
-import { Button, Form } from "@/components/ui";
-import { Content, Item, Label, Portal, Root, Trigger } from "@/components/ui/dropdown-menu";
+import { Button, DropdownMenu, Form } from "@/components/ui";
 import { Main } from "@/pages/_components";
 import { useForm } from "react-hook-form";
 import "react-international-phone/style.css";
@@ -71,21 +70,21 @@ const EditProfile = () => {
 					<Form.Item control={control} className="space-y-3" name="phone">
 						<Form.Label className="font-medium">Phone number</Form.Label>
 						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
-							<Root>
-								<Trigger>
+							<DropdownMenu.Root>
+								<DropdownMenu.Trigger>
 									<Button unstyled={true} className="flex cursor-pointer items-center gap-[2px]">
-										<Label className="p-0 text-[14px] font-normal">Home</Label>
+										<DropdownMenu.Label className="p-0 text-[14px] font-normal">
+											Home
+										</DropdownMenu.Label>
 										<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
 									</Button>
-								</Trigger>
-								<Portal>
-									<Content>
-										<Item>Home</Item>
-										<Item>Work</Item>
-										<Item>Mobile</Item>
-									</Content>
-								</Portal>
-							</Root>
+								</DropdownMenu.Trigger>
+								<DropdownMenu.Content>
+									<DropdownMenu.Item>Home</DropdownMenu.Item>
+									<DropdownMenu.Item>Work</DropdownMenu.Item>
+									<DropdownMenu.Item>Mobile</DropdownMenu.Item>
+								</DropdownMenu.Content>
+							</DropdownMenu.Root>
 							<Form.Input
 								type="tel"
 								placeholder="+234 7062462466"
@@ -114,20 +113,20 @@ const EditProfile = () => {
 						<Form.Label className="font-medium">Email</Form.Label>
 
 						<div className="flex h-[44px] items-center rounded-[8px] border border-grey-200 px-[10px]">
-							<Root>
-								<Trigger>
+							<DropdownMenu.Root>
+								<DropdownMenu.Trigger>
 									<Button unstyled={true} className="flex cursor-pointer items-center gap-[2px]">
-										<Label className="p-0 text-[14px] font-normal">Home</Label>
+										<DropdownMenu.Label className="p-0 text-[14px] font-normal">
+											Home
+										</DropdownMenu.Label>
 										<IconBox icon="solar:alt-arrow-down-outline" className="text-grey-700" />
 									</Button>
-								</Trigger>
-								<Portal>
-									<Content>
-										<Item>Home</Item>
-										<Item>Work</Item>
-									</Content>
-								</Portal>
-							</Root>
+								</DropdownMenu.Trigger>
+								<DropdownMenu.Content>
+									<DropdownMenu.Item>Home</DropdownMenu.Item>
+									<DropdownMenu.Item>Work</DropdownMenu.Item>
+								</DropdownMenu.Content>
+							</DropdownMenu.Root>
 							<Form.Input
 								type="email"
 								placeholder="miraclegift@gmail.com"
