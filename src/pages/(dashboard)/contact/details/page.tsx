@@ -45,7 +45,7 @@ function ContactDetailsPage() {
 		<div
 			key={detail.detailCategory}
 			className="flex flex-wrap items-center justify-between gap-[12px] border-b border-solid
-				border-[#E7E7E7] pb-[12px] pt-[5px] text-[14px]"
+				border-[#E7E7E7] pt-[5px] pb-[12px] text-[14px]"
 		>
 			<p className="font-[400] text-[#7F7F7F]">{detail.detailCategory}</p>
 			<p className="font-medium text-[#353535]">{detail.detailContent}</p>
@@ -301,7 +301,7 @@ function ContactDetailsPage() {
 					</Drawer.Footer>
 				</Drawer.Content> */}
 
-				<Drawer.Content className="max-w-full rounded-t-[16px] px-5 pb-5 pt-6">
+				<Drawer.Content className="max-w-full rounded-t-[16px] px-5 pt-6 pb-5">
 					<Drawer.Header className="flex flex-col gap-6 p-0">
 						<Drawer.Title className="flex items-center self-center">
 							<p className="text-[18px] font-medium">Confirm</p>

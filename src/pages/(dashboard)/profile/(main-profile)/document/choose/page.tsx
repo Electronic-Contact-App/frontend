@@ -46,14 +46,14 @@ const ChooseDocument = () => {
 								key={item}
 								control={control}
 								name="document"
-								className="flex-row items-center rounded-[8px] border border-grey-100 bg-white
+								className="border-grey-100 flex-row items-center rounded-[8px] border bg-white
 									px-[10px] py-[12.5px]"
 							>
 								<Form.Label className="w-full text-[14px] font-normal">{item}</Form.Label>
 								<Form.Input
 									value={item}
 									type="radio"
-									className="size-[20px] rounded-[8px] border-8 border-grey-700 px-[10px]"
+									className="border-grey-700 size-[20px] rounded-[8px] border-8 px-[10px]"
 								/>
 							</Form.Item>
 						)}
@@ -72,14 +72,14 @@ const ChooseDocument = () => {
 								key={item}
 								control={control}
 								name="numberInput"
-								className="flex-row items-center rounded-[8px] border border-grey-100 bg-white
+								className="border-grey-100 flex-row items-center rounded-[8px] border bg-white
 									px-[10px] py-[12.5px]"
 							>
 								<Form.Label className="w-full text-[14px] font-normal">{item}</Form.Label>
 								<Form.Input
 									value={item}
 									type="radio"
-									className="size-[20px] rounded-[8px] border-8 border-grey-700 px-[10px]"
+									className="border-grey-700 size-[20px] rounded-[8px] border-8 px-[10px]"
 								/>
 							</Form.Item>
 						)}
@@ -88,7 +88,7 @@ const ChooseDocument = () => {
 
 				<section className="mt-[36px] space-y-2">
 					<div className="flex items-center gap-2">
-						<span className="grid size-6 place-items-center rounded-full bg-grey-100">
+						<span className="bg-grey-100 grid size-6 place-items-center rounded-full">
 							<IconBox
 								icon="material-symbols:shield-lock-outline-rounded"
 								className="size-5 text-[hsl(137,99%,39%)]"

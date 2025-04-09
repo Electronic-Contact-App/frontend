@@ -95,10 +95,10 @@ function HomePage() {
 						<p className="text-[14px]">Complete your profile</p>
 					</div>
 					<div className="flex gap-2 self-end">
-						<Link to="/profile" className="text-[14px] text-primary">
+						<Link to="/profile" className="text-primary text-[14px]">
 							Go to profile
 						</Link>
-						<ArrowIcon className="rotate-180 text-primary" />
+						<ArrowIcon className="text-primary rotate-180" />
 					</div>
 				</article>
 			</section>
@@ -112,7 +112,7 @@ function HomePage() {
 					render={(action) => (
 						<li
 							key={action.title}
-							className="flex h-[90px] items-center justify-between rounded-[8px] bg-grey-50 px-3
+							className="bg-grey-50 flex h-[90px] items-center justify-between rounded-[8px] px-3
 								py-4"
 						>
 							<p className="text-[14px]">{action.title}</p>

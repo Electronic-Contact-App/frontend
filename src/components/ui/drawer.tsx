@@ -28,14 +28,14 @@ function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content> & { wit
 
 			<DrawerPrimitive.Content
 				className={cnMerge(
-					`fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border
-					bg-shadcn-background`,
+					`bg-shadcn-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col
+					rounded-t-[10px] border`,
 					className
 				)}
 				{...restOfProps}
 			>
 				{withHandle && (
-					<span className="mx-auto mt-4 block h-2 w-[100px] rounded-full bg-shadcn-muted" />
+					<span className="bg-shadcn-muted mx-auto mt-4 block h-2 w-[100px] rounded-full" />
 				)}
 
 				{children}
@@ -63,7 +63,7 @@ function DrawerTitle(props: InferProps<typeof DrawerPrimitive.Title>) {
 
 	return (
 		<DrawerPrimitive.Title
-			className={cnMerge("text-lg font-semibold leading-none tracking-tight", className)}
+			className={cnMerge("text-lg leading-none font-semibold tracking-tight", className)}
 			{...restOfProps}
 		/>
 	);
@@ -74,7 +74,7 @@ const DrawerDescription = (props: InferProps<typeof DrawerPrimitive.Description>
 
 	return (
 		<DrawerPrimitive.Description
-			className={cnMerge("text-sm text-shadcn-muted-foreground", className)}
+			className={cnMerge("text-shadcn-muted-foreground text-sm", className)}
 			{...restOfProps}
 		/>
 	);

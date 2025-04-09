@@ -41,9 +41,9 @@ function CreateBusinessCardFormPage() {
 			<section className="flex flex-col gap-6">
 				<Form.Root methods={methods} className="gap-4">
 					<div className="my-4 w-full justify-center justify-items-center">
-						<div className="flex size-20 items-center justify-center rounded-full bg-grey-100">
+						<div className="bg-grey-100 flex size-20 items-center justify-center rounded-full">
 							<span className="flex size-12">
-								<IconBox icon="tabler:user-filled" className="size-full text-grey-400" />
+								<IconBox icon="tabler:user-filled" className="text-grey-400 size-full" />
 							</span>
 						</div>
 						<p>Add Photo</p>
@@ -52,8 +52,8 @@ function CreateBusinessCardFormPage() {
 					<Form.Item control={control} name="name" className="gap-3">
 						<Form.Label className="font-medium">Name</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your full name"
 						/>
 					</Form.Item>
@@ -75,9 +75,9 @@ function CreateBusinessCardFormPage() {
 										[--react-international-phone-dropdown-item-background-color:white]
 										[--react-international-phone-font-size:14px]
 										[--react-international-phone-height:44px]
-										[&>.react-international-phone-input]:w-full
+										[&_.react-international-phone-country-selector>button>div]:pl-[10px]
 										[&_.react-international-phone-country-selector>button>div>img]:rounded-full
-										[&_.react-international-phone-country-selector>button>div]:pl-[10px]"
+										[&>.react-international-phone-input]:w-full"
 								/>
 							)}
 						/>
@@ -87,8 +87,8 @@ function CreateBusinessCardFormPage() {
 						<Form.Label className="font-medium">Email</Form.Label>
 						<Form.Input
 							type="email"
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your email address"
 						/>
 					</Form.Item>
@@ -96,8 +96,8 @@ function CreateBusinessCardFormPage() {
 					<Form.Item control={control} name="about" className="gap-3">
 						<Form.Label className="font-medium">About</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter a brief info about yourself"
 						/>
 					</Form.Item>
@@ -105,8 +105,8 @@ function CreateBusinessCardFormPage() {
 					<Form.Item control={control} name="jobtitle" className="gap-3">
 						<Form.Label className="font-medium">Job title</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your job title"
 						/>
 					</Form.Item>
@@ -114,21 +114,21 @@ function CreateBusinessCardFormPage() {
 					<Form.Item control={control} name="companyName" className="gap-3">
 						<Form.Label className="font-medium">Company name</Form.Label>
 						<Form.Input
-							className="h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter the name of your company"
 						/>
 					</Form.Item>
 
 					<div className="flex gap-2">
-						<span className="flex size-6 text-primary">
+						<span className="text-primary flex size-6">
 							<IconBox icon="iconoir:plus-circle" className="size-full" />
 						</span>
 						<p className="text-primary">Add field</p>
 					</div>
 
 					<div className="mt-4 flex flex-col items-center gap-7">
-						<Button type="submit" className="gap-2 bg-grey-300">
+						<Button type="submit" className="bg-grey-300 gap-2">
 							<span className="flex size-6">
 								<IconBox icon="iconoir:plus-circle" className="size-full" />
 							</span>

@@ -21,27 +21,27 @@ function TabNavigation() {
 
 			<section>
 				<Tabs.Root value={pathname.split("/")[2] ?? "contact"} onValueChange={handleTabChange}>
-					<Tabs.List className="w-full justify-between rounded-[16px] bg-grey-50 px-3 py-1">
+					<Tabs.List className="bg-grey-50 w-full justify-between rounded-[16px] px-3 py-1">
 						<Tabs.Trigger
 							value="contact"
-							className="rounded-[8px] px-3 py-[6px] text-[13.5px] font-medium text-grey-700
-								data-[state=active]:bg-white data-[state=active]:text-primary"
+							className="text-grey-700 data-[state=active]:text-primary rounded-[8px] px-3 py-[6px]
+								text-[13.5px] font-medium data-[state=active]:bg-white"
 						>
 							<Link to="/profile">Contact Details</Link>
 						</Tabs.Trigger>
 
 						<Tabs.Trigger
 							value="business-card"
-							className="rounded-[8px] px-3 py-[6px] text-[13.5px] font-medium text-grey-700
-								data-[state=active]:bg-white data-[state=active]:text-primary"
+							className="text-grey-700 data-[state=active]:text-primary rounded-[8px] px-3 py-[6px]
+								text-[13.5px] font-medium data-[state=active]:bg-white"
 						>
 							<Link to="/profile/business-card">Business Card</Link>
 						</Tabs.Trigger>
 
 						<Tabs.Trigger
 							value="document"
-							className="rounded-[8px] px-3 py-[6px] text-[13.5px] font-medium text-grey-700
-								data-[state=active]:bg-white data-[state=active]:text-primary"
+							className="text-grey-700 data-[state=active]:text-primary rounded-[8px] px-3 py-[6px]
+								text-[13.5px] font-medium data-[state=active]:bg-white"
 						>
 							<Link to="/profile/document">Document</Link>
 						</Tabs.Trigger>

@@ -13,7 +13,7 @@ function DocumentPage() {
 
 			<section className="space-y-3">
 				<div className="flex items-center gap-2">
-					<span className="grid size-6 place-items-center rounded-full bg-grey-100">
+					<span className="bg-grey-100 grid size-6 place-items-center rounded-full">
 						<IconBox
 							icon="material-symbols:shield-lock-outline-rounded"
 							className="size-5 text-[hsl(137,99%,39%)]"

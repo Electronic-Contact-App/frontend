@@ -7,7 +7,7 @@ function AuthLayout() {
 		<div>
 			<Button
 				unstyled={true}
-				className="mt-4 flex size-11 items-center justify-center self-start rounded-full bg-grey-100"
+				className="bg-grey-100 mt-4 flex size-11 items-center justify-center self-start rounded-full"
 				onClick={() => history.back()}
 			>
 				<ArrowIcon className="text-icon" />

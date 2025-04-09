@@ -50,10 +50,10 @@ const SigninPage = () => {
 					</Button>
 				</div>
 
-				<div className="flex items-center justify-center gap-2 text-grey-300">
-					<span className="inline-block h-px w-full bg-grey-300" />
+				<div className="text-grey-300 flex items-center justify-center gap-2">
+					<span className="bg-grey-300 inline-block h-px w-full" />
 					Or
-					<span className="inline-block h-px w-full bg-grey-300" />
+					<span className="bg-grey-300 inline-block h-px w-full" />
 				</div>
 			</section>
 
@@ -65,8 +65,8 @@ const SigninPage = () => {
 				<Form.Item control={control} name="user_identifier" className="space-y-3">
 					<Form.Label className="font-medium">Email address/Username</Form.Label>
 					<Form.Input
-						className="h-11 w-full rounded-[8px] border border-grey-200 px-[10px]
-							placeholder:text-grey-600"
+						className="border-grey-200 placeholder:text-grey-600 h-11 w-full rounded-[8px] border
+							px-[10px]"
 						placeholder="Enter your email address or username"
 					/>
 				</Form.Item>
@@ -76,8 +76,8 @@ const SigninPage = () => {
 					<Form.Input
 						type="password"
 						classNames={{
-							inputGroup: `h-11 rounded-[8px] border border-grey-200 px-[10px]
-							placeholder:text-grey-600`,
+							inputGroup: `border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+							px-[10px]`,
 							eyeIcon: "text-grey-600",
 						}}
 						placeholder="Enter your password"
@@ -87,7 +87,7 @@ const SigninPage = () => {
 				<div className="flex items-center justify-between">
 					<Form.Item className="flex-row items-center gap-[8px]" name="">
 						<Form.Input
-							className="size-6 w-[18px] rounded-[8px] border border-grey-200 px-[10px]
+							className="border-grey-200 size-6 w-[18px] rounded-[8px] border px-[10px]
 								accent-[#DA700A]"
 							type="checkbox"
 						/>

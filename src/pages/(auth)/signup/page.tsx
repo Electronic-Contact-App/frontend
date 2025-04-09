@@ -48,7 +48,7 @@ function SignupPage() {
 			<header>
 				<h1 className="text-[24px] font-bold">Welcome to Chacha</h1>
 
-				<p className="mt-2 text-[15px] leading-[20px] text-grey-500">
+				<p className="text-grey-500 mt-2 text-[15px] leading-[20px]">
 					Please provide your information to enjoy a seamless experience.
 				</p>
 			</header>
@@ -70,10 +70,10 @@ function SignupPage() {
 							</Button>
 						</div>
 
-						<div className="flex items-center justify-center gap-2 text-grey-300">
-							<span className="inline-block h-px w-full bg-grey-300" />
+						<div className="text-grey-300 flex items-center justify-center gap-2">
+							<span className="bg-grey-300 inline-block h-px w-full" />
 							Or
-							<span className="inline-block h-px w-full bg-grey-300" />
+							<span className="bg-grey-300 inline-block h-px w-full" />
 						</div>
 					</article>
 				</div>
@@ -86,8 +86,8 @@ function SignupPage() {
 					<Form.Item control={control} name="first_name" className="gap-3">
 						<Form.Label className="font-medium">First name</Form.Label>
 						<Form.Input
-							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your first name"
 						/>
 					</Form.Item>
@@ -95,8 +95,8 @@ function SignupPage() {
 					<Form.Item control={control} name="last_name" className="gap-3">
 						<Form.Label className="font-medium">Last name</Form.Label>
 						<Form.Input
-							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your last name"
 						/>
 					</Form.Item>
@@ -104,8 +104,8 @@ function SignupPage() {
 					<Form.Item control={control} name="username" className="gap-3">
 						<Form.Label className="font-medium">User name</Form.Label>
 						<Form.Input
-							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your username"
 						/>
 					</Form.Item>
@@ -114,8 +114,8 @@ function SignupPage() {
 						<Form.Label className="font-medium">Email</Form.Label>
 						<Form.Input
 							type="email"
-							className="h-11 rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600"
+							className="border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+								px-[10px]"
 							placeholder="Enter your email address"
 						/>
 					</Form.Item>
@@ -137,9 +137,9 @@ function SignupPage() {
 										[--react-international-phone-dropdown-item-background-color:white]
 										[--react-international-phone-font-size:14px]
 										[--react-international-phone-height:44px]
-										[&>.react-international-phone-input]:w-full
+										[&_.react-international-phone-country-selector>button>div]:pl-[10px]
 										[&_.react-international-phone-country-selector>button>div>img]:rounded-full
-										[&_.react-international-phone-country-selector>button>div]:pl-[10px]"
+										[&>.react-international-phone-input]:w-full"
 								/>
 							)}
 						/>
@@ -151,21 +151,21 @@ function SignupPage() {
 						<Form.Input
 							type="password"
 							classNames={{
-								inputGroup: `h-11 rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600`,
+								inputGroup: `border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+								px-[10px]`,
 								eyeIcon: "text-grey-600",
 							}}
 							placeholder="Enter your password"
 						/>
 
-						<article className="text-[12px] text-grey-800">
+						<article className="text-grey-800 text-[12px]">
 							<p>Password must have: </p>
 
 							<div className="mt-2 flex flex-wrap gap-2">
-								<span className="rounded-[24px] border border-grey-800 px-2 py-[5px]">
+								<span className="border-grey-800 rounded-[24px] border px-2 py-[5px]">
 									at least 1 special character
 								</span>
-								<span className="rounded-[24px] border border-grey-800 px-2 py-[5px]">
+								<span className="border-grey-800 rounded-[24px] border px-2 py-[5px]">
 									8 characters min
 								</span>
 							</div>
@@ -178,8 +178,8 @@ function SignupPage() {
 						<Form.Input
 							type="password"
 							classNames={{
-								inputGroup: `h-11 rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600`,
+								inputGroup: `border-grey-200 placeholder:text-grey-600 h-11 rounded-[8px] border
+								px-[10px]`,
 								eyeIcon: "text-grey-600",
 							}}
 							placeholder="Re-enter your password"
@@ -198,7 +198,7 @@ function SignupPage() {
 
 						<p className="flex gap-1">
 							Already have an account?
-							<Link to="/signin" className="font-medium text-primary">
+							<Link to="/signin" className="text-primary font-medium">
 								Sign In
 							</Link>
 						</p>

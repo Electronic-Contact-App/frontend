@@ -34,7 +34,7 @@ function ResetPasswordPage() {
 			<header>
 				<h1 className="text-[24px] font-bold">Reset Password</h1>
 
-				<p className="mt-2 text-[15px] leading-[20px] text-grey-500">
+				<p className="text-grey-500 mt-2 text-[15px] leading-[20px]">
 					Create a new password you can remember
 				</p>
 			</header>
@@ -51,21 +51,21 @@ function ResetPasswordPage() {
 						<Form.Input
 							type="password"
 							classNames={{
-								inputGroup: `h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600`,
+								inputGroup: `border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px]
+								border px-[10px]`,
 								eyeIcon: "text-grey-600",
 							}}
 							placeholder="Enter your password"
 						/>
 
-						<article className="text-[12px] text-grey-800">
+						<article className="text-grey-800 text-[12px]">
 							<p>Password must have: </p>
 
 							<div className="mt-2 flex flex-wrap gap-2">
-								<span className="rounded-[24px] border border-grey-800 px-2 py-[5px]">
+								<span className="border-grey-800 rounded-[24px] border px-2 py-[5px]">
 									at least 1 special character
 								</span>
-								<span className="rounded-[24px] border border-grey-800 px-2 py-[5px]">
+								<span className="border-grey-800 rounded-[24px] border px-2 py-[5px]">
 									8 characters min
 								</span>
 							</div>
@@ -78,8 +78,8 @@ function ResetPasswordPage() {
 						<Form.Input
 							type="password"
 							classNames={{
-								inputGroup: `h-[44px] rounded-[8px] border border-grey-200 px-[10px]
-								placeholder:text-grey-600`,
+								inputGroup: `border-grey-200 placeholder:text-grey-600 h-[44px] rounded-[8px]
+								border px-[10px]`,
 								eyeIcon: "text-grey-600",
 							}}
 							placeholder="Re-enter your password"
@@ -87,7 +87,7 @@ function ResetPasswordPage() {
 					</Form.Item>
 
 					<div className="flex items-center gap-2">
-						<span className="grid size-8 place-items-center rounded-full bg-grey-100">
+						<span className="bg-grey-100 grid size-8 place-items-center rounded-full">
 							<IconBox
 								icon="material-symbols:shield-lock-outline-rounded"
 								className="size-5 text-[hsl(137,99%,39%)]"

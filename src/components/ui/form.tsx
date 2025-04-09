@@ -213,9 +213,9 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 				type={type === "password" && isPasswordVisible ? "text" : type}
 				className={cnMerge(
 					!inputTypesWithoutFullWith.has(type) && "flex w-full",
-					`bg-transparent text-sm file:border-0 file:bg-transparent
-					placeholder:text-shadcn-muted-foreground focus-visible:outline-hidden
-					disabled:cursor-not-allowed disabled:opacity-50`,
+					`placeholder:text-shadcn-muted-foreground bg-transparent text-sm file:border-0
+					file:bg-transparent focus-visible:outline-hidden disabled:cursor-not-allowed
+					disabled:opacity-50`,
 					className,
 					classNames?.input,
 					type !== "password" && name && errors?.[name] && classNames?.error
@@ -300,7 +300,7 @@ function FormTextAreaPrimitive<TFieldValues extends FieldValues>(
 			id={id}
 			name={name}
 			className={cnMerge(
-				`w-full bg-transparent text-sm placeholder:text-shadcn-muted-foreground
+				`placeholder:text-shadcn-muted-foreground w-full bg-transparent text-sm
 				focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50`,
 				className,
 				name && errors?.[name] && errorClassName

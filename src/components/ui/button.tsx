@@ -17,11 +17,11 @@ const button = tv(
 
 		variants: {
 			theme: {
-				ghost: "border border-primary bg-transparent text-primary",
+				ghost: "border-primary text-primary border bg-transparent",
 
 				primary: "bg-primary text-white",
 
-				"primary-inverted": "border border-blue-300 bg-blue-50 text-primary",
+				"primary-inverted": "text-primary border border-blue-300 bg-blue-50",
 			},
 
 			size: {
@@ -34,7 +34,7 @@ const button = tv(
 			},
 
 			isDisabled: {
-				true: "cursor-not-allowed border-none bg-grey-300 text-white",
+				true: "bg-grey-300 cursor-not-allowed border-none text-white",
 			},
 		},
 

@@ -34,7 +34,7 @@ function VerifyResetOTPPage() {
 			<header>
 				<h1 className="mt-6 text-[27px] font-medium">Let’s us verify it’s you</h1>
 
-				<p className="mt-2 text-[14px] text-grey-700">
+				<p className="text-grey-700 mt-2 text-[14px]">
 					Enter the 6 digit code sent to miraclegift@gmail.com to verify your account
 				</p>
 			</header>
@@ -61,49 +61,49 @@ function VerifyResetOTPPage() {
 										<InputOTP.Slot
 											index={0}
 											classNames={{
-												base: "size-11 rounded-[4px] border-[0.5px] border-grey-200 bg-grey-50",
+												base: "border-grey-200 bg-grey-50 size-11 rounded-[4px] border-[0.5px]",
 												isActive: "ring-secondary",
 											}}
 										/>
 										<InputOTP.Slot
 											index={1}
 											classNames={{
-												base: "size-11 rounded-[4px] border-[0.5px] border-grey-200 bg-grey-50",
+												base: "border-grey-200 bg-grey-50 size-11 rounded-[4px] border-[0.5px]",
 												isActive: "ring-secondary",
 											}}
 										/>
 										<InputOTP.Slot
 											index={2}
 											classNames={{
-												base: "size-11 rounded-[4px] border-[0.5px] border-grey-200 bg-grey-50",
+												base: "border-grey-200 bg-grey-50 size-11 rounded-[4px] border-[0.5px]",
 												isActive: "ring-secondary",
 											}}
 										/>
 										<InputOTP.Slot
 											index={3}
 											classNames={{
-												base: "size-11 rounded-[4px] border-[0.5px] border-grey-200 bg-grey-50",
+												base: "border-grey-200 bg-grey-50 size-11 rounded-[4px] border-[0.5px]",
 												isActive: "ring-secondary",
 											}}
 										/>
 										<InputOTP.Slot
 											index={4}
 											classNames={{
-												base: "size-11 rounded-[4px] border-[0.5px] border-grey-200 bg-grey-50",
+												base: "border-grey-200 bg-grey-50 size-11 rounded-[4px] border-[0.5px]",
 												isActive: "ring-secondary",
 											}}
 										/>
 										<InputOTP.Slot
 											index={5}
 											classNames={{
-												base: "size-11 rounded-[4px] border-[0.5px] border-grey-200 bg-grey-50",
+												base: "border-grey-200 bg-grey-50 size-11 rounded-[4px] border-[0.5px]",
 												isActive: "ring-secondary",
 											}}
 										/>
 									</InputOTP.Root>
 
 									<div className="flex items-center gap-2">
-										<span className="grid size-8 place-items-center rounded-full bg-grey-100">
+										<span className="bg-grey-100 grid size-8 place-items-center rounded-full">
 											<IconBox
 												icon="material-symbols:shield-lock-outline-rounded"
 												className="size-5 text-[hsl(137,99%,39%)]"
@@ -126,10 +126,10 @@ function VerifyResetOTPPage() {
 						Verify
 					</Button>
 
-					<p className="mt-6 text-grey-800">
+					<p className="text-grey-800 mt-6">
 						Didn't get code?{" "}
 						<span
-							className="ml-[6px] inline-block font-medium text-secondary underline
+							className="text-secondary ml-[6px] inline-block font-medium underline
 								underline-offset-2"
 						>
 							Resend

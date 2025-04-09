@@ -68,12 +68,12 @@ const settingsLinks = {
 		},
 		{
 			link: null,
-			icon: <IconBox icon="solar:logout-2-linear" className="size-full text-error" />,
+			icon: <IconBox icon="solar:logout-2-linear" className="text-error size-full" />,
 			title: <p className="text-error">Log out</p>,
 		},
 		{
 			link: null,
-			icon: <IconBox icon="solar:trash-bin-trash-outline" className="size-full text-error" />,
+			icon: <IconBox icon="solar:trash-bin-trash-outline" className="text-error size-full" />,
 			title: <p className="text-error">Delete account</p>,
 		},
 	],
@@ -123,13 +123,13 @@ function SettingsPage() {
 							to={item.link}
 							className={cnJoin(
 								"flex items-center justify-between",
-								index !== array.length - 1 && "border-b border-b-grey-100 pb-3 pt-1"
+								index !== array.length - 1 && "border-b-grey-100 border-b pt-1 pb-3"
 							)}
 						>
 							<div className="flex items-center gap-3">
 								<span className="block size-6">
 									{isString(item.icon) ? (
-										<IconBox icon={item.icon} className="size-full text-grey-700" />
+										<IconBox icon={item.icon} className="text-grey-700 size-full" />
 									) : (
 										item.icon
 									)}
@@ -140,7 +140,7 @@ function SettingsPage() {
 							<span className="block size-5">
 								<IconBox
 									icon="material-symbols:chevron-right-rounded"
-									className="size-full text-grey-800"
+									className="text-grey-800 size-full"
 								/>
 							</span>
 						</Link>
@@ -157,13 +157,13 @@ function SettingsPage() {
 							to={item.link}
 							className={cnJoin(
 								"flex items-center justify-between",
-								index !== array.length - 1 && "border-b border-b-grey-100 pb-3 pt-1"
+								index !== array.length - 1 && "border-b-grey-100 border-b pt-1 pb-3"
 							)}
 						>
 							<div className="flex items-center gap-3">
 								<span className="block size-6">
 									{isString(item.icon) ? (
-										<IconBox icon={item.icon} className="size-full text-grey-700" />
+										<IconBox icon={item.icon} className="text-grey-700 size-full" />
 									) : (
 										item.icon
 									)}
@@ -174,7 +174,7 @@ function SettingsPage() {
 							<span className="block size-5">
 								<IconBox
 									icon="material-symbols:chevron-right-rounded"
-									className="size-full text-grey-800"
+									className="text-grey-800 size-full"
 								/>
 							</span>
 						</Link>
@@ -192,13 +192,13 @@ function SettingsPage() {
 								to={item.link as string}
 								className={cnJoin(
 									"flex items-center justify-between",
-									index !== array.length - 1 && "border-b border-b-grey-100 pb-3 pt-1"
+									index !== array.length - 1 && "border-b-grey-100 border-b pt-1 pb-3"
 								)}
 							>
 								<div className="flex items-center gap-3">
 									<span className="block size-6">
 										{isString(item.icon) ? (
-											<IconBox icon={item.icon} className="size-full text-grey-700" />
+											<IconBox icon={item.icon} className="text-grey-700 size-full" />
 										) : (
 											item.icon
 										)}
@@ -210,7 +210,7 @@ function SettingsPage() {
 								<span className="block size-5">
 									<IconBox
 										icon="material-symbols:chevron-right-rounded"
-										className="size-full text-grey-800"
+										className="text-grey-800 size-full"
 									/>
 								</span>
 							</Link>
@@ -220,13 +220,13 @@ function SettingsPage() {
 									unstyled={true}
 									className={cnJoin(
 										"flex w-full items-center justify-between",
-										index !== array.length - 1 && "border-b border-b-grey-100 pb-3 pt-1"
+										index !== array.length - 1 && "border-b-grey-100 border-b pt-1 pb-3"
 									)}
 								>
 									<div className="flex items-center gap-3">
 										<span className="block size-6">
 											{isString(item.icon) ? (
-												<IconBox icon={item.icon} className="size-full text-grey-700" />
+												<IconBox icon={item.icon} className="text-grey-700 size-full" />
 											) : (
 												item.icon
 											)}
@@ -238,7 +238,7 @@ function SettingsPage() {
 									<span className="block size-5">
 										<IconBox
 											icon="material-symbols:chevron-right-rounded"
-											className="size-full text-grey-800"
+											className="text-grey-800 size-full"
 										/>
 									</span>
 								</Button>

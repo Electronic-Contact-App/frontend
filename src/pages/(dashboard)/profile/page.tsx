@@ -55,20 +55,20 @@ const ContactDetail = () => {
 	return (
 		<Main className="px-3">
 			<header
-				className="mx-auto mb-[24px] flex size-[110px] items-center justify-center rounded-[55px]
-					bg-grey-50 text-center"
+				className="bg-grey-50 mx-auto mb-[24px] flex size-[110px] items-center justify-center
+					rounded-[55px] text-center"
 			>
-				<IconBox icon="solar:user-bold" className="size-12 text-grey-700" />
+				<IconBox icon="solar:user-bold" className="text-grey-700 size-12" />
 			</header>
 			<section className="mb-[36px] space-y-[24px] rounded-[16px] bg-white px-[12px] py-[24px]">
 				<div className="space-y-[8px]">
 					{details.map((detail) => (
 						<div
 							key={detail.detailCategory}
-							className="flex flex-wrap items-center justify-between gap-[12px] border-b
-								border-solid border-grey-100 pb-[12px] pt-[5px] text-[14px]"
+							className="border-grey-100 flex flex-wrap items-center justify-between gap-[12px]
+								border-b border-solid pt-[5px] pb-[12px] text-[14px]"
 						>
-							<p className="font-[400] text-grey-700">{detail.detailCategory}</p>
+							<p className="text-grey-700 font-[400]">{detail.detailCategory}</p>
 							<p className="font-medium">{detail.detailContent}</p>
 						</div>
 					))}
@@ -76,7 +76,7 @@ const ContactDetail = () => {
 
 				<Link
 					to="/profile/qr-code"
-					className="flex items-center gap-[4px] text-[14px] font-normal text-secondary"
+					className="text-secondary flex items-center gap-[4px] text-[14px] font-normal"
 				>
 					Generate QR code <IconBox icon="quill:chevron-right" className="mt-[3px]" />
 				</Link>
@@ -85,8 +85,8 @@ const ContactDetail = () => {
 			{actionButtons.map((items) => (
 				<div
 					key={items.text}
-					className="mb-1 flex items-center gap-[8px] rounded-[8px] bg-grey-50 px-6 py-[13px]
-						text-primary"
+					className="bg-grey-50 text-primary mb-1 flex items-center gap-[8px] rounded-[8px] px-6
+						py-[13px]"
 				>
 					{items.image}
 

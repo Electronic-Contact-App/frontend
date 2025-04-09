@@ -28,7 +28,7 @@ export function DropZoneInput(props: DropZoneInputProps) {
 		<DropZone
 			onUpload={handleFileUpload}
 			classNames={{
-				base: `items-center gap-2 rounded-[8px] border-[3px] border-dashed border-grey-600 px-4
+				base: `border-grey-600 items-center gap-2 rounded-[8px] border-[3px] border-dashed px-4
 				py-[60px]`,
 			}}
 			allowedFileTypes={[]}
@@ -75,8 +75,8 @@ export function DropZoneImagePreview(props: ImagePreviewProps) {
 	return (
 		<ImagePreviewList
 			className={cnMerge(
-				`relative mt-[13px] max-h-[140px] divide-y divide-grey-600 overflow-y-auto overscroll-y-contain
-				rounded-md border border-grey-600`,
+				`divide-grey-600 border-grey-600 relative mt-[13px] max-h-[140px] divide-y overflow-y-auto
+				overscroll-y-contain rounded-md border`,
 				classNames?.listContainer
 			)}
 			each={newFilesArray}
@@ -127,7 +127,7 @@ export function DropZoneImagePreview(props: ImagePreviewProps) {
 							<button type="button" onClick={handleRemoveImage(file)}>
 								<IconBox
 									icon="lucide:trash-2"
-									className="size-[20px] text-error-500 active:scale-110"
+									className="text-error-500 size-[20px] active:scale-110"
 								/>
 							</button>
 						)}

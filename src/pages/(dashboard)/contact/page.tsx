@@ -18,7 +18,7 @@ function ContactPage() {
 				<p>Contact Sharing</p>
 			</div>
 
-			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded-sm bg-grey-100 px-5">
+			<div className="bg-grey-100 mt-5 flex h-[90px] w-full items-center justify-between rounded-sm px-5">
 				<div>
 					<p>View Contacts</p>
 				</div>
@@ -26,7 +26,7 @@ function ContactPage() {
 					<Image src={ViewContacts} layout="fullWidth" alt="" className="size-full" />
 				</div>
 			</div>
-			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded-sm bg-grey-100 px-5">
+			<div className="bg-grey-100 mt-5 flex h-[90px] w-full items-center justify-between rounded-sm px-5">
 				<div>
 					<p>Scan QR code</p>
 				</div>
@@ -35,7 +35,10 @@ function ContactPage() {
 				</div>
 			</div>
 			<Link to={`virtual-business-card`}>
-				<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded-sm bg-grey-100 px-5">
+				<div
+					className="bg-grey-100 mt-5 flex h-[90px] w-full items-center justify-between rounded-sm
+						px-5"
+				>
 					<div>
 						<p>Share your virtual business cards</p>
 					</div>
@@ -44,7 +47,7 @@ function ContactPage() {
 					</div>
 				</div>
 			</Link>
-			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded-sm bg-grey-100 px-5">
+			<div className="bg-grey-100 mt-5 flex h-[90px] w-full items-center justify-between rounded-sm px-5">
 				<div>
 					<p>Share your document</p>
 				</div>
@@ -52,7 +55,7 @@ function ContactPage() {
 					<Image src={shareDocuments} alt="" layout="fullWidth" className="size-full" />
 				</div>
 			</div>
-			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded-sm bg-grey-100 px-5">
+			<div className="bg-grey-100 mt-5 flex h-[90px] w-full items-center justify-between rounded-sm px-5">
 				<div>
 					<p>Share your contact</p>
 				</div>
@@ -60,7 +63,7 @@ function ContactPage() {
 					<Image src={shareContactTemporarily} alt="" layout="fullWidth" className="size-full" />
 				</div>
 			</div>
-			<div className="mt-5 flex h-[90px] w-full items-center justify-between rounded-sm bg-grey-100 px-5">
+			<div className="bg-grey-100 mt-5 flex h-[90px] w-full items-center justify-between rounded-sm px-5">
 				<div>
 					<p>View your QR code </p>
 				</div>
@@ -71,7 +74,7 @@ function ContactPage() {
 
 			<Link to={`how-to-tutorial`}>
 				<div className="flex gap-3 pt-3">
-					<VideoIcon className="rounded-sm bg-grey-100 p-0.5" />
+					<VideoIcon className="bg-grey-100 rounded-sm p-0.5" />
 					<p className="text-[#DA700A]">Tutorial: How to share contact temporarily</p>
 				</div>
 			</Link>

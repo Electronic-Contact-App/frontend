@@ -38,7 +38,7 @@ function PrivacySettingsPage() {
 							to={item.link}
 							className={cnJoin(
 								"flex items-center justify-between",
-								index !== array.length - 1 && "border-b border-b-grey-100 pb-3 pt-1"
+								index !== array.length - 1 && "border-b-grey-100 border-b pt-1 pb-3"
 							)}
 						>
 							<p>{item.title}</p>
@@ -46,7 +46,7 @@ function PrivacySettingsPage() {
 							<span className="block size-5">
 								<IconBox
 									icon="material-symbols:chevron-right-rounded"
-									className="size-full text-grey-800"
+									className="text-grey-800 size-full"
 								/>
 							</span>
 						</Link>

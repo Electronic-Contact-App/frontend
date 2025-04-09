@@ -9,7 +9,7 @@ function NestedPagesLayout() {
 			<Teleport to="main>header>section">
 				<Button
 					unstyled={true}
-					className="absolute left-0 flex size-11 items-center justify-center rounded-full bg-grey-100"
+					className="bg-grey-100 absolute left-0 flex size-11 items-center justify-center rounded-full"
 					onClick={() => history.back()}
 				>
 					<ArrowIcon className="text-icon" />

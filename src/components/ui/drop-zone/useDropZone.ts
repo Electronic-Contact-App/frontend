@@ -147,11 +147,7 @@ const useDropZone = (props: UseDropZoneProps) => {
 
 	const getInputProps = (): InputProps => ({
 		accept: allowedFileTypes ? allowedFileTypes.join(", ") : accept,
-		className: cnMerge(
-			"absolute inset-0 z-100 cursor-pointer opacity-0",
-			className,
-			classNames?.input
-		),
+		className: cnMerge("absolute inset-0 z-100 cursor-pointer opacity-0", className, classNames?.input),
 		onChange: (event: ChangeEvent<HTMLInputElement>) => {
 			handleFileUpload(event);
 			onChange?.(event);

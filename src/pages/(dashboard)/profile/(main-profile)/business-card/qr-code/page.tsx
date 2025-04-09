@@ -42,7 +42,7 @@ const BusinessCard = () => {
 			<section className="mb-[36px] space-y-[24px]">
 				<Image src={qrCode} alt="" width={327} height={327} />
 
-				<Link to="qr" className="flex items-center gap-[4px] text-[14px] font-normal text-secondary">
+				<Link to="qr" className="text-secondary flex items-center gap-[4px] text-[14px] font-normal">
 					View contact as text <IconBox icon="quill:chevron-right" className="mt-[3px]" />
 				</Link>
 			</section>
@@ -50,8 +50,8 @@ const BusinessCard = () => {
 			{actionButtons.map((items) => (
 				<div
 					key={items.text}
-					className="mb-1 flex items-center gap-[8px] rounded-[8px] bg-grey-50 px-6 py-[13px]
-						text-primary"
+					className="bg-grey-50 text-primary mb-1 flex items-center gap-[8px] rounded-[8px] px-6
+						py-[13px]"
 				>
 					{items.image}
 

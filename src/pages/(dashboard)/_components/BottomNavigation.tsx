@@ -33,7 +33,7 @@ function BottomNavigation() {
 	const [NavigationList] = getElementList();
 
 	return (
-		<nav className="sticky bottom-0 bg-background px-5 pb-5 pt-4">
+		<nav className="bg-background sticky bottom-0 px-5 pt-4 pb-5">
 			<NavigationList
 				className="flex justify-between gap-5 self-end"
 				each={naviationLinks}
@@ -41,7 +41,7 @@ function BottomNavigation() {
 					<li key={link.href}>
 						<NavLink
 							to={link.href}
-							className="flex flex-col items-center gap-2 text-grey-800 [&.active]:text-primary"
+							className="text-grey-800 [&.active]:text-primary flex flex-col items-center gap-2"
 						>
 							<span className="block size-6">
 								<IconBox icon={link.icon} className="size-full" />
