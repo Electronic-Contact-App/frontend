@@ -214,7 +214,7 @@ function FormInputPrimitive<TFieldValues extends FieldValues>(
 				className={cnMerge(
 					!inputTypesWithoutFullWith.has(type) && "flex w-full",
 					`bg-transparent text-sm file:border-0 file:bg-transparent
-					placeholder:text-shadcn-muted-foreground focus-visible:outline-none
+					placeholder:text-shadcn-muted-foreground focus-visible:outline-hidden
 					disabled:cursor-not-allowed disabled:opacity-50`,
 					className,
 					classNames?.input,
@@ -301,7 +301,7 @@ function FormTextAreaPrimitive<TFieldValues extends FieldValues>(
 			name={name}
 			className={cnMerge(
 				`w-full bg-transparent text-sm placeholder:text-shadcn-muted-foreground
-				focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+				focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50`,
 				className,
 				name && errors?.[name] && errorClassName
 			)}

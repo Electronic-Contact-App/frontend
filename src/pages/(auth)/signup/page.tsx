@@ -132,7 +132,7 @@ function SignupPage() {
 									onChange={field.onChange}
 									placeholder="70xxxxxxxx"
 									className="[--react-international-phone-background-color:transparent]
-										[--react-international-phone-border-color:theme('colors.grey.200')]
+										[--react-international-phone-border-color:var(--color-grey-200)]
 										[--react-international-phone-border-radius:8px]
 										[--react-international-phone-dropdown-item-background-color:white]
 										[--react-international-phone-font-size:14px]

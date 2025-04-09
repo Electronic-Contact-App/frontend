@@ -1,10 +1,11 @@
+import type { InferProps } from "@zayne-labs/toolkit/react";
 import type { Prettify } from "@zayne-labs/toolkit/type-helpers";
 import { type VariantProps, tv } from "tailwind-variants";
 import { Slot, Slottable } from "../common";
 import { ArrowIcon, SpinnerIcon } from "../icons";
 
 // prettier-ignore
-export type ButtonProps = Prettify<React.ComponentPropsWithRef<"button"> & VariantProps<typeof button> & {
+export type ButtonProps = Prettify<InferProps<"button"> & VariantProps<typeof button> & {
 	asChild?: boolean;
 	isLoading?: boolean;
 	unstyled?: boolean;

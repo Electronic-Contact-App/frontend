@@ -1,6 +1,166 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+@theme {
+  --color-*: initial;
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-transparent: transparent;
+
+  --color-blue-50: var(--color-blue-50);
+  --color-blue-100: var(--color-blue-100);
+  --color-blue-200: var(--color-blue-200);
+  --color-blue-300: var(--color-blue-300);
+  --color-blue-400: var(--color-blue-400);
+  --color-blue-600: var(--color-blue-600);
+  --color-blue-700: var(--color-blue-700);
+  --color-blue-800: var(--color-blue-800);
+  --color-blue-900: var(--color-blue-900);
+  --color-blue-primary: var(--color-primary);
+
+  --color-orange-50: var(--color-orange-50);
+  --color-orange-100: var(--color-orange-100);
+  --color-orange-200: var(--color-orange-200);
+  --color-orange-300: var(--color-orange-300);
+  --color-orange-400: var(--color-orange-400);
+  --color-orange-600: var(--color-orange-600);
+  --color-orange-700: var(--color-orange-700);
+  --color-orange-800: var(--color-orange-800);
+  --color-orange-900: var(--color-orange-900);
+  --color-orange-secondary: var(--color-secondary);
+
+  --color-grey-50: var(--color-grey-50);
+  --color-grey-100: var(--color-grey-100);
+  --color-grey-200: var(--color-grey-200);
+  --color-grey-300: var(--color-grey-300);
+  --color-grey-400: var(--color-grey-400);
+  --color-grey-500: var(--color-grey-500);
+  --color-grey-600: var(--color-grey-600);
+  --color-grey-700: var(--color-grey-700);
+  --color-grey-800: var(--color-grey-800);
+  --color-grey-900: var(--color-grey-900);
+
+  --color-error-50: var(--color-error-50);
+  --color-error-100: var(--color-error-100);
+  --color-error-200: var(--color-error-200);
+  --color-error-300: var(--color-error-300);
+  --color-error-400: var(--color-error-400);
+  --color-error-500: var(--color-error-500);
+  --color-error-600: var(--color-error-600);
+  --color-error-700: var(--color-error-700);
+  --color-error-800: var(--color-error-800);
+  --color-error-900: var(--color-error-900);
+  --color-error: var(--color-error-500);
+
+  --color-success-50: var(--color-success-50);
+  --color-success-100: var(--color-success-100);
+  --color-success-200: var(--color-success-200);
+  --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400);
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+  --color-success-700: var(--color-success-700);
+  --color-success-800: var(--color-success-800);
+  --color-success-900: var(--color-success-900);
+
+  --color-light-green: var(--color-light-green);
+  --color-green-stroke: var(--color-green-stroke);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-background: var(--color-background);
+
+  --color-body-text: var(--color-body-text);
+  --color-body-bolder: var(--color-body-bolder);
+
+  --color-icon: var(--color-icon);
+
+  --color-shadcn-background: hsl(0, 0%, 100%);
+  --color-shadcn-foreground: hsl(222.2, 47.4%, 11.2%);
+
+  --color-shadcn-primary: hsl(222.2, 47.4%, 11.2%);
+  --color-shadcn-primary-foreground: hsl(210, 40%, 98%);
+
+  --color-shadcn-secondary: hsl(210, 40%, 96.1%);
+  --color-shadcn-secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+
+  --color-shadcn-popover: hsl(0, 0%, 100%);
+  --color-shadcn-popover-foreground: hsl(222.2, 47.4%, 11.2%);
+
+  --color-shadcn-accent: hsl(210, 40%, 96.1%);
+  --color-shadcn-accent-foreground: hsl(222.2, 47.4%, 11.2%);
+
+  --color-shadcn-muted: hsl(210, 40%, 96.1%);
+  --color-shadcn-muted-foreground: hsl(215.4, 16.3%, 46.9%);
+
+  --color-shadcn-input: hsl(214.3, 31.8%, 91.4%);
+  --color-shadcn-border: hsl(214.3, 31.8%, 91.4%);
+  --color-shadcn-ring: hsl(215, 20.2%, 65.1%);
+
+  --breakpoint-lg: 1000px;
+  --breakpoint-md: 768px;
+  --breakpoint-sm: 480px;
+  --breakpoint-xl: 1280px;
+
+  --font-satoshi: Satoshi, sans-serif;
+
+  --animate-flicker: flicker 3s linear infinite;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes flicker {
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    70%,
+    to {
+      filter: drop-shadow(0 0 1px rgba(252, 211, 77))
+        drop-shadow(0 0 15px rgba(245, 158, 11))
+        drop-shadow(0 0 1px rgba(252, 211, 77));
+      opacity: 0.99;
+    }
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    69.999% {
+      filter: none;
+      opacity: 0.4;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 /* ------------------*/
 /* Custom Properties */
@@ -113,9 +273,9 @@
 	}
 
 	body {
-		color: theme("colors.body.text");
+		color: var(--color-body-text);
 		--webkit-font-smoothing: antialiased;
 		line-height: 1.5;
-		font-family: theme("fontFamily.satoshi");
+		font-family: var(--font-satoshi);
 	}
 }

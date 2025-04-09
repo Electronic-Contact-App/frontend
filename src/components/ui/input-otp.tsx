@@ -12,7 +12,7 @@ export function InputOTP(
 	return (
 		<OTPInput
 			containerClassName={cnMerge(
-				"flex items-center gap-2 has-[:disabled]:opacity-50",
+				"flex items-center gap-2 has-disabled:opacity-50",
 				containerClassName,
 				classNames?.container
 			)}

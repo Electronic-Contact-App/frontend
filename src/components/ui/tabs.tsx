@@ -24,10 +24,10 @@ function TabsTrigger(props: InferProps<typeof TabsPrimitive.Trigger>) {
 		<TabsPrimitive.Trigger
 			className={cnMerge(
 				`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm
-				font-medium ring-offset-shadcn-background transition-all focus-visible:outline-none
+				font-medium ring-offset-shadcn-background transition-all focus-visible:outline-hidden
 				focus-visible:ring-2 focus-visible:ring-shadcn-ring focus-visible:ring-offset-2
 				disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-shadcn-background
-				data-[state=active]:text-shadcn-foreground data-[state=active]:shadow-sm`,
+				data-[state=active]:text-shadcn-foreground data-[state=active]:shadow-xs`,
 				className
 			)}
 			{...restOfProps}
@@ -41,7 +41,7 @@ function TabsContent(props: InferProps<typeof TabsPrimitive.Content>) {
 	return (
 		<TabsPrimitive.Content
 			className={cnMerge(
-				`mt-2 ring-offset-shadcn-background focus-visible:outline-none focus-visible:ring-2
+				`mt-2 ring-offset-shadcn-background focus-visible:outline-hidden focus-visible:ring-2
 				focus-visible:ring-shadcn-ring focus-visible:ring-offset-2`,
 				className
 			)}

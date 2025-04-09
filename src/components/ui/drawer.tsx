@@ -29,7 +29,7 @@ function DrawerContent(props: InferProps<typeof DrawerPrimitive.Content> & { wit
 			<DrawerPrimitive.Content
 				className={cnMerge(
 					`fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border
-					bg-background`,
+					bg-shadcn-background`,
 					className
 				)}
 				{...restOfProps}

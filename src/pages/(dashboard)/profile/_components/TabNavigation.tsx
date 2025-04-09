@@ -1,15 +1,12 @@
 import { Tabs } from "@/components/ui";
 import { useLocation } from "@zayne-labs/toolkit/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function TabNavigation() {
-	const navigate = useNavigate();
-
-	const [pathname, { triggerPopstate }] = useLocation((state) => state.pathname);
+	const [pathname, { push }] = useLocation((state) => state.pathname);
 
 	const handleTabChange = (value: string) => {
-		void navigate(value === "contact" ? "/profile" : `/profile/${value}`);
-		triggerPopstate();
+		push(value === "contact" ? "/profile" : `/profile/${value}`);
 	};
 
 	return (

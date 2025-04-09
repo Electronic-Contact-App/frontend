@@ -88,7 +88,7 @@ const EditProfile = () => {
 							<Form.Input
 								type="tel"
 								placeholder="+234 7062462466"
-								className="flex-1 bg-transparent outline-none"
+								className="flex-1 bg-transparent outline-hidden"
 							/>
 						</div>
 					</Form.Item>
@@ -130,7 +130,7 @@ const EditProfile = () => {
 							<Form.Input
 								type="email"
 								placeholder="miraclegift@gmail.com"
-								className="flex-1 bg-transparent outline-none"
+								className="flex-1 bg-transparent outline-hidden"
 							/>
 						</div>
 					</Form.Item>
@@ -154,7 +154,7 @@ const EditProfile = () => {
 					<Form.TextArea
 						className="h-[44px] rounded-[8px] border border-grey-200 p-[10px]
 							placeholder:text-grey-600 focus:h-[134px] focus:leading-normal
-							placeholder:focus:leading-normal"
+							focus:placeholder:leading-normal"
 						placeholder="Enter a brief info about yourself"
 					/>
 				</Form.Item>
